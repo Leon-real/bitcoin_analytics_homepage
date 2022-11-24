@@ -12,15 +12,25 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+import os
+import json   # json file을 읽기 위해 json module을 import 합니다.
+from django.core.exceptions import ImproperlyConfigured # Error 발생시 처리하기 위해 import 합니다.
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+secret_file = os.path.join(BASE_DIR, 'secrets.json') # 만들어두었던 json 파일을 불러옵니다.
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+=9=n1)6=^8%pwq_)8dvc6g6^fy*=e#*%b&53o8#$touyb-n4p'
+with open(secret_file) as f: # json 파일을 읽어 secret에 할당합니다.
+	secrets = json.loads(f.read())
+# json 파일에 key를 확인하고 key가 없으면 KeyError를 출력합니다.
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets[setting]
+    except KeyError:
+        error_msg = "Set the {0} enviroment variable".format(setting)
+        raise ImproperlyConfigured(error_msg)
+ 
+SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
