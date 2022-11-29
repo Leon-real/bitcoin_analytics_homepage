@@ -68,7 +68,6 @@ const config = {
         console.log(value)
         document.getElementById('FearAndGreedData').innerHTML = value
         document.getElementById('FearAndGreedDataProgressbar').value = value
-        
     })
     .catch(error => console.log(error));
 
