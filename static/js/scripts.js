@@ -67,6 +67,8 @@ const config = {
         const value = data.data[0]['value'] // api value 값 가져오기
         console.log(value)
         document.getElementById('FearAndGreedData').innerHTML = value
+        document.getElementById('FearAndGreedDataProgressbar').value = value
+        
     })
     .catch(error => console.log(error));
 
