@@ -27,25 +27,25 @@ window.addEventListener('DOMContentLoaded', event => {
     if (dashbordObject1) {
         dashbordObject1.addEventListener('click', event => {
             console.log('공포 / 탐욕 지수 차트 표시');
-            document.getElementById('index_dashboradchart1').innerHTML = '공포 / 탐욕지시'
+            document.getElementById('index_dashboradchart1').innerHTML = '공포 / 탐욕 지수 차트'
         });
     }
     if (dashbordObject2) {
         dashbordObject2.addEventListener('click', event => {
             console.log('강도 지수 차트 표시');
-            document.getElementById('index_dashboradchart1').innerHTML = '공포 / 탐욕지시'
+            document.getElementById('index_dashboradchart1').innerHTML = '상대 강도 지수 차트'
         });
     }
     if (dashbordObject3) {
         dashbordObject3.addEventListener('click', event => {
             console.log('시장 트렌드 차트 표시');
-            document.getElementById('index_dashboradchart1').innerHTML = '공포 / 탐욕지시'
+            document.getElementById('index_dashboradchart1').innerHTML = '시장 트렌드 차트'
         });
     }
     if (dashbordObject4) {
         dashbordObject4.addEventListener('click', event => {
             console.log('비트코인 도미넌스 차트 표시');
-            document.getElementById('index_dashboradchart1').innerHTML = '공포 / 탐욕지시'
+            document.getElementById('index_dashboradchart1').innerHTML = '비트코인 도미넌스 차트'
         });
     }
 
