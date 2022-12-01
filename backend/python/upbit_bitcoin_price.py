@@ -5,10 +5,8 @@ import pandas as pd
 from datetime import datetime, timedelta
 import time
 
-def update_price_data(ticker, recent_time_data, recnet_close_data, recent_volume_data):
+def update_price_data(ticker, recent_time_data):
     t = datetime.strptime(recent_time_data, '%Y-%m-%d %H:%M:%S') # sql에 저장된 마지막 시간
-    c = recnet_close_data # sql에 저장된 마지막 close 가격
-    v = recent_volume_data # sql에 저장된 마지막 volume
 
     # 부족한 데이터 갯수 차이 구하기(1분 단위로 갯수 차이 계산)
     utc_time = t - timedelta(hours=9) + timedelta(minutes=1) # UTC 기준 시간으로 변환
@@ -43,9 +41,7 @@ for ticker in tickers:
             cur.execute(f"SELECT * FROM {ticker[4:]} ORDER BY ROWID DESC LIMIT 1") # 마지막  행 읽기
             rows = cur.fetchone() 
             last_time = rows[0] # SQL 마지막에 저장된 데이터의 time 값
-            last_cloes = rows[4] # SQL 마지막에 저장된 데이터의 close 값
-            last_volume = rows[5] # SQL 마지막에 저장된 데이터의 volume값
-            update_df, update_count = update_price_data(ticker, last_time, last_cloes, last_volume) # 새로운 데이터 프레임
+            update_df, update_count = update_price_data(ticker, last_time) # 새로운 데이터 프레임
             cur.execute(f"DELETE FROM {ticker[4:]} WHERE ROWID IN (SELECT ROWID FROM {ticker[4:]} ORDER BY ROWID DESC LIMIT 1)") # 기존의 마지막행 삭제
             update_df.to_sql(f'{ticker[4:]}', conn, if_exists='append') #새로운 데이터 업데이트
             print(f"\t{update_count}데이터 업데이트")
