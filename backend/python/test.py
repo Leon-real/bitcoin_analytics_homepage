@@ -1,5 +1,5 @@
 import sqlite3
-
+import pandas as pd
 
 data = {0:['시간', '데이터1'], 1:['가격','데이터2'], 2:['기타','데이터3']}
 
@@ -19,3 +19,7 @@ for i in range(len(data)):
     cur.execute(sql, (i, data_timeline, data_data))
     
 conn.commit()
+# conn.close()
+
+df = pd.read_excel('KRW-BTC.xlsx')
+df.to_sql('BTC',conn, if_exists='replace', index = 0)
