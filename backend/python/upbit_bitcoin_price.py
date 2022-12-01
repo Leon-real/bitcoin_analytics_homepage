@@ -56,7 +56,3 @@ for ticker in tickers:
 
 conn.commit()
 conn.close()
-
-
-1401
-1403
