@@ -16,22 +16,25 @@ def update_price_data(ticker, recent_time_data):
     # print(minute_counts)
 
     # sql에 저장된 마지막 시간을 기준으로 upbit 데이터 한개 가져오기
-    new_df = pyupbit.get_ohlcv(ticker, interval="minute1", count=minute_counts, period=0.5) 
+    new_df = pyupbit.get_ohlcv(ticker, interval="minute1", count=minute_counts, period=0.2) 
 
     return new_df, minute_counts
 
-# 업비트 내의 모든 티커 저장
-tickers = pyupbit.get_tickers(fiat="KRW") 
+#######################################################################################################################################################
+#######################################################################################################################################################
+# Main Process
+def main_process():
+    # 업비트 내의 모든 티커 저장
+    tickers = pyupbit.get_tickers(fiat="KRW") 
 
-############################
-# SQL에 데이터가 있는지 없는지 확인하기
+    ############################
+    # SQL에 데이터가 있는지 없는지 확인하기
 
-# 1. db 연결하기
-conn=sqlite3.connect('upbit_price.db') # db 연결
-cur = conn.cursor() # db 커서
+    # 1. db 연결하기
+    conn=sqlite3.connect('upbit_price.db') # db 연결
+    cur = conn.cursor() # db 커서
 
-# ticker들 하나씩 순회하며 데이터 저장하기
-while True:
+    # ticker들 하나씩 순회하며 데이터 저장하기
     for ticker in tickers:
         try:
             # 2. db에 테이블 존재 여부 확인하기
@@ -53,11 +56,14 @@ while True:
                 df.to_sql(f'{ticker[4:]}', conn)
                 print(f"\t {ticker[4:]}데이터 저장 완료")
             
-            time.sleep(0.5)
+            time.sleep(0.2)
         except:
             print(f"{ticker} Error")
             time.sleep(5)
-    time.sleep(5)
-    conn.commit()
+        time.sleep(0.03)
 
-conn.close()
+    conn.commit()
+    conn.close()
+
+def run():
+    main_process()
