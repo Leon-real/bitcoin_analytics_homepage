@@ -5,10 +5,10 @@ import binance_bitcoin_price
 from datetime import datetime
 
 if __name__ == '__main__':
-    p = Pool(2)
-    start = time.time()
+    
 
     while True:
+        p = Pool(2)
         start = time.time()
         print(f"업데이트 시작 시간 : {datetime.now()}")
         get_upbit = p.apply_async(upbit_bitcoin_price.run)
