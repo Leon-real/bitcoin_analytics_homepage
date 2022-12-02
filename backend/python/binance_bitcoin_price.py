@@ -54,16 +54,16 @@ def main_process():
             cur.execute(f"SELECT COUNT(*) FROM sqlite_master WHERE name='{ticker[:-5]}'")
             exist_or_not = cur.fetchone()[0]
             if exist_or_not == 1: # 테이블 존재 => 테이블의 마지막 행부터 데이터 가져와서 테이블에 저장하기
-                print(f"{ticker[:-5]} 테이블이 존재합니다")
+                # print(f"{ticker[:-5]} 테이블이 존재합니다")
                 cur.execute(f"SELECT * FROM '{ticker[:-5]}' ORDER BY ROWID DESC LIMIT 1") # 마지막  행 읽기
                 rows = cur.fetchone() 
                 last_time = rows[0] # SQL 마지막에 저장된 데이터의 time 값
                 update_df, update_count = update_price_data(ticker, last_time, binance) # 새로운 데이터 프레임
                 cur.execute(f"DELETE FROM '{ticker[:-5]}' WHERE ROWID IN (SELECT ROWID FROM '{ticker[:-5]}' ORDER BY ROWID DESC LIMIT 1)") # 기존의 마지막행 삭제
                 update_df.to_sql(f'{ticker[:-5]}', conn, if_exists='append') #새로운 데이터 업데이트
-                print(f"\t{update_count}데이터 업데이트")
+                # print(f"\t{update_count}데이터 업데이트")
             else: # 테이블이 존재하지 않음 => 데이터를 테이블에 저장하기
-                print(f"{ticker[:-5]} 테이블이 존재하지 않습니다")
+                # print(f"{ticker[:-5]} 테이블이 존재하지 않습니다")
                 # ticker의 ohlcv 값 sql에 저장하기
                 btc = binance.fetch_ohlcv(ticker,timeframe='1m',since=None)
                 df = pd.DataFrame(btc, columns=['index', 'open', 'high', 'low', 'close', 'volume']) # 가격 데이터 프래임 생성
@@ -71,7 +71,7 @@ def main_process():
                 df.set_index('index', inplace=True) # 인덱스 설정
 
                 df.to_sql(f'{ticker[:-5]}', conn) # sql 테이블에 저장하기
-                print(f"\t {ticker[:-5]}데이터 저장 완료")
+                # print(f"\t {ticker[:-5]}데이터 저장 완료")
             
             time.sleep(0.2)
         except:
