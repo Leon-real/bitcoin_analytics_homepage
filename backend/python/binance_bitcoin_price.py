@@ -51,16 +51,16 @@ def main_process():
     for ticker in usdt_tickers:
         try:
             # 2. db에 테이블 존재 여부 확인하기
-            cur.execute(f"SELECT COUNT(*) FROM sqlite_master WHERE name='{ticker[:-5]}'")
+            cur.execute(f"SELECT COUNT(*) FROM sqlite_master WHERE name='F_{ticker[:-5]}'")
             exist_or_not = cur.fetchone()[0]
             if exist_or_not == 1: # 테이블 존재 => 테이블의 마지막 행부터 데이터 가져와서 테이블에 저장하기
                 # print(f"{ticker[:-5]} 테이블이 존재합니다")
-                cur.execute(f"SELECT * FROM '{ticker[:-5]}' ORDER BY ROWID DESC LIMIT 1") # 마지막  행 읽기
+                cur.execute(f"SELECT * FROM 'F_{ticker[:-5]}' ORDER BY ROWID DESC LIMIT 1") # 마지막  행 읽기
                 rows = cur.fetchone() 
                 last_time = rows[0] # SQL 마지막에 저장된 데이터의 time 값
                 update_df, update_count = update_price_data(ticker, last_time, binance) # 새로운 데이터 프레임
-                cur.execute(f"DELETE FROM '{ticker[:-5]}' WHERE ROWID IN (SELECT ROWID FROM '{ticker[:-5]}' ORDER BY ROWID DESC LIMIT 1)") # 기존의 마지막행 삭제
-                update_df.to_sql(f'{ticker[:-5]}', conn, if_exists='append') #새로운 데이터 업데이트
+                cur.execute(f"DELETE FROM 'F_{ticker[:-5]}' WHERE ROWID IN (SELECT ROWID FROM 'F_{ticker[:-5]}' ORDER BY ROWID DESC LIMIT 1)") # 기존의 마지막행 삭제
+                update_df.to_sql(f'F_{ticker[:-5]}', conn, if_exists='append') #새로운 데이터 업데이트
                 # print(f"\t{update_count}데이터 업데이트")
             else: # 테이블이 존재하지 않음 => 데이터를 테이블에 저장하기
                 # print(f"{ticker[:-5]} 테이블이 존재하지 않습니다")
@@ -70,7 +70,7 @@ def main_process():
                 df['index'] = pd.to_datetime(df['index'], unit='ms')+ timedelta(hours=9) # 한국 시간으로 맞추기
                 df.set_index('index', inplace=True) # 인덱스 설정
 
-                df.to_sql(f'{ticker[:-5]}', conn) # sql 테이블에 저장하기
+                df.to_sql(f'F_{ticker[:-5]}', conn) # sql 테이블에 저장하기
                 # print(f"\t {ticker[:-5]}데이터 저장 완료")
             
             time.sleep(0.2)
