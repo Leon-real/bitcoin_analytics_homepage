@@ -1,4 +1,12 @@
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+
 
 class F1000Lunc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -12,6 +20,7 @@ class F1000Lunc(models.Model):
         managed = False
         db_table = 'F_1000LUNC'
 
+
 class F1000Shib(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -23,6 +32,7 @@ class F1000Shib(models.Model):
     class Meta:
         managed = False
         db_table = 'F_1000SHIB'
+
 
 class F1000Xec(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -36,6 +46,7 @@ class F1000Xec(models.Model):
         managed = False
         db_table = 'F_1000XEC'
 
+
 class F1Inch(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -47,6 +58,7 @@ class F1Inch(models.Model):
     class Meta:
         managed = False
         db_table = 'F_1INCH'
+
 
 class FAave(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -60,6 +72,7 @@ class FAave(models.Model):
         managed = False
         db_table = 'F_AAVE'
 
+
 class FAda(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -71,6 +84,7 @@ class FAda(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ADA'
+
 
 class FAlgo(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -84,6 +98,7 @@ class FAlgo(models.Model):
         managed = False
         db_table = 'F_ALGO'
 
+
 class FAlice(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -95,6 +110,7 @@ class FAlice(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ALICE'
+
 
 class FAlpha(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -108,6 +124,7 @@ class FAlpha(models.Model):
         managed = False
         db_table = 'F_ALPHA'
 
+
 class FAnkr(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -119,6 +136,7 @@ class FAnkr(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ANKR'
+
 
 class FAnt(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -132,6 +150,7 @@ class FAnt(models.Model):
         managed = False
         db_table = 'F_ANT'
 
+
 class FApe(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -143,6 +162,7 @@ class FApe(models.Model):
     class Meta:
         managed = False
         db_table = 'F_APE'
+
 
 class FApi3(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -156,6 +176,7 @@ class FApi3(models.Model):
         managed = False
         db_table = 'F_API3'
 
+
 class FApt(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -167,6 +188,7 @@ class FApt(models.Model):
     class Meta:
         managed = False
         db_table = 'F_APT'
+
 
 class FAr(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -180,6 +202,7 @@ class FAr(models.Model):
         managed = False
         db_table = 'F_AR'
 
+
 class FArpa(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -191,6 +214,7 @@ class FArpa(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ARPA'
+
 
 class FAta(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -204,6 +228,7 @@ class FAta(models.Model):
         managed = False
         db_table = 'F_ATA'
 
+
 class FAtom(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -215,6 +240,7 @@ class FAtom(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ATOM'
+
 
 class FAudio(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -228,6 +254,7 @@ class FAudio(models.Model):
         managed = False
         db_table = 'F_AUDIO'
 
+
 class FAvax(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -239,6 +266,7 @@ class FAvax(models.Model):
     class Meta:
         managed = False
         db_table = 'F_AVAX'
+
 
 class FAxs(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -252,6 +280,7 @@ class FAxs(models.Model):
         managed = False
         db_table = 'F_AXS'
 
+
 class FBake(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -263,6 +292,7 @@ class FBake(models.Model):
     class Meta:
         managed = False
         db_table = 'F_BAKE'
+
 
 class FBal(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -276,6 +306,7 @@ class FBal(models.Model):
         managed = False
         db_table = 'F_BAL'
 
+
 class FBand(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -287,6 +318,7 @@ class FBand(models.Model):
     class Meta:
         managed = False
         db_table = 'F_BAND'
+
 
 class FBat(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -300,6 +332,7 @@ class FBat(models.Model):
         managed = False
         db_table = 'F_BAT'
 
+
 class FBch(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -311,6 +344,7 @@ class FBch(models.Model):
     class Meta:
         managed = False
         db_table = 'F_BCH'
+
 
 class FBel(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -324,6 +358,7 @@ class FBel(models.Model):
         managed = False
         db_table = 'F_BEL'
 
+
 class FBluebird(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -335,6 +370,7 @@ class FBluebird(models.Model):
     class Meta:
         managed = False
         db_table = 'F_BLUEBIRD'
+
 
 class FBlz(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -348,6 +384,7 @@ class FBlz(models.Model):
         managed = False
         db_table = 'F_BLZ'
 
+
 class FBnb(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -359,6 +396,7 @@ class FBnb(models.Model):
     class Meta:
         managed = False
         db_table = 'F_BNB'
+
 
 class FBnx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -372,6 +410,7 @@ class FBnx(models.Model):
         managed = False
         db_table = 'F_BNX'
 
+
 class FBtc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -383,6 +422,7 @@ class FBtc(models.Model):
     class Meta:
         managed = False
         db_table = 'F_BTC'
+
 
 class FBtcdom(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -396,6 +436,7 @@ class FBtcdom(models.Model):
         managed = False
         db_table = 'F_BTCDOM'
 
+
 class FBtcusdt2(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -407,6 +448,7 @@ class FBtcusdt2(models.Model):
     class Meta:
         managed = False
         db_table = 'F_BTCUSDT_2'
+
 
 class FBts(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -420,6 +462,7 @@ class FBts(models.Model):
         managed = False
         db_table = 'F_BTS'
 
+
 class FC98(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -431,6 +474,7 @@ class FC98(models.Model):
     class Meta:
         managed = False
         db_table = 'F_C98'
+
 
 class FCelo(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -444,6 +488,7 @@ class FCelo(models.Model):
         managed = False
         db_table = 'F_CELO'
 
+
 class FCelr(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -455,6 +500,7 @@ class FCelr(models.Model):
     class Meta:
         managed = False
         db_table = 'F_CELR'
+
 
 class FChr(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -468,6 +514,7 @@ class FChr(models.Model):
         managed = False
         db_table = 'F_CHR'
 
+
 class FChz(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -479,6 +526,7 @@ class FChz(models.Model):
     class Meta:
         managed = False
         db_table = 'F_CHZ'
+
 
 class FComp(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -492,6 +540,7 @@ class FComp(models.Model):
         managed = False
         db_table = 'F_COMP'
 
+
 class FCoti(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -503,6 +552,7 @@ class FCoti(models.Model):
     class Meta:
         managed = False
         db_table = 'F_COTI'
+
 
 class FCrv(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -516,6 +566,7 @@ class FCrv(models.Model):
         managed = False
         db_table = 'F_CRV'
 
+
 class FCtk(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -527,6 +578,7 @@ class FCtk(models.Model):
     class Meta:
         managed = False
         db_table = 'F_CTK'
+
 
 class FCtsi(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -540,6 +592,7 @@ class FCtsi(models.Model):
         managed = False
         db_table = 'F_CTSI'
 
+
 class FCvc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -551,6 +604,7 @@ class FCvc(models.Model):
     class Meta:
         managed = False
         db_table = 'F_CVC'
+
 
 class FCvx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -564,6 +618,7 @@ class FCvx(models.Model):
         managed = False
         db_table = 'F_CVX'
 
+
 class FDar(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -575,6 +630,7 @@ class FDar(models.Model):
     class Meta:
         managed = False
         db_table = 'F_DAR'
+
 
 class FDash(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -588,6 +644,7 @@ class FDash(models.Model):
         managed = False
         db_table = 'F_DASH'
 
+
 class FDefi(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -599,6 +656,7 @@ class FDefi(models.Model):
     class Meta:
         managed = False
         db_table = 'F_DEFI'
+
 
 class FDent(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -612,6 +670,7 @@ class FDent(models.Model):
         managed = False
         db_table = 'F_DENT'
 
+
 class FDgb(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -623,6 +682,7 @@ class FDgb(models.Model):
     class Meta:
         managed = False
         db_table = 'F_DGB'
+
 
 class FDoge(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -636,6 +696,7 @@ class FDoge(models.Model):
         managed = False
         db_table = 'F_DOGE'
 
+
 class FDot(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -647,6 +708,7 @@ class FDot(models.Model):
     class Meta:
         managed = False
         db_table = 'F_DOT'
+
 
 class FDusk(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -660,6 +722,7 @@ class FDusk(models.Model):
         managed = False
         db_table = 'F_DUSK'
 
+
 class FDydx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -671,6 +734,7 @@ class FDydx(models.Model):
     class Meta:
         managed = False
         db_table = 'F_DYDX'
+
 
 class FEgld(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -684,6 +748,7 @@ class FEgld(models.Model):
         managed = False
         db_table = 'F_EGLD'
 
+
 class FEnj(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -695,6 +760,7 @@ class FEnj(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ENJ'
+
 
 class FEns(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -708,6 +774,7 @@ class FEns(models.Model):
         managed = False
         db_table = 'F_ENS'
 
+
 class FEos(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -719,6 +786,7 @@ class FEos(models.Model):
     class Meta:
         managed = False
         db_table = 'F_EOS'
+
 
 class FEtc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -732,6 +800,7 @@ class FEtc(models.Model):
         managed = False
         db_table = 'F_ETC'
 
+
 class FEth(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -743,6 +812,7 @@ class FEth(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ETH'
+
 
 class FEthusdt2(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -756,6 +826,7 @@ class FEthusdt2(models.Model):
         managed = False
         db_table = 'F_ETHUSDT_2'
 
+
 class FFil(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -767,6 +838,7 @@ class FFil(models.Model):
     class Meta:
         managed = False
         db_table = 'F_FIL'
+
 
 class FFlm(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -780,6 +852,7 @@ class FFlm(models.Model):
         managed = False
         db_table = 'F_FLM'
 
+
 class FFlow(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -791,6 +864,7 @@ class FFlow(models.Model):
     class Meta:
         managed = False
         db_table = 'F_FLOW'
+
 
 class FFootball(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -804,6 +878,7 @@ class FFootball(models.Model):
         managed = False
         db_table = 'F_FOOTBALL'
 
+
 class FFtm(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -815,6 +890,7 @@ class FFtm(models.Model):
     class Meta:
         managed = False
         db_table = 'F_FTM'
+
 
 class FFtt(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -828,6 +904,7 @@ class FFtt(models.Model):
         managed = False
         db_table = 'F_FTT'
 
+
 class FGal(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -839,6 +916,7 @@ class FGal(models.Model):
     class Meta:
         managed = False
         db_table = 'F_GAL'
+
 
 class FGala(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -852,6 +930,7 @@ class FGala(models.Model):
         managed = False
         db_table = 'F_GALA'
 
+
 class FGmt(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -863,6 +942,7 @@ class FGmt(models.Model):
     class Meta:
         managed = False
         db_table = 'F_GMT'
+
 
 class FGrt(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -876,6 +956,7 @@ class FGrt(models.Model):
         managed = False
         db_table = 'F_GRT'
 
+
 class FGtc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -887,6 +968,7 @@ class FGtc(models.Model):
     class Meta:
         managed = False
         db_table = 'F_GTC'
+
 
 class FHbar(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -900,6 +982,7 @@ class FHbar(models.Model):
         managed = False
         db_table = 'F_HBAR'
 
+
 class FHnt(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -911,6 +994,7 @@ class FHnt(models.Model):
     class Meta:
         managed = False
         db_table = 'F_HNT'
+
 
 class FHot(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -924,6 +1008,7 @@ class FHot(models.Model):
         managed = False
         db_table = 'F_HOT'
 
+
 class FIcp(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -935,6 +1020,7 @@ class FIcp(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ICP'
+
 
 class FIcx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -948,6 +1034,7 @@ class FIcx(models.Model):
         managed = False
         db_table = 'F_ICX'
 
+
 class FImx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -959,6 +1046,7 @@ class FImx(models.Model):
     class Meta:
         managed = False
         db_table = 'F_IMX'
+
 
 class FInj(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -972,6 +1060,7 @@ class FInj(models.Model):
         managed = False
         db_table = 'F_INJ'
 
+
 class FIost(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -983,6 +1072,7 @@ class FIost(models.Model):
     class Meta:
         managed = False
         db_table = 'F_IOST'
+
 
 class FIota(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -996,6 +1086,7 @@ class FIota(models.Model):
         managed = False
         db_table = 'F_IOTA'
 
+
 class FIotx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1007,6 +1098,7 @@ class FIotx(models.Model):
     class Meta:
         managed = False
         db_table = 'F_IOTX'
+
 
 class FJasmy(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1020,6 +1112,7 @@ class FJasmy(models.Model):
         managed = False
         db_table = 'F_JASMY'
 
+
 class FKava(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1031,6 +1124,7 @@ class FKava(models.Model):
     class Meta:
         managed = False
         db_table = 'F_KAVA'
+
 
 class FKlay(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1044,6 +1138,7 @@ class FKlay(models.Model):
         managed = False
         db_table = 'F_KLAY'
 
+
 class FKnc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1055,6 +1150,7 @@ class FKnc(models.Model):
     class Meta:
         managed = False
         db_table = 'F_KNC'
+
 
 class FKsm(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1068,6 +1164,7 @@ class FKsm(models.Model):
         managed = False
         db_table = 'F_KSM'
 
+
 class FLdo(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1079,6 +1176,7 @@ class FLdo(models.Model):
     class Meta:
         managed = False
         db_table = 'F_LDO'
+
 
 class FLina(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1092,6 +1190,7 @@ class FLina(models.Model):
         managed = False
         db_table = 'F_LINA'
 
+
 class FLink(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1103,6 +1202,7 @@ class FLink(models.Model):
     class Meta:
         managed = False
         db_table = 'F_LINK'
+
 
 class FLit(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1116,6 +1216,7 @@ class FLit(models.Model):
         managed = False
         db_table = 'F_LIT'
 
+
 class FLpt(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1127,6 +1228,7 @@ class FLpt(models.Model):
     class Meta:
         managed = False
         db_table = 'F_LPT'
+
 
 class FLrc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1140,6 +1242,7 @@ class FLrc(models.Model):
         managed = False
         db_table = 'F_LRC'
 
+
 class FLtc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1151,6 +1254,7 @@ class FLtc(models.Model):
     class Meta:
         managed = False
         db_table = 'F_LTC'
+
 
 class FLuna2(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1164,6 +1268,7 @@ class FLuna2(models.Model):
         managed = False
         db_table = 'F_LUNA2'
 
+
 class FMana(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1175,6 +1280,7 @@ class FMana(models.Model):
     class Meta:
         managed = False
         db_table = 'F_MANA'
+
 
 class FMask(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1188,6 +1294,7 @@ class FMask(models.Model):
         managed = False
         db_table = 'F_MASK'
 
+
 class FMatic(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1199,6 +1306,7 @@ class FMatic(models.Model):
     class Meta:
         managed = False
         db_table = 'F_MATIC'
+
 
 class FMkr(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1212,6 +1320,7 @@ class FMkr(models.Model):
         managed = False
         db_table = 'F_MKR'
 
+
 class FMtl(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1223,6 +1332,7 @@ class FMtl(models.Model):
     class Meta:
         managed = False
         db_table = 'F_MTL'
+
 
 class FNear(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1236,6 +1346,7 @@ class FNear(models.Model):
         managed = False
         db_table = 'F_NEAR'
 
+
 class FNeo(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1247,6 +1358,7 @@ class FNeo(models.Model):
     class Meta:
         managed = False
         db_table = 'F_NEO'
+
 
 class FNkn(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1260,6 +1372,7 @@ class FNkn(models.Model):
         managed = False
         db_table = 'F_NKN'
 
+
 class FOcean(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1271,6 +1384,7 @@ class FOcean(models.Model):
     class Meta:
         managed = False
         db_table = 'F_OCEAN'
+
 
 class FOgn(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1284,6 +1398,7 @@ class FOgn(models.Model):
         managed = False
         db_table = 'F_OGN'
 
+
 class FOmg(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1295,6 +1410,7 @@ class FOmg(models.Model):
     class Meta:
         managed = False
         db_table = 'F_OMG'
+
 
 class FOne(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1308,6 +1424,7 @@ class FOne(models.Model):
         managed = False
         db_table = 'F_ONE'
 
+
 class FOnt(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1319,6 +1436,7 @@ class FOnt(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ONT'
+
 
 class FOp(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1332,6 +1450,7 @@ class FOp(models.Model):
         managed = False
         db_table = 'F_OP'
 
+
 class FPeople(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1343,6 +1462,7 @@ class FPeople(models.Model):
     class Meta:
         managed = False
         db_table = 'F_PEOPLE'
+
 
 class FQnt(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1356,6 +1476,7 @@ class FQnt(models.Model):
         managed = False
         db_table = 'F_QNT'
 
+
 class FQtum(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1367,6 +1488,7 @@ class FQtum(models.Model):
     class Meta:
         managed = False
         db_table = 'F_QTUM'
+
 
 class FRay(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1380,6 +1502,7 @@ class FRay(models.Model):
         managed = False
         db_table = 'F_RAY'
 
+
 class FReef(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1391,6 +1514,7 @@ class FReef(models.Model):
     class Meta:
         managed = False
         db_table = 'F_REEF'
+
 
 class FRen(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1404,6 +1528,7 @@ class FRen(models.Model):
         managed = False
         db_table = 'F_REN'
 
+
 class FRlc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1415,6 +1540,7 @@ class FRlc(models.Model):
     class Meta:
         managed = False
         db_table = 'F_RLC'
+
 
 class FRose(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1428,6 +1554,7 @@ class FRose(models.Model):
         managed = False
         db_table = 'F_ROSE'
 
+
 class FRsr(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1439,6 +1566,7 @@ class FRsr(models.Model):
     class Meta:
         managed = False
         db_table = 'F_RSR'
+
 
 class FRune(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1452,6 +1580,7 @@ class FRune(models.Model):
         managed = False
         db_table = 'F_RUNE'
 
+
 class FRvn(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1463,6 +1592,7 @@ class FRvn(models.Model):
     class Meta:
         managed = False
         db_table = 'F_RVN'
+
 
 class FSand(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1476,6 +1606,7 @@ class FSand(models.Model):
         managed = False
         db_table = 'F_SAND'
 
+
 class FSc(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1487,6 +1618,7 @@ class FSc(models.Model):
     class Meta:
         managed = False
         db_table = 'F_SC'
+
 
 class FSfp(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1500,6 +1632,7 @@ class FSfp(models.Model):
         managed = False
         db_table = 'F_SFP'
 
+
 class FSkl(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1511,6 +1644,7 @@ class FSkl(models.Model):
     class Meta:
         managed = False
         db_table = 'F_SKL'
+
 
 class FSnx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1524,6 +1658,7 @@ class FSnx(models.Model):
         managed = False
         db_table = 'F_SNX'
 
+
 class FSol(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1535,6 +1670,7 @@ class FSol(models.Model):
     class Meta:
         managed = False
         db_table = 'F_SOL'
+
 
 class FSpell(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1548,6 +1684,7 @@ class FSpell(models.Model):
         managed = False
         db_table = 'F_SPELL'
 
+
 class FSrm(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1559,6 +1696,7 @@ class FSrm(models.Model):
     class Meta:
         managed = False
         db_table = 'F_SRM'
+
 
 class FStg(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1572,6 +1710,7 @@ class FStg(models.Model):
         managed = False
         db_table = 'F_STG'
 
+
 class FStmx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1583,6 +1722,7 @@ class FStmx(models.Model):
     class Meta:
         managed = False
         db_table = 'F_STMX'
+
 
 class FStorj(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1596,6 +1736,7 @@ class FStorj(models.Model):
         managed = False
         db_table = 'F_STORJ'
 
+
 class FSushi(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1607,6 +1748,7 @@ class FSushi(models.Model):
     class Meta:
         managed = False
         db_table = 'F_SUSHI'
+
 
 class FSxp(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1620,6 +1762,7 @@ class FSxp(models.Model):
         managed = False
         db_table = 'F_SXP'
 
+
 class FTheta(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1631,6 +1774,7 @@ class FTheta(models.Model):
     class Meta:
         managed = False
         db_table = 'F_THETA'
+
 
 class FTlm(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1644,6 +1788,7 @@ class FTlm(models.Model):
         managed = False
         db_table = 'F_TLM'
 
+
 class FTomo(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1655,6 +1800,7 @@ class FTomo(models.Model):
     class Meta:
         managed = False
         db_table = 'F_TOMO'
+
 
 class FTrb(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1668,6 +1814,7 @@ class FTrb(models.Model):
         managed = False
         db_table = 'F_TRB'
 
+
 class FTrx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1679,6 +1826,7 @@ class FTrx(models.Model):
     class Meta:
         managed = False
         db_table = 'F_TRX'
+
 
 class FUnfi(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1692,6 +1840,7 @@ class FUnfi(models.Model):
         managed = False
         db_table = 'F_UNFI'
 
+
 class FUni(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1703,6 +1852,7 @@ class FUni(models.Model):
     class Meta:
         managed = False
         db_table = 'F_UNI'
+
 
 class FVet(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1716,6 +1866,7 @@ class FVet(models.Model):
         managed = False
         db_table = 'F_VET'
 
+
 class FWaves(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1727,6 +1878,7 @@ class FWaves(models.Model):
     class Meta:
         managed = False
         db_table = 'F_WAVES'
+
 
 class FWoo(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1740,6 +1892,7 @@ class FWoo(models.Model):
         managed = False
         db_table = 'F_WOO'
 
+
 class FXem(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1751,6 +1904,7 @@ class FXem(models.Model):
     class Meta:
         managed = False
         db_table = 'F_XEM'
+
 
 class FXlm(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1764,6 +1918,7 @@ class FXlm(models.Model):
         managed = False
         db_table = 'F_XLM'
 
+
 class FXmr(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1775,6 +1930,7 @@ class FXmr(models.Model):
     class Meta:
         managed = False
         db_table = 'F_XMR'
+
 
 class FXrp(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1788,6 +1944,7 @@ class FXrp(models.Model):
         managed = False
         db_table = 'F_XRP'
 
+
 class FXtz(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1799,6 +1956,7 @@ class FXtz(models.Model):
     class Meta:
         managed = False
         db_table = 'F_XTZ'
+
 
 class FYfi(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1812,6 +1970,7 @@ class FYfi(models.Model):
         managed = False
         db_table = 'F_YFI'
 
+
 class FZec(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1823,6 +1982,7 @@ class FZec(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ZEC'
+
 
 class FZen(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1836,6 +1996,7 @@ class FZen(models.Model):
         managed = False
         db_table = 'F_ZEN'
 
+
 class FZil(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
     open = models.FloatField(blank=True, null=True)
@@ -1847,6 +2008,7 @@ class FZil(models.Model):
     class Meta:
         managed = False
         db_table = 'F_ZIL'
+
 
 class FZrx(models.Model):
     index = models.TextField(blank=True, null=True)  # This field type is a guess.
@@ -1860,1484 +2022,112 @@ class FZrx(models.Model):
         managed = False
         db_table = 'F_ZRX'
 
-class C1Inch(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'C_1INCH'
-
-class CAave(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_AAVE'
-
-class CAda(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ADA'
-
-class CAergo(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_AERGO'
-
-class CAht(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_AHT'
-
-class CAlgo(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ALGO'
-
-class CAnkr(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ANKR'
-
-class CApt(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_APT'
-
-class CAqt(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_AQT'
-
-class CArdr(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ARDR'
-
-class CArk(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ARK'
-
-class CAtom(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ATOM'
-
-class CAvax(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_AVAX'
-
-class CAxs(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_AXS'
-
-class CBat(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_BAT'
-
-class CBch(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_BCH'
-
-class CBora(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_BORA'
-
-class CBsv(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_BSV'
-
-class CBtc(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_BTC'
-
-class CBtg(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_BTG'
-
-class CBtt(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_BTT'
-
-class CCbk(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_CBK'
-
-class CCelo(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_CELO'
-
-class CChz(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_CHZ'
-
-class CCre(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_CRE'
-
-class CCro(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_CRO'
-
-class CCvc(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_CVC'
-
-class CDawn(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_DAWN'
-
-class CDka(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_DKA'
-
-class CDoge(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_DOGE'
-
-class CDot(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_DOT'
-
-class CElf(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ELF'
-
-class CEnj(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ENJ'
-
-class CEos(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_EOS'
-
-class CEtc(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ETC'
-
-class CEth(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ETH'
-
-class CFct2(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_FCT2'
-
-class CFlow(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_FLOW'
-
-class CGas(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_GAS'
-
-class CGlm(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_GLM'
-
-class CGmt(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_GMT'
-
-class CGrs(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_GRS'
-
-class CHbar(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_HBAR'
-
-class CHive(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_HIVE'
-
-class CHum(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_HUM'
-
-class CHunt(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_HUNT'
-
-class CIcx(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ICX'
-
-class CIost(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_IOST'
-
-class CIota(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_IOTA'
-
-class CIq(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_IQ'
-
-class CJst(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_JST'
-
-class CKava(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+class AuthGroup(models.Model):
+    name = models.CharField(unique=True, max_length=150)
 
     class Meta:
         managed = False
-        db_table = 'C_KAVA'
+        db_table = 'auth_group'
 
-class CKnc(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'C_KNC'
-
-class CLink(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_LINK'
-
-class CLoom(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_LOOM'
-
-class CLsk(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_LSK'
-
-class CMana(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_MANA'
-
-class CMatic(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_MATIC'
-
-class CMbl(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_MBL'
-
-class CMed(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_MED'
-
-class CMeta(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_META'
-
-class CMft(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_MFT'
-
-class CMlk(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_MLK'
-
-class CMoc(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_MOC'
-
-class CMtl(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_MTL'
-
-class CMvl(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_MVL'
-
-class CNear(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_NEAR'
-
-class CNeo(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_NEO'
-
-class CNu(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_NU'
-
-class COmg(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_OMG'
-
-class COng(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ONG'
-
-class COnt(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ONT'
-
-class COrbs(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_ORBS'
-
-class CPla(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_PLA'
-
-class CPoly(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_POLY'
-
-class CPowr(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_POWR'
-
-class CPundix(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_PUNDIX'
-
-class CQkc(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_QKC'
-
-class CQtum(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_QTUM'
-
-class CRep(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_REP'
-
-class CRfr(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_RFR'
-
-class CSand(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_SAND'
-
-class CSbd(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_SBD'
-
-class CSc(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_SC'
-
-class CSnt(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_SNT'
-
-class CSol(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_SOL'
-
-class CSrm(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_SRM'
-
-class CSsx(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_SSX'
-
-class CSteem(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_STEEM'
-
-class CStmx(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_STMX'
-
-class CStorj(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_STORJ'
-
-class CStpt(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_STPT'
-
-class CStrax(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_STRAX'
-
-class CStrk(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_STRK'
-
-class CStx(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_STX'
-
-class CSxp(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_SXP'
-
-class CT(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_T'
+class AuthGroupPermissions(models.Model):
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+    permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
 
-class CTfuel(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
     class Meta:
         managed = False
-        db_table = 'C_TFUEL'
-
-class CTheta(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+        db_table = 'auth_group_permissions'
+        unique_together = (('group', 'permission'),)
 
-    class Meta:
-        managed = False
-        db_table = 'C_THETA'
 
-class CTon(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+class AuthPermission(models.Model):
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
+    codename = models.CharField(max_length=100)
+    name = models.CharField(max_length=255)
 
     class Meta:
         managed = False
-        db_table = 'C_TON'
-
-class CTrx(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+        db_table = 'auth_permission'
+        unique_together = (('content_type', 'codename'),)
 
-    class Meta:
-        managed = False
-        db_table = 'C_TRX'
 
-class CTt(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+class AuthUser(models.Model):
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.BooleanField()
+    username = models.CharField(unique=True, max_length=150)
+    last_name = models.CharField(max_length=150)
+    email = models.CharField(max_length=254)
+    is_staff = models.BooleanField()
+    is_active = models.BooleanField()
+    date_joined = models.DateTimeField()
+    first_name = models.CharField(max_length=150)
 
     class Meta:
         managed = False
-        db_table = 'C_TT'
-
-class CUpp(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+        db_table = 'auth_user'
 
-    class Meta:
-        managed = False
-        db_table = 'C_UPP'
 
-class CVet(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+class AuthUserGroups(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
 
     class Meta:
         managed = False
-        db_table = 'C_VET'
+        db_table = 'auth_user_groups'
+        unique_together = (('user', 'group'),)
 
-class CWaves(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_WAVES'
 
-class CWaxp(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+class AuthUserUserPermissions(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
 
     class Meta:
         managed = False
-        db_table = 'C_WAXP'
+        db_table = 'auth_user_user_permissions'
+        unique_together = (('user', 'permission'),)
 
-class CWemix(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_WEMIX'
 
-class CXec(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+class DjangoAdminLog(models.Model):
+    object_id = models.TextField(blank=True, null=True)
+    object_repr = models.CharField(max_length=200)
+    action_flag = models.PositiveSmallIntegerField()
+    change_message = models.TextField()
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    action_time = models.DateTimeField()
 
     class Meta:
         managed = False
-        db_table = 'C_XEC'
+        db_table = 'django_admin_log'
 
-class CXem(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_XEM'
 
-class CXlm(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+class DjangoContentType(models.Model):
+    app_label = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
 
     class Meta:
         managed = False
-        db_table = 'C_XLM'
+        db_table = 'django_content_type'
+        unique_together = (('app_label', 'model'),)
 
-class CXrp(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'C_XRP'
 
-class CXtz(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+class DjangoMigrations(models.Model):
+    app = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    applied = models.DateTimeField()
 
     class Meta:
         managed = False
-        db_table = 'C_XTZ'
-
-class CZil(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+        db_table = 'django_migrations'
 
-    class Meta:
-        managed = False
-        db_table = 'C_ZIL'
 
-class CZrx(models.Model):
-    index = models.TextField(blank=True, null=True)  # This field type is a guess.
-    open = models.FloatField(blank=True, null=True)
-    high = models.FloatField(blank=True, null=True)
-    low = models.FloatField(blank=True, null=True)
-    close = models.FloatField(blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+class DjangoSession(models.Model):
+    session_key = models.CharField(primary_key=True, max_length=40)
+    session_data = models.TextField()
+    expire_date = models.DateTimeField()
 
     class Meta:
         managed = False
-        db_table = 'C_ZRX'
+        db_table = 'django_session'

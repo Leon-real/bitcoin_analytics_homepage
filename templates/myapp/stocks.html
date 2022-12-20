@@ -99,6 +99,47 @@
             <div id="layoutSidenav_content">
                 <main>
                     <h1>준비중 . . .</h1>
+
+                    <h1>Hello, Django with sqlite3</h1>
+
+                    <table border="1">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                        <tr>
+                            <th>코인</th>
+                            <th>시간</th>
+                            <th>시가</th>
+                            <th>고가</th>
+                            <th>저가</th>
+                            <th>종가</th>
+                            <th>거래량</th>
+                        </tr>
+                        {% if not ticker_data %}
+                            <tr>
+                                <th colspan="4">----------정보없음----------</th>
+                            </tr>
+                        {% else %}
+                            {% for data in ticker_data %}
+                                <tr>
+                                    <td>{{data.id}}</td>
+                                    <td>{{date.index|date:"Y-m-d"}}</td>
+                                    <td>{{data.open}}</td>
+                                    <td>{{data.high}}</td>
+                                    <td>{{data.low}}</td>
+                                    <td>{{data.close}}</td>
+                                    <td>{{data.volume}}</td>
+
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                        <tr>
+                        </tr>
+                    </table>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">

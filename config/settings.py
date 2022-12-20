@@ -87,18 +87,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'binance_price': {
-        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'binance_price.db',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'upbit_pirce': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'upbit_price.db',
-    }
+    # 'binance_price': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'binance_price.db',
+    # },
+    # 'upbit_pirce': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'upbit_price.db',
+    # },
 }
-DATABASE_ROUTERS = ['config.router.Router']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
