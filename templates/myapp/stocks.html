@@ -111,7 +111,6 @@
                         <col width="200">
                         <col width="200">
                         <tr>
-                            <th>코인</th>
                             <th>시간</th>
                             <th>시가</th>
                             <th>고가</th>
@@ -126,8 +125,7 @@
                         {% else %}
                             {% for data in ticker_data %}
                                 <tr>
-                                    <td>{{data.id}}</td>
-                                    <td>{{date.index|date:"Y-m-d"}}</td>
+                                    <td>{{date.index}}</td>
                                     <td>{{data.open}}</td>
                                     <td>{{data.high}}</td>
                                     <td>{{data.low}}</td>

@@ -26,7 +26,7 @@ def update_price_data(ticker, recent_time_data):
 def main_process():
     # 업비트 내의 모든 티커 저장
     tickers = pyupbit.get_tickers(fiat="KRW") 
-
+    tickers = ['KRW-BTC']
     ############################
     # SQL에 데이터가 있는지 없는지 확인하기
 
@@ -67,3 +67,5 @@ def main_process():
 
 def run():
     main_process()
+
+run()

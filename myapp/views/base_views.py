@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from myapp.models import FBtc
+from myapp.models import CBtc
 
 
 
@@ -10,14 +10,8 @@ def index(request):
 
 # 분석 페이지
 def analytics_stcok(request): # 현물
-    FBtc_data = FBtc.objects.get()
-
-    print("************************************************")
-    print(FBtc_data)
-    print("************************************************")
-
-
-    return render(request, 'myapp/stocks.html', {'ticker_data': FBtc_data})
+    CBtc_data = CBtc.objects.all()
+    return render(request, 'myapp/stocks.html', {'ticker_data': CBtc_data,})
 def analytics_future(request): # 선물
     return render(request, 'myapp/future.html')
 
