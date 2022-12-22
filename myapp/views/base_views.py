@@ -8,6 +8,12 @@ from myapp.models import CBtc
 def index(request):
     return render(request, 'myapp/index.html')
 
+def dashbord_upbit(request): # 업비트 대시보드
+    return render(request, 'myapp/dashbord_upbit.html')
+
+def dashbord_binance(request): # 바이낸스 대시보드
+    return render(request, 'myapp/dashbord_binance.html')
+
 # 분석 페이지
 def analytics_stcok(request): # 현물
     CBtc_data = CBtc.objects.all()
