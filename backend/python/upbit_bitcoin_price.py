@@ -67,5 +67,3 @@ def main_process():
 
 def run():
     main_process()
-
-run()
