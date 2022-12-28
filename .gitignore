@@ -7,3 +7,5 @@ __pycache__
 secrets.json
 
 *.ipynb
+
+.DS_Stores
