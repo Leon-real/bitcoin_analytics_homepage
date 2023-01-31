@@ -7,7 +7,8 @@
     // 데이터 변수 선언 => 여기서는 datas_set으로 데이터 변수를 받는다
     var data_set = "{{datas_set|escapejs}}";
     var data_set_json = JSON.parse(data_set)
-    console.log(data_set_json);
+    // console.log(data_set_json);
+    
 </script>
 
     <main>
@@ -85,4 +86,9 @@
         
 <!-- ***************************************** -->
     </main>
+    
+{% endblock %}
+
+{% block jsfile %}
+    <script src="/static/js/test_dashboard_data.js" type="text/javascript"></script>
 {% endblock %}
