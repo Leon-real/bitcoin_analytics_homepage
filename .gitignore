@@ -9,3 +9,5 @@ secrets.json
 *.ipynb
 
 *.DS_Stores
+
+.DS_Stores
