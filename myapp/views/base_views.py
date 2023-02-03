@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from myapp.models import CBtc
 from django.core import serializers
-
 import json
 
 # 메인 페이지

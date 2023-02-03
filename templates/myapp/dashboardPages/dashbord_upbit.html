@@ -9,12 +9,17 @@
     var data_set_json = JSON.parse(data_set)
     // console.log(data_set_json);
     
+    var ohlcv_data = "{{ohlcv_data}}";
+
 </script>
-
     <main>
-        <h1>메인 부분 내용입력</h1>
+        <h1>테스트중</h1>
 
-        <p>xptmxmdlqslek</p>
+        <p>데이터 업데이트 시간<br>
+            <span class="last-time"></span>
+        </p>
+        <p>비트코인 현재 가격 : <span class="current-price"></span></p>
+        
 <!-- ***************************************** -->
         <div class="card mb-4">
                 <div class="card-header">
@@ -82,7 +87,7 @@
                     </tr>
                 </table>
             </div>
-    </div>
+        </div>
         
 <!-- ***************************************** -->
     </main>
@@ -90,5 +95,7 @@
 {% endblock %}
 
 {% block jsfile %}
-    <script src="/static/js/test_dashboard_data.js" type="text/javascript"></script>
+    <!-- ajax 자바스크립트 링크 jquery 필요하다.-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/static/js/upbit_dashboard_data.js" type="text/javascript"></script>
 {% endblock %}

@@ -67,3 +67,7 @@ def main_process():
 
 def run():
     main_process()
+
+while True:
+    main_process()
+    time.sleep(5)
