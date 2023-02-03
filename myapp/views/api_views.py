@@ -11,9 +11,3 @@ class BtcAPI(APIView):
         # print(queryset)
         serializer = CBtcOhlcvSerializer(queryset, many=True)
         return Response(serializer.data)
-
-    # def post(self, request):
-    #     queryset = CBtc.objects.all()
-    #     print(queryset)
-    #     serializer = CBtcOhlcvSerializer(queryset, many=True)
-    #     return Response(serializer.data)
