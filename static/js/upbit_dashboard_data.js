@@ -1,6 +1,9 @@
+let last_time // 업비트 거래+시간
 let upbit_date // 업비트 거래 날짜
 let upbit_time // 업비트 거래 시간
 let current_price // 업비트 거래 가격
+
+
 
 window.addEventListener('DOMContentLoaded', event => {
     // Simple-DataTables
@@ -23,14 +26,24 @@ window.addEventListener('DOMContentLoaded', event => {
 
                 if (upbit_time >= 240000) {
                     upbit_time -= 240000
+                    last_time = upbit_date.toString().substring(0,4) + '년 ' + 
+                                upbit_date.toString().substring(4,6) + '월 ' + 
+                                upbit_date.toString().substring(6,8) + '일 ' + 
+                                upbit_time.toString().substring(0,2) + '시 ' + 
+                                upbit_time.toString().substring(2,4) + '분 ' + 
+                                upbit_time.toString().substring(4,6) + '초 '
+                } else {
+                    last_time = upbit_date.toString().substring(0,4) + '년 ' + 
+                                upbit_date.toString().substring(4,6) + '월 ' + 
+                                upbit_date.toString().substring(6,8) + '일 ' + 
+                                upbit_time.toString().substring(0,2) + '시 ' + 
+                                upbit_time.toString().substring(2,4) + '분 ' + 
+                                upbit_time.toString().substring(4,6) + '초 '
                 };
+                $(".last-time").text(last_time)
+                $(".current-price").text(current_price)
             })
-            .catch((err) => console.error(err));
-    }, 3000);
+        .catch((err) => console.error(err));
+    }, 1000);
 
-    
-    
 });
-
-
-
