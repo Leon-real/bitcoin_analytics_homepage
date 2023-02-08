@@ -2,7 +2,8 @@ let last_time // 업비트 거래+시간
 let upbit_date // 업비트 거래 날짜
 let upbit_time // 업비트 거래 시간
 let current_price // 업비트 거래 가격
-
+let premium_bitcoin // 비트코인 프리미엄
+let binance_price; // 바이낸스 비트코인 가격 (USDT 기준)
 
 // bitcoin 타이핑 효과
 const typing_text = 'Bitcoin ! ! !]          '
@@ -19,18 +20,15 @@ function typing_bitcoin() {
 setInterval(typing_bitcoin, 100)
 // 타이핑 효과 끝
 
-window.addEventListener('DOMContentLoaded', event => {
-    // Simple-DataTables
-    // https://github.com/fiduswriter/Simple-DataTables/wiki
 
-    const test_data = window.data_set_json;
-    var testData = '안녕하세요';
-    console.log(testData);
-    console.log(test_data);
-    
+
+
+
+
+window.addEventListener('DOMContentLoaded', event => {
     // 업비트 api 부분
     setInterval(function () {
-        console.log('업비트 통신중')
+        // console.log('업비트 통신중')
         let arr = fetch('https://api.upbit.com/v1/ticker?markets=krw-btc')
             .then((response) => response.json())
             .then((response) => {
@@ -58,6 +56,54 @@ window.addEventListener('DOMContentLoaded', event => {
                 $(".current-price").text(current_price)
             })
         .catch((err) => console.error(err));
-    }, 1000);
+    }, 1000); // 1초마다 갱신
+
+    // 환율 부분
+    //환율 정보 초기에 한번 업데이트 해주기
+    console.log("[Update Exchange Rate]")
+    fetch('https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD')
+        .then((response) => response.json())
+        .then((response) => {
+            console.log('[Update : Exchange Rate]'+response[0]['basePrice'])
+            $('.exchange-rate').text(response[0]['basePrice'])
+        })
+        .catch((err) => console.error(err));
+    setInterval(function () {
+        console.log("[Update Exchange Rate]")
+        fetch('https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD')
+            .then((response) => response.json())
+            .then((response) => {
+                console.log('[Update : Exchange Rate]'+response[0]['basePrice'])
+                $('.exchange-rate').text(response[0]['basePrice'])
+            })
+            .catch((err) => console.error(err));
+    }, 1000*60*60); // 한시간마다 갱신
+
+    // 비트코인 김프 => (한국 비트코인가격 / 미국 비트코인 가격) * 환율 * 100 - 100
+    setInterval(function () {
+        fetch('https://api.binance.com/api/v3/trades?symbol=BTCUSDT&limit=1')
+            .then((response) => response.json())
+            .then((response) => {
+                // console.log(response[0]['price'])
+                binance_price = parseInt(response[0]['price']) //바이낸스 가격
+            })
+            .catch((err) => console.error(err));
+            
+            let current_price = parseInt($('.current-price').text()); // 현재 가격 html에서 가져오기(업비트)
+            let exchange_rate = parseInt($('.exchange-rate').text()); // 현재 환률 html에서 가져오기
+            // console.log("김프테스트")
+            let premium_price = ((current_price / (binance_price * exchange_rate) * 100) - 100).toFixed(2)
+            // console.log(parseFloat(premium_price))
+            
+            // 김프 플러스일 때 +기호 붙여주기
+            if (parseFloat(premium_price) > 0){
+                premium_price = "+ " + premium_price
+            } else {
+                premium_price = premium_price
+            }
+            
+            $('.premium_bitcoin').text(premium_price)
+
+        }, 3000); // 3초에 한번씩 갱신
 
 });
