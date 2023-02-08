@@ -18,6 +18,7 @@ function typing_bitcoin() {
     }
 }
 setInterval(typing_bitcoin, 100)
+// 타이핑 효과 끝
 
 window.addEventListener('DOMContentLoaded', event => {
     // Simple-DataTables
