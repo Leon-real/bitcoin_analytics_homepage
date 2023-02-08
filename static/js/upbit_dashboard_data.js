@@ -4,6 +4,20 @@ let upbit_time // 업비트 거래 시간
 let current_price // 업비트 거래 가격
 
 
+// bitcoin 타이핑 효과
+const typing_text = 'Bitcoin ! ! !]'
+const main_text = $('.main_text')
+let index = 0;
+
+function typing_bitcoin() {
+    main_text.text(main_text.text()+typing_text[index++]);
+    console.log(main_text)
+    if (index > typing_text.length){
+        main_text.text("[")
+        index = 0;
+    }
+}
+setInterval(typing_bitcoin, 100)
 
 window.addEventListener('DOMContentLoaded', event => {
     // Simple-DataTables
