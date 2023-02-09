@@ -183,7 +183,8 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
             // 고래 체결량 표시
             if (tickerJsonData.code == value && tickerJsonData.type == 'trade') {
                 // console.log(console.log(tickerJsonData))
-                if ((tickerJsonData['trade_price'] * tickerJsonData['trade_volume']) > 30000000) { // 3000만원 이상일 경우
+                // 한번에 3000만원 이상 그리고 매수로 거래하였을 때
+                if ((tickerJsonData['trade_price'] * tickerJsonData['trade_volume']) > 30000000 && tickerJsonData['ask_bid']=='ASK') {
                     console.log(tickerJsonData['code'])
                     console.log(tickerJsonData['trade_price'] * tickerJsonData['trade_volume'].toFixed(2));
                     $(".table_bigwhale_"+value).text(tickerJsonData['trade_price']+' ('+tickerJsonData['trade_volume'].toFixed(2).toString()+')')
