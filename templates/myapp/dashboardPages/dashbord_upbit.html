@@ -16,6 +16,31 @@
         <p>김프 퍼센트<br>
             <span class="premium_bitcoin"></span>
         </p>
+        <!-- 업비트 티커 정보 업데이트 하기 -->
+        <div id="coin_lists_div">업비트 티커 정보들
+            <table id="coin_lists">
+                <th>코인</th>
+                <th>가격</th>
+                <th>등락 퍼센트</th>
+                <th>등락 가격</th>
+                <th>마켓 상황</th>
+            </table>
+
+        </div>
+        <div>비트코인 부분
+            <p> 비트코인 현재 가격
+                <span class="bitcoin-current-price"></span>
+            </p>
+            <p> 비트코인 현재 마켓 상황
+                <span class="bitcoin-current-market"></span>
+            </p>
+            <p> 비트코인 변동 비율
+                <span class="bitcoin-change-rate"></span>
+            </p>
+            <p> 비트코인 변동 가격
+                <span class="bitcoin-change-price"></span>
+            </p>
+        </div>
 <!-- ***************************************** -->
         <div class="card mb-4">
                 <div class="card-header">
@@ -92,6 +117,7 @@
 
 {% block jsfile %}
     <!-- ajax 자바스크립트 링크 jquery 필요하다.-->
+    <script src="/static/js/temp.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/static/js/upbit_dashboard_data.js" type="text/javascript"></script>
 {% endblock %}

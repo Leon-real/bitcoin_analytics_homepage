@@ -4,6 +4,12 @@ let upbit_time // 업비트 거래 시간
 let current_price // 업비트 거래 가격
 let premium_bitcoin // 비트코인 프리미엄
 let binance_price; // 바이낸스 비트코인 가격 (USDT 기준)
+let upbit_tickers={}; // 업비트 KRW마켓의 {이름과 티커라벨}
+let upbit_ticker_codes='[{"ticket":"UNIQUE_TICKET"}'
+
+
+// 소켓 통신 부분
+let upbit_socket; // 업비트 소켓 통신
 
 // bitcoin 타이핑 효과
 const typing_text = 'Bitcoin ! ! !]          '
@@ -18,11 +24,7 @@ function typing_bitcoin() {
     }
 }
 setInterval(typing_bitcoin, 100)
-// 타이핑 효과 끝
-
-
-
-
+// 타이핑 효과 
 
 
 window.addEventListener('DOMContentLoaded', event => {
@@ -92,18 +94,136 @@ window.addEventListener('DOMContentLoaded', event => {
             let current_price = parseInt($('.current-price').text()); // 현재 가격 html에서 가져오기(업비트)
             let exchange_rate = parseInt($('.exchange-rate').text()); // 현재 환률 html에서 가져오기
             // console.log("김프테스트")
-            let premium_price = ((current_price / (binance_price * exchange_rate) * 100) - 100).toFixed(2)
+            let premium_price = ((current_price / (binance_price * exchange_rate) * 100) - 100).toFixed(2);
             // console.log(parseFloat(premium_price))
             
             // 김프 플러스일 때 +기호 붙여주기
             if (parseFloat(premium_price) > 0){
-                premium_price = "+ " + premium_price
+                premium_price = "+ " + premium_price;
+                $('.premium_bitcoin').text(premium_price).css('color','red');
+            } else if (parseFloat(premium_price) < 0){
+                premium_price = premium_price;
+                $('.premium_bitcoin').text(premium_price).css('color','blue');
             } else {
-                premium_price = premium_price
-            }
-            
-            $('.premium_bitcoin').text(premium_price)
+                premium_price = premium_price;
+                $('.premium_bitcoin').text(premium_price);
+            };
 
         }, 3000); // 3초에 한번씩 갱신
-
+    
 });
+
+// 업비트 소켓 통신 함수
+const listOfTickers = document.getElementById('coin_lists');// 업비트 티커 정보 보여줄 부분 만들기
+
+function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
+    // 웹소켓 연결
+    function connectWS() {
+        if(upbit_socket != undefined){
+            upbit_socket.close();
+        }
+        upbit_socket = new WebSocket("wss://api.upbit.com/websocket/v1");
+        upbit_socket.binaryType = 'arraybuffer';
+        upbit_socket.onopen 	= function(e){
+            filterRequest(upbit_ticker_codes
+            )//'[{"ticket":"UNIQUE_TICKET"},{"type":"ticker","codes":["KRW-BTC"]},{"type":"ticker","codes":["KRW-ETH"]}]'
+        }
+        upbit_socket.onclose 	= function(e){ 
+            upbit_socket = undefined; 
+        }
+        upbit_socket.onmessage= function(e){ 
+            let enc = new TextDecoder("utf-8");
+            let arr = new Uint8Array(e.data);
+            let str_d = enc.decode(arr);
+            let d = JSON.parse(str_d);
+            // console.log(d)
+            // console.log(d['trade_date'])
+            // console.log(d['trade_time'])
+            if(d.code == "KRW-BTC") { // 비트코인 가격
+                // console.log(d['trade_price']);
+                // console.log(d['market_state']);
+                // console.log(d['change_rate']);
+                // console.log(d['change_price']);
+                $('.bitcoin-current-price').text(d['trade_price']);
+                $('.bitcoin-current-market').text(d['market_state']);
+                $('.bitcoin-change-rate').text(d['change_rate']);
+                $('.bitcoin-change-price').text(d['change_price']);
+            }
+            if(d.code == "KRW-ETH") { // 이더리움 가격
+                // console.log(d['trade_price']);
+            }
+            for (const [key, value] of Object.entries(upbit_tickers)){
+                // console.log(`${key}: ${value}`);
+                if (d.code == value){ // 키값이 같을 경우
+                    // console.log(value)
+                    // console.log($(".table_" + value).text())
+                    
+                    // + - 일 때의 가격 색깔 조정하기
+                    if (parseFloat(d['change_rate'].toFixed(2)) > 0){
+                        $(".table_change_price_" + value).text(d['change_price']).css('color','red');
+                        $(".table_change_rate_" + value).text(d['change_rate']).css('color','red');
+                    } else if (parseFloat(d['change_rate'].toFixed(2)) < 0){
+                        $(".table_change_price_" + value).text(d['change_price']).css('color','blue');
+                        $(".table_change_rate_" + value).text(d['change_rate']).css('color','blue');
+                    } else if (parseFloat(d['change_rate'].toFixed(2)) === 0 ) {
+                    };
+                    // 값 넣어주기
+                    $(".table_price_" + value).text(d['trade_price']);
+                    $(".table_change_rate_" + value).text(d['change_rate'].toFixed(2));
+                    $(".table_change_price_" + value).text(d['change_price']);
+                    $(".table_market_" + value).text(d['market_state']);
+                }
+            }
+        }	
+    }
+    // 웹소켓 연결 해제
+    function closeWS() {
+        if(upbit_socket != undefined){
+            upbit_socket.close();
+            upbit_socket = undefined;
+        }	
+    }
+
+    // 웹소켓 요청
+    function filterRequest(filter) {
+        if(upbit_socket == undefined){
+            alert('no connect exists');
+            return;
+        }
+        upbit_socket.send(filter);
+    }
+    connectWS();
+};
+// 업비트 마켓 정보 가지고 오기
+(function () {
+    let arr = fetch('https://api.upbit.com/v1/market/all')
+            .then((response) => response.json())
+            .then((response) => {
+                // console.log(response)
+                for (let key in response){
+                    if (response[key]['market'].includes("KRW")){
+                        // console.log(response[key]['market'], response[key]['korean_name'])
+                        upbit_tickers[response[key]['korean_name']] = response[key]['market'];
+                        upbit_ticker_codes += ',{"type":"ticker","codes":["' + response[key]['market'] + '"]}';
+                        
+                        listOfTickers.innerHTML += '<tr>'+
+                            '<td class =table_name_'+response[key]['market']+'>'+response[key]['korean_name']+'</td>'+
+                            '<td class =table_price_'+response[key]['market']+'>'+0+'</td>'+
+                            '<td class =table_change_rate_'+response[key]['market']+'>'+'0'+'</td>'+
+                            '<td class =table_change_price_'+response[key]['market']+'>'+'0'+'</td>'+
+                            '<td class =table_market_'+response[key]['market']+'>'+'0'+'</td>'+
+                                                '</th>';
+                    };
+                    if (key == response.length-1){
+                        upbit_ticker_codes+=']'
+                    };
+                    
+                
+                };
+                // console.log(upbit_ticker_codes)
+            })
+        .catch((err) => console.error(err));
+})();
+
+upbit_web_socket(); // 업비트 소켓 통신하기
+
