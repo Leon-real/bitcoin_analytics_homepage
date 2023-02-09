@@ -136,44 +136,8 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
             let arr = new Uint8Array(e.data);
             let str_d = enc.decode(arr);
             let d = JSON.parse(str_d);
-            // console.log(d)
-            // console.log(d['trade_date'])
-            // console.log(d['trade_time'])
-            if(d.code == "KRW-BTC") { // 비트코인 가격
-                // console.log(d['trade_price']);
-                // console.log(d['market_state']);
-                // console.log(d['change_rate']);
-                // console.log(d['change_price']);
-                $('.bitcoin-current-price').text(d['trade_price']);
-                $('.bitcoin-current-market').text(d['market_state']);
-                $('.bitcoin-change-rate').text(d['change_rate']);
-                $('.bitcoin-change-price').text(d['change_price']);
-            }
-            if(d.code == "KRW-ETH") { // 이더리움 가격
-                // console.log(d['trade_price']);
-            }
-            for (const [key, value] of Object.entries(upbit_tickers)){
-                // console.log(`${key}: ${value}`);
-                if (d.code == value){ // 키값이 같을 경우
-                    // console.log(value)
-                    // console.log($(".table_" + value).text())
-                    
-                    // + - 일 때의 가격 색깔 조정하기
-                    if (parseFloat(d['change_rate'].toFixed(2)) > 0){
-                        $(".table_change_price_" + value).text(d['change_price']).css('color','red');
-                        $(".table_change_rate_" + value).text(d['change_rate']).css('color','red');
-                    } else if (parseFloat(d['change_rate'].toFixed(2)) < 0){
-                        $(".table_change_price_" + value).text(d['change_price']).css('color','blue');
-                        $(".table_change_rate_" + value).text(d['change_rate']).css('color','blue');
-                    } else if (parseFloat(d['change_rate'].toFixed(2)) === 0 ) {
-                    };
-                    // 값 넣어주기
-                    $(".table_price_" + value).text(d['trade_price']);
-                    $(".table_change_rate_" + value).text(d['change_rate'].toFixed(2));
-                    $(".table_change_price_" + value).text(d['change_price']);
-                    $(".table_market_" + value).text(d['market_state']);
-                }
-            }
+            coinListSetup(d);
+
         }	
     }
     // 웹소켓 연결 해제
@@ -183,7 +147,6 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
             upbit_socket = undefined;
         }	
     }
-
     // 웹소켓 요청
     function filterRequest(filter) {
         if(upbit_socket == undefined){
@@ -192,6 +155,44 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
         }
         upbit_socket.send(filter);
     }
+    // 코인 리스트 실시간 업데이트 하기
+    function coinListSetup(tickerJsonData){
+        // console.log(tickerJsonData)
+        // console.log(tickerJsonData['trade_date'])
+        // console.log(tickerJsonData['trade_time'])
+        for (const [key, value] of Object.entries(upbit_tickers)){
+            // console.log(`${key}: ${value}`);
+            // 가격, 가격등락 퍼센트, 가격등락 액수, 전날대비 시장 상황 표시
+            if (tickerJsonData.code == value && tickerJsonData.type == 'ticker'){ // 키값이 같을 경우
+                // console.log(value)
+                // + - 일 때의 가격 색깔 조정하기
+                if (tickerJsonData['change'] == 'RISE'){
+                    $(".table_change_price_" + value).text(tickerJsonData['change_price']).css('color','red');
+                    $(".table_change_rate_" + value).text(tickerJsonData['change_rate']).css('color','red');
+                } else if (tickerJsonData['change'] == 'FALL') {
+                    $(".table_change_price_" + value).text(tickerJsonData['change_price']).css('color','blue');
+                    $(".table_change_rate_" + value).text(tickerJsonData['change_rate']).css('color','blue');
+                } else if (tickerJsonData['change'] == 'EVEN') {
+                };
+                // 값 넣어주기
+                $(".table_price_" + value).text(tickerJsonData['trade_price']);
+                $(".table_change_rate_" + value).text(tickerJsonData['change_rate'].toFixed(2)+' %');
+                $(".table_change_price_" + value).text(tickerJsonData['change_price']);
+                $(".table_market_" + value).text(tickerJsonData['change']);
+            };
+            // 고래 체결량 표시
+            if (tickerJsonData.code == value && tickerJsonData.type == 'trade') {
+                // console.log(console.log(tickerJsonData))
+                if ((tickerJsonData['trade_price'] * tickerJsonData['trade_volume']) > 30000000) { // 3000만원 이상일 경우
+                    console.log(tickerJsonData['code'])
+                    console.log(tickerJsonData['trade_price'] * tickerJsonData['trade_volume'].toFixed(2));
+                    $(".table_bigwhale_"+value).text(tickerJsonData['trade_price']+' ('+tickerJsonData['trade_volume'].toFixed(2).toString()+')')
+                };
+                
+            };
+        };
+    };
+    // 웹소켓 연결 시작
     connectWS();
 };
 // 업비트 마켓 정보 가지고 오기
@@ -204,7 +205,8 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
                     if (response[key]['market'].includes("KRW")){
                         // console.log(response[key]['market'], response[key]['korean_name'])
                         upbit_tickers[response[key]['korean_name']] = response[key]['market'];
-                        upbit_ticker_codes += ',{"type":"ticker","codes":["' + response[key]['market'] + '"]}';
+                        upbit_ticker_codes += ',{"type":"ticker","codes":["' + response[key]['market'] +
+                                                '"]},{"type":"trade","codes":["'+  response[key]['market'] +'"]}';
                         
                         listOfTickers.innerHTML += '<tr>'+
                             '<td class =table_name_'+response[key]['market']+'>'+response[key]['korean_name']+'</td>'+
@@ -212,6 +214,7 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
                             '<td class =table_change_rate_'+response[key]['market']+'>'+'0'+'</td>'+
                             '<td class =table_change_price_'+response[key]['market']+'>'+'0'+'</td>'+
                             '<td class =table_market_'+response[key]['market']+'>'+'0'+'</td>'+
+                            '<td class =table_bigwhale_'+response[key]['market']+'>'+' - '+'</td>'+
                                                 '</th>';
                     };
                     if (key == response.length-1){
