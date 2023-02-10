@@ -4,13 +4,9 @@ let upbit_time // 업비트 거래 시간
 let current_price // 업비트 거래 가격
 let premium_bitcoin // 비트코인 프리미엄
 let binance_price; // 바이낸스 비트코인 가격 (USDT 기준)
-let upbit_tickers={}; // 업비트 KRW마켓의 {이름과 티커라벨}
-let upbit_ticker_codes='[{"ticket":"UNIQUE_TICKET"}'
-
 
 // 소켓 통신 부분
 let upbit_socket; // 업비트 소켓 통신
-
 
 window.addEventListener('DOMContentLoaded', event => {
     // 업비트 api 부분
@@ -174,37 +170,18 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
     connectWS();
 };
 // 업비트 마켓 정보 가지고 오기
-(function () {
-    let arr = fetch('https://api.upbit.com/v1/market/all')
-            .then((response) => response.json())
-            .then((response) => {
-                // console.log(response)
-                for (let key in response){
-                    if (response[key]['market'].includes("KRW")){
-                        // console.log(response[key]['market'], response[key]['korean_name'])
-                        upbit_tickers[response[key]['korean_name']] = response[key]['market'];
-                        upbit_ticker_codes += ',{"type":"ticker","codes":["' + response[key]['market'] +
-                                                '"]},{"type":"trade","codes":["'+  response[key]['market'] +'"]}';
-                        
-                        listOfTickers.innerHTML += '<tr>'+
-                            '<td class =table_name_'+response[key]['market']+'>'+response[key]['korean_name']+'</td>'+
-                            '<td class =table_price_'+response[key]['market']+'>'+0+'</td>'+
-                            '<td class =table_change_rate_'+response[key]['market']+'>'+'0'+'</td>'+
-                            '<td class =table_change_price_'+response[key]['market']+'>'+'0'+'</td>'+
-                            '<td class =table_market_'+response[key]['market']+'>'+'0'+'</td>'+
-                            '<td class =table_bigwhale_'+response[key]['market']+'>'+' - '+'</td>'+
-                                                '</th>';
-                    };
-                    if (key == response.length-1){
-                        upbit_ticker_codes+=']'
-                    };
-                    
-                
-                };
-                // console.log(upbit_ticker_codes)
-            })
-        .catch((err) => console.error(err));
-})();
+setTimeout((function () {
+    for (let i in upbit_tickers){
+        listOfTickers.innerHTML += '<tr>'+
+            '<td class =table_name_'+upbit_tickers[i]+'>'+i+'</td>'+
+            '<td class =table_price_'+upbit_tickers[i]+'>'+0+'</td>'+
+            '<td class =table_change_rate_'+upbit_tickers[i]+'>'+'0'+'</td>'+
+            '<td class =table_change_price_'+upbit_tickers[i]+'>'+'0'+'</td>'+
+            '<td class =table_market_'+upbit_tickers[i]+'>'+'0'+'</td>'+
+            '<td class =table_bigwhale_'+upbit_tickers[i]+'>'+' - '+'</td>'+
+                            '</th>';
+    };
+}), 3000); // 3초 뒤에 테이블 만들기 (왜냐하면 데이터 동신이 너무 빠르다보니 빈 값으로 테이블을 만들면 값이 안만들어지는 경우가 있기 때문에)
 
 upbit_web_socket(); // 업비트 소켓 통신하기
 

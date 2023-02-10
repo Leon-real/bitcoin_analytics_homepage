@@ -1,19 +1,21 @@
 // upbit, binance에고 공통으로 필요로 하는 데이터 js 관리
+//
 
+let upbit_tickers={}; // 업비트 KRW마켓의 {이름과 티커라벨}
+let upbit_ticker_codes='[{"ticket":"UNIQUE_TICKET"}' // upbit web socket filterRequest
 
 // bitcoin 타이핑 효과
-const typing_text = 'Bitcoin ! ! !]          '
-const main_text = $('.main_text')
+const typing_text = 'Bitcoin ! ! !]          ';
+const main_text = $('.main_text');
 let index = 0;
-
 function typing_bitcoin() {
     main_text.text(main_text.text()+typing_text[index++]);
     if (index > typing_text.length){
         main_text.text("[")
         index = 0;
     }
-}
-setInterval(typing_bitcoin, 100)
+};
+setInterval(typing_bitcoin, 100);
 // 타이핑 효과 
 
 
@@ -39,3 +41,27 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch((err) => console.error(err));
     }, 1000*60*60); // 한시간마다 갱신
 });
+
+// 업비트 api 받아서 한국:티커이름 짝지어 주기
+(function () {
+    let arr = fetch('https://api.upbit.com/v1/market/all')
+            .then((response) => response.json())
+            .then((response) => {
+                // console.log(response)
+                for (let key in response){
+                    if (response[key]['market'].includes("KRW")){
+                        // console.log(response[key]['market'], response[key]['korean_name'])
+                        upbit_tickers[response[key]['korean_name']] = response[key]['market'];
+                        upbit_ticker_codes += ',{"type":"ticker","codes":["' + response[key]['market'] +
+                                                '"]},{"type":"trade","codes":["'+  response[key]['market'] +'"]}';
+                    };
+                    if (key == response.length-1){
+                        upbit_ticker_codes+=']'
+                    };
+                    
+                
+                };
+                // console.log(upbit_ticker_codes)
+            })
+        .catch((err) => console.error(err));
+})();
