@@ -109,8 +109,23 @@ window.addEventListener('DOMContentLoaded', event => {
                 $('.premium_bitcoin').text(premium_price);
             };
 
-        }, 3000); // 3초에 한번씩 갱신
+    }, 3000); // 3초에 한번씩 갱신
     
+    // 고래 체결량 가격 차이 발생시 삭제해주기 4% 이하로 체결된 가격 있으면 초기화 시키기
+    setInterval(function () {
+        for (let ticker in upbit_tickers){
+            // console.log(upbit_tickers[ticker])
+            let temp_1 = $(".table_price_"+upbit_tickers[ticker]).text();
+            let temp_2 = $(".table_bigwhale_"+upbit_tickers[ticker]).text();
+            if (temp_2 !== ' - '){
+                temp_2 = temp_2.split(" ")[0]
+                if (temp_1 < (temp_2 *0.96)){ // 4% 아래에서 체결될 때 삭제
+                    $(".table_bigwhale_"+upbit_tickers[ticker]).text(" - ");
+                    console.log(temp_1, temp_2);
+                }
+            };
+        };
+    }, 1000);
 });
 
 // 업비트 소켓 통신 함수
@@ -176,7 +191,7 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
                 };
                 // 값 넣어주기
                 $(".table_price_" + value).text(tickerJsonData['trade_price']);
-                $(".table_change_rate_" + value).text(tickerJsonData['change_rate'].toFixed(2)+' %');
+                $(".table_change_rate_" + value).text((tickerJsonData['change_rate']*100).toFixed(2)+' %');
                 $(".table_change_price_" + value).text(tickerJsonData['change_price']);
                 $(".table_market_" + value).text(tickerJsonData['change']);
             };
@@ -184,12 +199,11 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
             if (tickerJsonData.code == value && tickerJsonData.type == 'trade') {
                 // console.log(console.log(tickerJsonData))
                 // 한번에 3000만원 이상 그리고 매수로 거래하였을 때
-                if ((tickerJsonData['trade_price'] * tickerJsonData['trade_volume']) > 30000000 && tickerJsonData['ask_bid']=='ASK') {
-                    console.log(tickerJsonData['code'])
-                    console.log(tickerJsonData['trade_price'] * tickerJsonData['trade_volume'].toFixed(2));
+                if ((tickerJsonData['trade_price'] * tickerJsonData['trade_volume']) > 10000000 && tickerJsonData['ask_bid']=='ASK') {
+                    // console.log(tickerJsonData['code'])
+                    // console.log(tickerJsonData['trade_price'] * tickerJsonData['trade_volume'].toFixed(2));
                     $(".table_bigwhale_"+value).text(tickerJsonData['trade_price']+' ('+tickerJsonData['trade_volume'].toFixed(2).toString()+')')
                 };
-                
             };
         };
     };
