@@ -88,8 +88,6 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 // 업비트 소켓 통신 함수
-const listOfTickers = document.getElementById('coin_lists');// 업비트 티커 정보 보여줄 부분 만들기
-
 function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
     // 웹소켓 연결
     function connectWS() {
@@ -169,7 +167,8 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
     // 웹소켓 연결 시작
     connectWS();
 };
-// 업비트 마켓 정보 가지고 오기
+// 업비트 마켓 정보 가지고 오기 및 table 만들기
+const listOfTickers = document.getElementById('coin_lists');// 업비트 티커 정보 보여줄 부분 만들기
 setTimeout((function () {
     for (let i in upbit_tickers){
         listOfTickers.innerHTML += '<tr>'+
@@ -181,7 +180,7 @@ setTimeout((function () {
             '<td class =table_bigwhale_'+upbit_tickers[i]+'>'+' - '+'</td>'+
                             '</th>';
     };
-}), 3000); // 3초 뒤에 테이블 만들기 (왜냐하면 데이터 동신이 너무 빠르다보니 빈 값으로 테이블을 만들면 값이 안만들어지는 경우가 있기 때문에)
+}), 1500); // 3초 뒤에 테이블 만들기 (왜냐하면 데이터 동신이 너무 빠르다보니 빈 값으로 테이블을 만들면 값이 안만들어지는 경우가 있기 때문에)
 
 upbit_web_socket(); // 업비트 소켓 통신하기
 
