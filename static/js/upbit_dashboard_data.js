@@ -11,21 +11,6 @@ let upbit_ticker_codes='[{"ticket":"UNIQUE_TICKET"}'
 // 소켓 통신 부분
 let upbit_socket; // 업비트 소켓 통신
 
-// bitcoin 타이핑 효과
-const typing_text = 'Bitcoin ! ! !]          '
-const main_text = $('.main_text')
-let index = 0;
-
-function typing_bitcoin() {
-    main_text.text(main_text.text()+typing_text[index++]);
-    if (index > typing_text.length){
-        main_text.text("[")
-        index = 0;
-    }
-}
-setInterval(typing_bitcoin, 100)
-// 타이핑 효과 
-
 
 window.addEventListener('DOMContentLoaded', event => {
     // 업비트 api 부분
@@ -59,28 +44,6 @@ window.addEventListener('DOMContentLoaded', event => {
             })
         .catch((err) => console.error(err));
     }, 1000); // 1초마다 갱신
-
-    // 환율 부분
-    //환율 정보 초기에 한번 업데이트 해주기
-    console.log("[Update Exchange Rate]")
-    fetch('https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD')
-        .then((response) => response.json())
-        .then((response) => {
-            console.log('[Update : Exchange Rate]'+response[0]['basePrice'])
-            $('.exchange-rate').text(response[0]['basePrice'])
-        })
-        .catch((err) => console.error(err));
-    setInterval(function () {
-        console.log("[Update Exchange Rate]")
-        fetch('https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD')
-            .then((response) => response.json())
-            .then((response) => {
-                console.log('[Update : Exchange Rate]'+response[0]['basePrice'])
-                $('.exchange-rate').text(response[0]['basePrice'])
-            })
-            .catch((err) => console.error(err));
-    }, 1000*60*60); // 한시간마다 갱신
-
     // 비트코인 김프 => (한국 비트코인가격 / 미국 비트코인 가격) * 환율 * 100 - 100
     setInterval(function () {
         fetch('https://api.binance.com/api/v3/trades?symbol=BTCUSDT&limit=1')
