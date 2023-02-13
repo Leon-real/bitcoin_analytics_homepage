@@ -6,11 +6,23 @@
         <p>환율<br>
             <span class="exchange-rate"></span> 원달러
         </p>
+        <!-- 바이낸스 티커 정보 업데이트 하기 -->
+        <div id="coin_lists_div">바이낸스 티커 정보들 (USDT 기준)
+            <table id="coin_lists_table">
+                <tbody id="coin_lists_table_body">
+                    <th>코인</th>
+                    <th id="th_price">가격</th>
+                    <th>등락 퍼센트</th>
+                    <th>등락 가격</th>
+                    <th>체결 수량</th>
+                    <th>고래 체결 가격 (갯수)</th>
+                </tbody>
+            </table>
+        </div>
     </main>
 {% endblock %}
 
 {% block jsfile %}
-    <!-- ajax 자바스크립트 링크 jquery 필요하다.-->
     <script src="/static/js/temp.js" type="text/javascript"></script>
     <script src="/static/js/dashboard_same.js" type="text/javascript"></script>
     <script src="/static/js/binance_dashboard_data.js" type="text/javascript"></script>

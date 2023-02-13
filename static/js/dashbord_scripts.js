@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // API
 
     // Fear & Greed API
-    console.log("api test start")
+    // console.log("api test start")
 
     const config = {
         method: "get"
@@ -19,6 +19,6 @@ window.addEventListener('DOMContentLoaded', event => {
         })
         .catch(error => console.log(error));
 
-    console.log("api test end")
+    // console.log("api test end")
 
 });

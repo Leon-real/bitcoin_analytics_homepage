@@ -1,6 +1,5 @@
 // upbit, binance에고 공통으로 필요로 하는 데이터 js 관리
-//
-
+let binance_tickers={}; // 바이낸스 KRW마켓의 {이름과 티커라벨}
 let upbit_tickers={}; // 업비트 KRW마켓의 {이름과 티커라벨}
 let upbit_ticker_codes='[{"ticket":"UNIQUE_TICKET"}' // upbit web socket filterRequest
 
@@ -18,7 +17,7 @@ function typing_bitcoin() {
 setInterval(typing_bitcoin, 100);
 // 타이핑 효과 
 
-
+// 환율 업데이트
 window.addEventListener('DOMContentLoaded', event => {
     // 환율 부분
     //환율 정보 초기에 한번 업데이트 해주기
@@ -58,10 +57,24 @@ window.addEventListener('DOMContentLoaded', event => {
                     if (key == response.length-1){
                         upbit_ticker_codes+=']'
                     };
-                    
-                
                 };
                 // console.log(upbit_ticker_codes)
+            })
+        .catch((err) => console.error(err));
+})();
+
+// 바이낸스 api 받아서 한국:티커이름 짝지어 주기
+(function () {
+    let arr = fetch('https://fapi.binance.com/fapi/v1/ticker/price')
+            .then((response) => response.json())
+            .then((response) => {
+                // console.log(response)
+                for (let key in response){
+                    if (response[key]['symbol'].includes("USDT")){
+                        // console.log(response[key]['market'], response[key]['korean_name'])
+                        binance_tickers[response[key]['symbol']] = response[key]['price'];
+                    };
+                };
             })
         .catch((err) => console.error(err));
 })();
