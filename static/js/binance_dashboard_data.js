@@ -1,3 +1,31 @@
+
+window.addEventListener('DOMContentLoaded', event => {
+    // 고래 체결량 가격 차이 발생시 삭제해주기 4% 이하로 체결된 가격 있으면 초기화 시키기
+    setInterval(function () {
+        for (let i in binance_tickers){
+            let before_replace = i;
+            i = i.replace("USDT","");
+            // console.log(upbit_tickers[ticker])
+            let temp_1 = $(".table_price_"+i).text();
+            let temp_2 = $(".table_bigwhale_"+i).text();
+            if (temp_2.length > 1 ){
+                temp_2 = temp_2.split(" ")[0]
+                if (temp_2.includes('-')) {
+                    if (temp_1 > (temp_2 *1.04)){ // 4% 아래에서 체결될 때 삭제
+                        $(".table_bigwhale_"+i).text(" - ");
+                        console.log(temp_1, temp_2);
+                } else {
+                    if (temp_1 < (temp_2 *0.96)){ // 4% 아래에서 체결될 때 삭제
+                        $(".table_bigwhale_"+i).text(" - ");
+                        console.log(temp_1, temp_2);
+                }
+                };
+            };
+        };
+    }, 1000);
+});
+
+
 // 바이낸스 소켓 통신 함수 부분
 function binance_web_socket(){ 
     console.log("Start binance . . . Socket")
@@ -24,7 +52,8 @@ function binance_web_socket(){
             // Q : last quantity
             if (value['s'].includes('USDT')) { //USDT라는 글자가 있을 경우
                 // console.log(value['s'], value['c'], value['P'], value['p'], value['Q']);
-                // // 색깔 조건 설정
+                // console.log(value['s'], value['n'], value['Q'], value['p'], Math.abs(parseFloat(value['Q'])*parseFloat(value['p'])));
+                // 색깔 조건 설정
                 if (parseFloat(value['P']) > 0){
                     $(".table_change_rate_" + value['s'].replace("USDT",'')).text(parseFloat(value['P']).toFixed(2)+' %').css('color','#00DD00');
                     $(".table_change_price_" + value['s'].replace("USDT",'')).text(parseFloat(value['p'])).css('color','#00DD00');
@@ -32,6 +61,10 @@ function binance_web_socket(){
                     $(".table_change_rate_" + value['s'].replace("USDT",'')).text(parseFloat(value['P']).toFixed(2)+' %').css('color','red');
                     $(".table_change_price_" + value['s'].replace("USDT",'')).text(parseFloat(value['p'])).css('color','red');
                 };
+                // 고래 체결 가격 (10 만달러 이상인 경우 =약 1억2천만원)
+                if (Math.abs(parseFloat(value['Q'])*parseFloat(value['p'])) >100) {
+                    $(".table_bigwhale_"+value['s'].replace("USDT",'')).text(value['p']+' ('+value['Q']+')')
+                }
                 // 값 넣어주기
                 $(".table_price_" + value['s'].replace("USDT",'')).text(parseFloat(value['c']));
                 $(".quantity_" + value['s'].replace("USDT",'')).text(parseFloat(value['Q']));
