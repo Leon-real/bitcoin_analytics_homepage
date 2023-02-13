@@ -235,7 +235,6 @@ setInterval(function () {
                 $('tbody').append(row);
             });
         } else if (($(this).is('.desc'))) {
-            console.log("tt")
             sortdir = -1;
             
             var rec = $('table').find('tbody>tr').get();
