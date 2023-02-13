@@ -170,13 +170,13 @@ const listOfTickers = document.getElementById('coin_lists_table_body');// 업비
 setTimeout((function () {
     for (let i in upbit_tickers){
         listOfTickers.innerHTML += '<tr>'+
-            '<td class =table_name_'+upbit_tickers[i]+'>'+i+'</td>'+
-            '<td class =table_price_'+upbit_tickers[i]+'>'+0+'</td>'+
-            '<td class =table_change_rate_'+upbit_tickers[i]+'>'+'0'+'</td>'+
-            '<td class =table_change_price_'+upbit_tickers[i]+'>'+'0'+'</td>'+
-            '<td class =table_market_'+upbit_tickers[i]+'>'+'0'+'</td>'+
-            '<td class =table_bigwhale_'+upbit_tickers[i]+'>'+' - '+'</td>'+
-            '</tr>';
+                                        '<td class =table_name_'+upbit_tickers[i]+'>'+i+'</td>'+
+                                        '<td class =table_price_'+upbit_tickers[i]+'>'+0+'</td>'+
+                                        '<td class =table_change_rate_'+upbit_tickers[i]+'>'+'0'+'</td>'+
+                                        '<td class =table_change_price_'+upbit_tickers[i]+'>'+'0'+'</td>'+
+                                        '<td class =table_market_'+upbit_tickers[i]+'>'+'0'+'</td>'+
+                                        '<td class =table_bigwhale_'+upbit_tickers[i]+'>'+' - '+'</td>'+
+                                    '</tr>';
     };
 }), 1500); // 3초 뒤에 테이블 만들기 (왜냐하면 데이터 동신이 너무 빠르다보니 빈 값으로 테이블을 만들면 값이 안만들어지는 경우가 있기 때문에)
 

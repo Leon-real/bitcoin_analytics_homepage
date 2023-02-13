@@ -50,16 +50,16 @@ const listOfTickers = document.getElementById('coin_lists_table_body');// 바이
 setTimeout((function () {
     for (let i in binance_tickers){
         // console.log(i, binance_tickers[i])
-        let before_replace = i
-        i = i.replace("USDT","")
+        let before_replace = i;
+        i = i.replace("USDT","");
         listOfTickers.innerHTML += '<tr>'+
-            '<td class =table_name_'+i+'>'+i+'</td>'+
-            '<td class =table_price_'+i+'>'+binance_tickers[before_replace]+'</td>'+
-            '<td class =table_change_rate_'+i+'>'+'0'+'</td>'+
-            '<td class =table_change_price_'+i+'>'+'0'+'</td>'+
-            '<td class =quantity_'+i+'>'+'0'+'</td>'+
-            '<td class =table_bigwhale_'+i+'>'+' - '+'</td>'+
-                            '</tr>';
+                                        '<td class =table_name_'+i+'>'+i+'</td>'+
+                                        '<td class =table_price_'+i+'>'+binance_tickers[before_replace]+'</td>'+
+                                        '<td class =table_change_rate_'+i+'>'+'0'+'</td>'+
+                                        '<td class =table_change_price_'+i+'>'+'0'+'</td>'+
+                                        '<td class =quantity_'+i+'>'+'0'+'</td>'+
+                                        '<td class =table_bigwhale_'+i+'>'+' - '+'</td>'+
+                                    '</tr>';
     };
 }), 1500); // 3초 뒤에 테이블 만들기 (왜냐하면 데이터 동신이 너무 빠르다보니 빈 값으로 테이블을 만들면 값이 안만들어지는 경우가 있기 때문에)
 
