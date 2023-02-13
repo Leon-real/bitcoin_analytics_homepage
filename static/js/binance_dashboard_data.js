@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 // 바이낸스 소켓 통신 함수 부분
 function binance_web_socket(){ 
-    console.log("Start binance . . . Socket")
+    // console.log("Start binance . . . Socket")
     // 바이낸스 소켓 연결
     function binance_connect(){
         // let binance_socket = new WebSocket('wss://stream.binance.com:443/ws/!miniTicker@arr'); // 현물
@@ -61,8 +61,9 @@ function binance_web_socket(){
                     $(".table_change_rate_" + value['s'].replace("USDT",'')).text(parseFloat(value['P']).toFixed(2)+' %').css('color','red');
                     $(".table_change_price_" + value['s'].replace("USDT",'')).text(parseFloat(value['p'])).css('color','red');
                 };
-                // 고래 체결 가격 (10 만달러 이상인 경우 =약 1억2천만원)
-                if (Math.abs(parseFloat(value['Q'])*parseFloat(value['p'])) >100000) {
+                // 고래 체결 가격 (5 만달러 이상인 경우 =약 7천만원)
+                if (Math.abs(parseFloat(value['Q'])*parseFloat(value['p'])) >50000) {
+                    console.log("고래 출현 : " + value['Q'])
                     $(".table_bigwhale_"+value['s'].replace("USDT",'')).text(value['p']+' ('+value['Q']+')')
                 }
                 // 값 넣어주기

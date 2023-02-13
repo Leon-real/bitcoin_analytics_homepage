@@ -157,6 +157,7 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
                 if ((tickerJsonData['trade_price'] * tickerJsonData['trade_volume']) > 30000000 && tickerJsonData['ask_bid']=='ASK') {
                     // console.log(tickerJsonData['code'])
                     // console.log(tickerJsonData['trade_price'] * tickerJsonData['trade_volume'].toFixed(2));
+                    console.log("고래 출현 : "+tickerJsonData['trade_price'])
                     $(".table_bigwhale_"+value).text(tickerJsonData['trade_price']+' ('+tickerJsonData['trade_volume'].toFixed(2).toString()+')')
                 };
             };
