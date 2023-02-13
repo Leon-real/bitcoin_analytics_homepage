@@ -65,7 +65,32 @@ setTimeout((function () {
 }), 1500); // 3초 뒤에 테이블 만들기 (왜냐하면 데이터 동신이 너무 빠르다보니 빈 값으로 테이블을 만들면 값이 안만들어지는 경우가 있기 때문에)
 
 // 바이낸스 테이블 정렬하기
-
-function sortedTablePrice() {
-    console.log("table sorting test")
-};
+setInterval(function() {
+    $(document).ready(function () {
+        // console.log("test 중")
+        $('th').each(function (column) {
+            $(this).click(function () {
+                if ($(this).is('.asc')) {
+                    $(this).removeClass('asc');
+                    $(this).addClass('desc');
+                    sortdir = -1;
+                } else {
+                    $(this).addClass('asc');
+                    $(this).removeClass('desc');
+                    sortdir = 1;
+                }
+                $(this).siblings().removeClass('asc');
+                $(this).siblings().removeClass('desc');
+                var rec = $('table').find('tbody>tr').get();
+                rec.sort(function (a, b) {
+                    var val1 = $(a).children('td').eq(column).text().toUpperCase();
+                    var val2 = $(b).children('td').eq(column).text().toUpperCase();
+                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+                });
+                $.each(rec, function (index, row) {
+                    $('tbody').append(row);
+                });
+            });
+        });
+    });
+},1000);
