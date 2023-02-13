@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', event => {
         .catch((err) => console.error(err));
 })();
 
-// 바이낸스 api 받아서 한국:티커이름 짝지어 주기
+// 바이낸스 api 받아서 티커:현재 가격 짝지어 주기
 (function () {
     let arr = fetch('https://fapi.binance.com/fapi/v1/ticker/price')
             .then((response) => response.json())
@@ -71,7 +71,6 @@ window.addEventListener('DOMContentLoaded', event => {
                 // console.log(response)
                 for (let key in response){
                     if (response[key]['symbol'].includes("USDT")){
-                        // console.log(response[key]['market'], response[key]['korean_name'])
                         binance_tickers[response[key]['symbol']] = response[key]['price'];
                     };
                 };

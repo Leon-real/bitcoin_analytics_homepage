@@ -140,16 +140,14 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
                 // + - 일 때의 가격 색깔 조정하기
                 if (tickerJsonData['change'] == 'RISE'){
                     $(".table_change_price_" + value).text(tickerJsonData['change_price']).css('color','red');
-                    $(".table_change_rate_" + value).text(tickerJsonData['change_rate']).css('color','red');
+                    $(".table_change_rate_" + value).text((tickerJsonData['change_rate']*100).toFixed(2)+' %').css('color','red');
                 } else if (tickerJsonData['change'] == 'FALL') {
-                    $(".table_change_price_" + value).text(tickerJsonData['change_price']).css('color','blue');
-                    $(".table_change_rate_" + value).text(tickerJsonData['change_rate']).css('color','blue');
+                    $(".table_change_price_" + value).text("-"+tickerJsonData['change_price']).css('color','blue');
+                    $(".table_change_rate_" + value).text("-"+(tickerJsonData['change_rate']*100).toFixed(2)+' %').css('color','blue');
                 } else if (tickerJsonData['change'] == 'EVEN') {
                 };
                 // 값 넣어주기
                 $(".table_price_" + value).text(tickerJsonData['trade_price']);
-                $(".table_change_rate_" + value).text((tickerJsonData['change_rate']*100).toFixed(2)+' %');
-                $(".table_change_price_" + value).text(tickerJsonData['change_price']);
                 $(".table_market_" + value).text(tickerJsonData['change']);
             };
             // 고래 체결량 표시
@@ -185,32 +183,75 @@ setTimeout((function () {
 upbit_web_socket(); // 업비트 소켓 통신하기
 
 // 업비트 테이블 정렬하기
-setInterval(function() {
-    $(document).ready(function () {
-        // console.log("test 중")
-        $('th').each(function (column) {
-            $(this).click(function () {
-                if ($(this).is('.asc')) {
-                    $(this).removeClass('asc');
-                    $(this).addClass('desc');
-                    sortdir = -1;
-                } else {
-                    $(this).addClass('asc');
-                    $(this).removeClass('desc');
-                    sortdir = 1;
-                }
-                $(this).siblings().removeClass('asc');
-                $(this).siblings().removeClass('desc');
-                var rec = $('table').find('tbody>tr').get();
-                rec.sort(function (a, b) {
-                    var val1 = $(a).children('td').eq(column).text().toUpperCase();
-                    var val2 = $(b).children('td').eq(column).text().toUpperCase();
-                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
-                });
-                $.each(rec, function (index, row) {
-                    $('tbody').append(row);
-                });
-            });
+$('th').each(function (column) {
+    $(this).click(function () {
+        if ($(this).is('.asc')) {
+            $(this).removeClass('asc');
+            $(this).addClass('desc');
+            sortdir = -1;
+        } else {
+            $(this).addClass('asc');
+            $(this).removeClass('desc');
+            sortdir = 1;
+        }
+        $(this).siblings().removeClass('asc');
+        $(this).siblings().removeClass('desc');
+        var rec = $('table').find('tbody>tr').get();
+        rec.sort(function (a, b) {
+            var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
+            var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
+            if (isNaN(val1) || isNaN(val2)){
+                return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+            }
+            else {
+                return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
+            }
+        });
+        $.each(rec, function (index, row) {
+            $('tbody').append(row);
         });
     });
-},1000);
+});
+// 정렬 값 고정하여서 자동 갱신
+setInterval(function () {
+    // console.log("t")
+    $('th').each(function (column){
+        // console.log("자동 정렬 실행", $(this).is('.asc'), ($(this).is('.desc')))
+        
+        if ($(this).is('.asc')) {
+            sortdir = 1;
+            var rec = $('table').find('tbody>tr').get();
+            rec.sort(function (a, b) {
+                var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
+                var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
+                if (isNaN(val1) || isNaN(val2)){
+                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+                }
+                else {
+                    return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
+                }
+            });
+            $.each(rec, function (index, row) {
+                $('tbody').append(row);
+            });
+        } else if (($(this).is('.desc'))) {
+            console.log("tt")
+            sortdir = -1;
+            
+            var rec = $('table').find('tbody>tr').get();
+            rec.sort(function (a, b) {
+                var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
+                var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
+                if (isNaN(val1) || isNaN(val2)){
+                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+                }
+                else {
+                    return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
+                }
+            });
+            $.each(rec, function (index, row) {
+                $('tbody').append(row);
+            });
+        }
+    });
+}, 100);
