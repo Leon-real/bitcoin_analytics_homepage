@@ -14,11 +14,11 @@ window.addEventListener('DOMContentLoaded', event => {
                     if (temp_1 > (temp_2 *1.04)){ // 4% 아래에서 체결될 때 삭제
                         $(".table_bigwhale_"+i).text(" - ");
                         console.log(temp_1, temp_2);
-                } else {
-                    if (temp_1 < (temp_2 *0.96)){ // 4% 아래에서 체결될 때 삭제
-                        $(".table_bigwhale_"+i).text(" - ");
-                        console.log(temp_1, temp_2);
-                }
+                    } else {
+                        if (temp_1 < (temp_2 *0.96)){ // 4% 아래에서 체결될 때 삭제
+                            $(".table_bigwhale_"+i).text(" - ");
+                            console.log(temp_1, temp_2)};
+                    };
                 };
             };
         };
@@ -62,7 +62,7 @@ function binance_web_socket(){
                     $(".table_change_price_" + value['s'].replace("USDT",'')).text(parseFloat(value['p'])).css('color','red');
                 };
                 // 고래 체결 가격 (10 만달러 이상인 경우 =약 1억2천만원)
-                if (Math.abs(parseFloat(value['Q'])*parseFloat(value['p'])) >100) {
+                if (Math.abs(parseFloat(value['Q'])*parseFloat(value['p'])) >100000) {
                     $(".table_bigwhale_"+value['s'].replace("USDT",'')).text(value['p']+' ('+value['Q']+')')
                 }
                 // 값 넣어주기
