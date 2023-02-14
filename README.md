@@ -1,11 +1,10 @@
-# bitcoin_analytics_homepage
-Making Bitcoin Analytics Homepage
+# Bitcoin Analytics Homepage
 ---
 1. Spot : Upbit
 2. Future : Binance Future (USDT)
 
 # Time Line of This Project
-- Public Notion Link
+- Public Notion Link  
     https://realleonsnotebook.notion.site/Crypto-Currency-Analystics-Homepage-e40f502468fa47cc9cd5fa54107560e2
 
 ### Secrete Key
@@ -14,11 +13,11 @@ Making Bitcoin Analytics Homepage
 
 
 ### api 받아오는 참고 사이트
-- Fear and Greedy index (공포 탐욕 지표)
+- Fear and Greedy index (공포 탐욕 지표)  
     https://alternative.me/crypto/api/
-- Upbit official API documents (업비트 공식 API 문서)
+- Upbit official API documents (업비트 공식 API 문서)  
     https://docs.upbit.com/docs
-- Binance official API documents (바이낸스 공식 API 문서)
+- Binance official API documents (바이낸스 공식 API 문서)  
     https://binance-docs.github.io/apidocs/futures/en/#general-info
 
 
