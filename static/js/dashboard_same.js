@@ -70,6 +70,10 @@ window.addEventListener('DOMContentLoaded', event => {
             .then((response) => {
                 // console.log(response)
                 for (let key in response){
+                    // console.log(response[key]['symbol'])
+                    if (response[key]['symbol'].includes("_")){
+                        continue;
+                    }
                     if (response[key]['symbol'].includes("USDT")){
                         binance_tickers[response[key]['symbol']] = response[key]['price'];
                     };
