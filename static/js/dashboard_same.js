@@ -1,8 +1,10 @@
-// upbit, binance에고 공통으로 필요로 하는 데이터 js 관리
+// upbit, binance에고 공통으로 필요로 하는 데이터 js 관리 API 부분)
 let binance_tickers={}; // 바이낸스 KRW마켓의 {이름과 티커라벨}
 let upbit_tickers={}; // 업비트 KRW마켓의 {이름과 티커라벨}
 let upbit_ticker_codes='[{"ticket":"UNIQUE_TICKET"}' // upbit web socket filterRequest
-let binance_soc_data; // 바이낸스 소켓통신 데이터
+
+// 바이낸스 소켓통신 데이터 (소켓통신 부분)
+let binance_soc_data; 
 
 // bitcoin 타이핑 효과
 const typing_text = 'Bitcoin ! ! !]          ';

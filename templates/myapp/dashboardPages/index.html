@@ -98,11 +98,15 @@
 {% endblock %}
 
 {% block jsfile %}
-    <script src="/static/js/dashbord_scripts.js" type="text/javascript"></script>
+    <!-- api관련 :  공포 탐욕 -->
+    <script src="/static/js/dashbord_api_scripts.js" type="text/javascript"></script>
+    <!-- 공통 부분 관련 : 타이핑 효과, 환율 업데이트, 업비트 바이낸스 티커 정보 받기 -->
     <script src="/static/js/dashboard_same.js" type="text/javascript"></script>
+    <!-- 소켓 부분 관련 -->
+    <script src="/static/js/dashboard_socket.js" type="text/javascript"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="/static/js/assets/chart-area-demo.js" type="text/javascript"></script>
-    
     
     <!-- <script src="/static/js/datatables-simple-demo.js" type="text/javascript"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script> -->
