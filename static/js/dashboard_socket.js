@@ -1,7 +1,7 @@
 let binance_socket_datas; // 바이낸스 소켓통신 데이터들
 let upbit_socket_datas; // 업비트 소켓통신 데이터들
 
-// 바이낸스 소켓 통신 함수 부분
+// 바이낸스 소켓 통신 부분
 function binance_connect(){
     // let binance_socket = new WebSocket('wss://stream.binance.com:443/ws/!miniTicker@arr'); // 현물
     let binance_socket = new WebSocket('wss://fstream.binance.com:443/ws/!ticker@arr'); // 선물
@@ -10,11 +10,11 @@ function binance_connect(){
         binance_socket_datas = d;
     };
 };
-// 연결 실행
+// 바이낸스 소켓 통신 연결 실행
 binance_connect();
 
-// 업비트 소켓 통신 함수
-let upbit_socket;
+// 업비트 소켓 통신 부분
+let upbit_socket; // 업비트 소켓 객체 생성
 function upbit_connectWS() {
     if(upbit_socket != undefined){
         upbit_socket.close();
@@ -37,7 +37,7 @@ function upbit_connectWS() {
         upbit_socket_datas = d;
     }	
 }
-// 웹소켓 요청
+// 업비트 조회하는 티커의 조건 요청 웹소켓 요청
 function filterRequest(filter) {
     if(upbit_socket == undefined){
         alert('no connect exists');
@@ -45,5 +45,5 @@ function filterRequest(filter) {
     }
     upbit_socket.send(filter);
 }
-// 웹소켓 연결 시작
+// 업비트 소켓 통신 연결 실행
 upbit_connectWS();
