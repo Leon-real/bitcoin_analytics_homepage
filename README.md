@@ -1,5 +1,4 @@
 # Bitcoin Analytics Homepage
----
 1. Spot : Upbit
 2. Future : Binance Future (USDT)
 
@@ -8,7 +7,7 @@
     https://realleonsnotebook.notion.site/Crypto-Currency-Analystics-Homepage-e40f502468fa47cc9cd5fa54107560e2
 
 ### Secrete Key
-- 현재 gitignore로 업로드 안해놓은 상태, 따로 managy.py 파이썬 파일 위치에 secretes.json 파일이 있어야 서버가 돌아간다
+- 현재 gitignore로 업로드 안해놓은 상태,  따로 managy.py 파이썬 파일 위치에 secretes.json 파일이 있어야 서버가 돌아간다
 
 
 
