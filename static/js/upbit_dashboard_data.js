@@ -5,8 +5,8 @@ let current_price // 업비트 거래 가격
 let premium_bitcoin // 비트코인 프리미엄
 let binance_price; // 바이낸스 비트코인 가격 (USDT 기준)
 
-// 소켓 통신 부분
-let upbit_socket; // 업비트 소켓 통신
+let upbit_socket; // 소켓 통신 부분 업비트 소켓 통신
+
 
 window.addEventListener('DOMContentLoaded', event => {
     // 업비트 api 부분
@@ -108,6 +108,7 @@ function upbit_web_socket(){ // 업비트 소켓 통신 함수 부분
             let arr = new Uint8Array(e.data);
             let str_d = enc.decode(arr);
             let d = JSON.parse(str_d);
+            // console.log(d)
             coinListSetup(d);
 
         }	

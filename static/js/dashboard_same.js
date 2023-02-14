@@ -2,15 +2,17 @@
 let binance_tickers={}; // 바이낸스 KRW마켓의 {이름과 티커라벨}
 let upbit_tickers={}; // 업비트 KRW마켓의 {이름과 티커라벨}
 let upbit_ticker_codes='[{"ticket":"UNIQUE_TICKET"}' // upbit web socket filterRequest
+let binance_soc_data; // 바이낸스 소켓통신 데이터
 
 // bitcoin 타이핑 효과
 const typing_text = 'Bitcoin ! ! !]          ';
 const main_text = $('.main_text');
+const sub_main_text = $('.sub_main_text').text();
 let index = 0;
 function typing_bitcoin() {
     main_text.text(main_text.text()+typing_text[index++]);
     if (index > typing_text.length){
-        main_text.text("[")
+        main_text.text("["+sub_main_text)
         index = 0;
     }
 };
@@ -62,7 +64,6 @@ window.addEventListener('DOMContentLoaded', event => {
             })
         .catch((err) => console.error(err));
 })();
-
 // 바이낸스 api 받아서 티커:현재 가격 짝지어 주기
 (function () {
     let arr = fetch('https://fapi.binance.com/fapi/v1/ticker/price')

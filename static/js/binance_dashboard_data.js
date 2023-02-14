@@ -1,4 +1,3 @@
-
 window.addEventListener('DOMContentLoaded', event => {
     // 고래 체결량 가격 차이 발생시 삭제해주기 4% 이하로 체결된 가격 있으면 초기화 시키기
     setInterval(function () {
