@@ -4,6 +4,7 @@
 
 # Time Line of This Project
 - [Public Notion Link](https://realleonsnotebook.notion.site/Crypto-Currency-Analystics-Homepage-e40f502468fa47cc9cd5fa54107560e2)  
+    You can see the history of this project image and code progress.
 
   
 ### api 받아오는 참고 사이트
