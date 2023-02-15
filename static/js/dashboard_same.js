@@ -20,6 +20,7 @@ function typing_bitcoin() {
         index = 0;
     }
 };
+
 setInterval(typing_bitcoin, 100);
 // 타이핑 효과 
 

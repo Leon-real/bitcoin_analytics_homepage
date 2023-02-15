@@ -106,9 +106,11 @@ function coinListSetup(tickerJsonData){
         };
     };
 };
-setInterval(function () {
-    coinListSetup(upbit_socket_datas);
-},100);
+setTimeout(function() {
+    setInterval(function () {
+        coinListSetup(upbit_socket_datas);
+    },100);
+}, 1500);
 
 // 업비트 마켓 정보 가지고 오기 및 table 만들기
 const listOfTickers = document.getElementById('coin_lists_table_body');// 업비트 티커 정보 보여줄 부분 만들기
