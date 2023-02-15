@@ -9,13 +9,14 @@ let binance_soc_data;
 
 // bitcoin 타이핑 효과
 const sub_main_text = $('.sub_main_text').text();
-const typing_text = sub_main_text+' Bitcoin ! ! !]          ';
+const typing_text = ' Bitcoin ! ! !]          ';
 const main_text = $('.main_text');
-
+const full_text = sub_main_text+typing_text;
 let index = 0;
 function typing_bitcoin() {
-    main_text.text(main_text.text()+typing_text[index++]);
-    if (index > typing_text.length){
+    main_text.text(main_text.text()+ full_text[index++]);
+    if (index > full_text.length){
+        console.log()
         main_text.text("ㅤ");
         index = 0;
     }
