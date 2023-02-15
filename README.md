@@ -11,7 +11,7 @@
 - [Upbit official API documents (업비트 공식 API 문서)](https://docs.upbit.com/docs)
 - [Binance official API documents (바이낸스 공식 API 문서)](https://binance-docs.github.io/apidocs/futures/en/#general-info)
 
-### Contect with
+### Contact with
 - E-mail  
     tutmr999@naver.com
 
