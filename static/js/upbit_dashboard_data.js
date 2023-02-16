@@ -1,7 +1,3 @@
-let last_time // 업비트 거래+시간
-let current_price // 업비트 거래 가격
-let premium_bitcoin // 비트코인 프리미엄
-let binance_price; // 바이낸스 비트코인 가격 (USDT 기준)
 
 
 window.addEventListener('DOMContentLoaded', event => {
@@ -17,8 +13,8 @@ window.addEventListener('DOMContentLoaded', event => {
         let seconds = today.getSeconds();  // 초
         // let milliseconds = today.getMilliseconds(); // 밀리초
 
-        last_time = year+'년 '+month+'월 '+date+'일 '+hours+'시 '+minutes+'분 '+seconds+'초'
-        current_price = $('.table_price_KRW-BTC').text()
+        let last_time = year+'년 '+month+'월 '+date+'일 '+hours+'시 '+minutes+'분 '+seconds+'초'
+        let current_price = $('.table_price_KRW-BTC').text()
         $(".last-time").text(last_time)
         $(".current-price").text(current_price)
     }, 1000); // 1초마다 갱신
@@ -34,7 +30,7 @@ window.addEventListener('DOMContentLoaded', event => {
                 // console.log(value['s'], value['c'], typeof(value['c']))
                 let current_price = parseInt($('.current-price').text()); // 현재 가격 html에서 가져오기(업비트)
                 let exchange_rate = parseInt($('.exchange-rate').text()); // 현재 환률 html에서 가져오기
-                binance_price = parseFloat(value['c']);
+                let binance_price = parseFloat(value['c']);
 
                 let premium_price = ((current_price / (binance_price * exchange_rate) * 100) - 100).toFixed(2);
                 // 김프 플러스일 때 +기호 붙여주기
@@ -68,7 +64,6 @@ window.addEventListener('DOMContentLoaded', event => {
         };
     }, 1000);
 });
-
 
 // 코인 리스트 실시간 업데이트 하기
 function coinListSetup(tickerJsonData){
