@@ -1,22 +1,31 @@
-let binance_socket_datas; // 바이낸스 소켓통신 선물 데이터들
+
+let binance_socket_future_datas; // 바이낸스 소켓통신 선물 데이터들
 let binance_socket_spot_datas; // 바이낸스 소켓통신 현물 데이터들
 let upbit_socket_datas; // 업비트 소켓통신 데이터들
 
-// 바이낸스 소켓 통신 부분
-function binance_connect(){
-    let binance_spot_socket = new WebSocket('wss://stream.binance.com:443/ws/!miniTicker@arr'); // 현물
-    let binance_socket = new WebSocket('wss://fstream.binance.com:443/ws/!ticker@arr'); // 선물
-    binance_socket.onmessage = (e) =>{
+// 바이낸스 선물 소켓 통신 부분
+function binance_future_connect(){
+    let binance_future_socket = new WebSocket('wss://fstream.binance.com:443/ws/!ticker@arr'); // 선물
+    //선물
+    binance_future_socket.onmessage = (e) =>{
         let d = JSON.parse(e.data);
-        binance_socket_datas = d;
+        binance_socket_future_datas = d;
     };
+    //현물
+};
+// 바이낸스 소켓 통신 연결 실행
+binance_future_connect();
+
+function binance_spot_connect(){
+    let binance_spot_socket = new WebSocket('wss://stream.binance.com:443/ws/!miniTicker@arr'); // 현물
+    //현물
     binance_spot_socket.onmessage = (e) =>{
         let d = JSON.parse(e.data);
         binance_socket_spot_datas = d;
     };
 };
-// 바이낸스 소켓 통신 연결 실행
-binance_connect();
+// 바이낸스 현물 소켓 통신 연결 실행
+binance_spot_connect();
 
 // 업비트 소켓 통신 부분
 let upbit_socket; // 업비트 소켓 객체 생성
