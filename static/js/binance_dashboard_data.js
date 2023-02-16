@@ -62,7 +62,7 @@ function coinListSetup(tickerJsonData){
 };
 setTimeout(function() {
         setInterval(function () {
-        coinListSetup(binance_socket_datas);
+            coinListSetup(binance_socket_datas);
     },100);
 }, 1500);
 

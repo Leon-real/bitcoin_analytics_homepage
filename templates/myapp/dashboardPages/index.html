@@ -5,7 +5,7 @@
     <div class="container-fluid px-4">
         <h1 class="main_text"></h1>
         <ol class="breadcrumb mb-4">
-            <li class="sub_main_text" style="display:none;">[Dashboard </li>
+            <li class="sub_main_text" style="display:none;">ㅤ[Dashboard </li>
         </ol>
         <div class="row">
             <div class="col-xl-3 col-md-6">
@@ -15,9 +15,9 @@
                     </div>                                    
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <buttom class="small btn btn-link text-white stretched-link" id="dashbordObject_1">
-                            <progress value="0" max="100" id="FearAndGreedDataProgressbar"></progress><!-- 좀 더 보완 필요 프로그래스 바 -->
+                            <!-- 좀 더 보완 필요 프로그래스 바 -->
+                            <progress value="0" max="100" id="FearAndGreedDataProgressbar"></progress>
                         </buttom>
-                        <div class="small text-white">View Details<i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
@@ -25,8 +25,9 @@
                 <div class="card bg-secondary text-white mb-4">
                     <div class="card-body">강도 지수</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <buttom class="small btn btn-link text-white stretched-link" id="dashbordObject_2">View Details</buttom>                                        
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        <buttom class="small btn btn-link text-white stretched-link" id="dashbordObject_2">
+                            <!-- 프로그래스 이미지 넣기 -->
+                        </buttom>                                        
                     </div>
                 </div>
             </div>
@@ -34,8 +35,9 @@
                 <div class="card bg-secondary text-white mb-4">
                     <div class="card-body">시장 트렌드</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <buttom class="small btn btn-link text-white stretched-link" id="dashbordObject_3">View Details</buttom>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        <buttom class="small btn btn-link text-white stretched-link" id="dashbordObject_3">
+                            <!-- 프로그래스 이미지 넣기 -->
+                        </buttom>
                     </div>
                 </div>
             </div>
@@ -43,8 +45,9 @@
                 <div class="card bg-secondary text-white mb-4">
                     <div class="card-body">비트코인 도미넌스</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <buttom class="small btn btn-link text-white stretched-link" id="dashbordObject_4">View Details</buttom>                                        
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        <buttom class="small btn btn-link text-white stretched-link" id="dashbordObject_4">
+                            <!-- 프로그래스 이미지 넣기 -->
+                        </buttom>                                        
                     </div>
                 </div>
             </div>
@@ -83,6 +86,8 @@
         </div>
     </div>
 </main>
+
+{% endblock %}
 <footer class="py-4 bg-light mt-auto">
     <div class="container-fluid px-4">
         <div class="d-flex align-items-center justify-content-between small">
@@ -95,8 +100,6 @@
         </div>
     </div>
 </footer>
-{% endblock %}
-
 {% block jsfile %}
     <!-- api관련 :  공포 탐욕 -->
     <script src="/static/js/dashbord_api_scripts.js" type="text/javascript"></script>
@@ -104,6 +107,8 @@
     <script src="/static/js/dashboard_same.js" type="text/javascript"></script>
     <!-- 소켓 부분 관련 -->
     <script src="/static/js/dashboard_socket.js" type="text/javascript"></script>
+    <!-- 메인 대시보드 데이터처리 관련-->
+    <script src="/static/js/main_dashboard.js" type="text/javascript"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="/static/js/assets/chart-area-demo.js" type="text/javascript"></script>

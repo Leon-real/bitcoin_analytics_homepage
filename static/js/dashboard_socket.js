@@ -1,13 +1,18 @@
-let binance_socket_datas; // 바이낸스 소켓통신 데이터들
+let binance_socket_datas; // 바이낸스 소켓통신 선물 데이터들
+let binance_socket_spot_datas; // 바이낸스 소켓통신 현물 데이터들
 let upbit_socket_datas; // 업비트 소켓통신 데이터들
 
 // 바이낸스 소켓 통신 부분
 function binance_connect(){
-    // let binance_socket = new WebSocket('wss://stream.binance.com:443/ws/!miniTicker@arr'); // 현물
+    let binance_spot_socket = new WebSocket('wss://stream.binance.com:443/ws/!miniTicker@arr'); // 현물
     let binance_socket = new WebSocket('wss://fstream.binance.com:443/ws/!ticker@arr'); // 선물
     binance_socket.onmessage = (e) =>{
         let d = JSON.parse(e.data);
         binance_socket_datas = d;
+    };
+    binance_spot_socket.onmessage = (e) =>{
+        let d = JSON.parse(e.data);
+        binance_socket_spot_datas = d;
     };
 };
 // 바이낸스 소켓 통신 연결 실행
