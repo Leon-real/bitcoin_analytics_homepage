@@ -1,5 +1,4 @@
-
-
+console.log("test")
 // 바이낸스 테이블 정렬하기
 $('th').each(function (column) {
     $(this).click(function () {
@@ -73,26 +72,26 @@ setInterval(function () {
         }
     });
     // 테이블에서 특정 조건의 행 숨겨주기
-    (function() {
-        var table_set = $('#coin_lists_table')[0]
-        var rowList = table_set.rows;
-        // console.log(rowList)
-        for (i=1; i<rowList.length; i++) {
-            var row = rowList[i];     //thead 부분을 제외하기 위해 i가 1부터 시작됩니다.
-            // var tdsNum = row.childElementCount;     //아래 for문에서 사용하기 위해 row 하위에 존재하는 td의 갯수를 구합니다.
+    // (function() {
+    //     var table_set = $('#coin_lists_table')[0]
+    //     var rowList = table_set.rows;
+    //     // console.log(rowList)
+    //     for (i=1; i<rowList.length; i++) {
+    //         var row = rowList[i];     //thead 부분을 제외하기 위해 i가 1부터 시작됩니다.
+    //         // var tdsNum = row.childElementCount;     //아래 for문에서 사용하기 위해 row 하위에 존재하는 td의 갯수를 구합니다.
 
-            var ticker_name = row.cells[0].innerHTML; // 코인
-            var ticker_spot_price = row.cells[1].innerHTML; // 가격
-            var ticker_future_price = row.cells[2].innerHTML; // 등락 퍼센트
-            var ticker_premium = row.cells[3].innerHTML; // 등락 가격
-            // 만약 등락 퍼센트가 0일 경우 안보이게 하기
-            if (ticker_future_price==0) {
-                row.style.display='none';
-            } else {  // 전부 있을 경우 다시 보여주기
-                row.style.display='';
-            }
+    //         var ticker_name = row.cells[0].innerHTML; // 코인
+    //         var ticker_spot_price = row.cells[1].innerHTML; // 가격
+    //         var ticker_future_price = row.cells[2].innerHTML; // 등락 퍼센트
+    //         var ticker_premium = row.cells[3].innerHTML; // 등락 가격
+    //         // 만약 등락 퍼센트가 0일 경우 안보이게 하기
+    //         if (ticker_future_price==0) {
+    //             row.style.display='none';
+    //         } else {  // 전부 있을 경우 다시 보여주기
+    //             row.style.display='';
+    //         }
 
-            // console.log(ticker_name, ticker_spot_price, ticker_future_price, ticker_premium)
-        };
-    }) ();
+    //         // console.log(ticker_name, ticker_spot_price, ticker_future_price, ticker_premium)
+    //     };
+    // }) ();
 }, 100);

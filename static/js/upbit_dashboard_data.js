@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', event => {
     }, 1000); // 1초마다 갱신
     // 비트코인 김프 => (한국 비트코인가격 / 미국 비트코인 가격) * 환율 * 100 - 100
     setInterval(function () {
-        for (const [key,value] of Object.entries(binance_socket_datas)) {
+        for (const [key,value] of Object.entries(binance_socket_spot_datas)) {
             // s : symbol
             // c : last price
             if (value['s'].includes('BTCUSDT')) { //USDT라는 글자가 있을 경우

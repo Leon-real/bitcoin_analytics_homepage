@@ -24,11 +24,9 @@ window.addEventListener('DOMContentLoaded', event => {
     }, 1000);
 });
 
-
-
 // 바이낸스 코인 리스트 셋업 및 실시간 가격 변동 반영
 function coinListSetup(tickerJsonData){
-    console.log(tickerJsonData);
+    // console.log(tickerJsonData);
     for (const [key, value] of Object.entries(tickerJsonData)){
         // console.log(value)
         // n : total number of trade
@@ -62,7 +60,7 @@ function coinListSetup(tickerJsonData){
 };
 setTimeout(function() {
         setInterval(function () {
-            coinListSetup(binance_socket_spot_datas);
+            coinListSetup(binance_socket_future_datas);
     },100);
 }, 1500);
 
