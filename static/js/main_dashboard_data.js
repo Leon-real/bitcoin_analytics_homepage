@@ -105,21 +105,22 @@ setTimeout((function () {
                                         '<td class =table_current_abroad_price_'+upbit_tickers[i]+'>'+0+'</td>'+
                                         '<td class =table_premium_price_'+upbit_tickers[i]+'>'+0+'</td>'+
                                     '</tr>';
-    }
-    //     listOfTickers_spot_top_10.innerHTML += '<tr>'+
-    //                                 '<td class = spot_top_table_name_'+upbit_tickers[i]+' id=spot_top_10_'+upbit_tickers[i]+'>'+i+'</td>'+
-    //                                 '<td class = spot_top_table_current_price_'+upbit_tickers[i]+'>'+0+'</td>'+
-    //                                 '<td class = spot_top_table_raise_percent'+upbit_tickers[i]+'>'+0+'</td>'+
-    //                             '</tr>';
-    // };
-    // // 선물 상승률 탑 10 데이터 만들기
-    // for (let i in binance_tickers) {
-    //     let temp_name = i.replace("USDT",'');
-    //     listOfTickers_future_top_10.innerHTML += '<tr>'+
-    //                                 '<td class = future_top_table_name_'+temp_name+' id=future_top_10_'+temp_name+'>'+temp_name+'</td>'+
-    //                                 '<td class = future_top_table_current_price_'+temp_name+'>'+0+'</td>'+
-    //                                 '<td class = future_top_table_raise_percent'+temp_name+'>'+0+'</td>'+
-    //                             '</tr>';
-    // };
+
+        listOfTickers_spot_top_10.innerHTML += '<tr>'+
+                                    '<td class = spot_top_table_name_'+upbit_tickers[i]+' id=spot_top_10_'+upbit_tickers[i]+'>'+i+'</td>'+
+                                    '<td class = spot_top_table_current_price_'+upbit_tickers[i]+'>'+0+'</td>'+
+                                    '<td class = spot_top_table_raise_percent'+upbit_tickers[i]+'>'+0+'</td>'+
+                                '</tr>';
+    };
+    // 선물 상승률 탑 10 데이터 만들기
+    for (let i in binance_tickers) {
+        let temp_name = i.replace("USDT",'');
+        listOfTickers_future_top_10.innerHTML += '<tr>'+
+                                    '<td class = future_top_table_name_'+temp_name+' id=future_top_10_'+temp_name+'>'+temp_name+'</td>'+
+                                    '<td class = future_top_table_current_price_'+temp_name+'>'+0+'</td>'+
+                                    '<td class = future_top_table_raise_percent'+temp_name+'>'+0+'</td>'+
+                                '</tr>';
+    };
+
 }), 1500); // 3초 뒤에 테이블 만들기 (왜냐하면 데이터 동신이 너무 빠르다보니 빈 값으로 테이블을 만들면 값이 안만들어지는 경우가 있기 때문에)
 

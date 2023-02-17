@@ -1,7 +1,8 @@
-
+console.log("정렬 테스트중")
 
 // 김치 프리미엄 테이블 정렬하기
-$('th').each(function (column) {
+// console.log($('#premium_tr').children())
+$('#premium_tr').children().each(function (column) {
     $(this).click(function () {
         if ($(this).is('.asc')) {
             $(this).removeClass('asc');
@@ -15,7 +16,9 @@ $('th').each(function (column) {
         $(this).siblings().removeClass('asc');
         $(this).siblings().removeClass('desc');
 
-        var rec = $('table').find('tbody>tr').get();
+        // var rec = $('table').find('tbody>tr').get();
+        var rec = $('#coin_premium_lists_table').find('tbody>tr').get();
+        
         rec.sort(function (a, b) {
             var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
             var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
@@ -27,52 +30,52 @@ $('th').each(function (column) {
             }
         });
         $.each(rec, function (index, row) {
-            $('tbody').append(row);
+            $('#coin_lists_table_body').append(row);
         });
     });
 });
 // 정렬 값 고정하여서 자동 갱신
 setInterval(function () {
     // console.log("t")
-    // $('th').each(function (column){
-    //     // 정렬 부분 고정
-    //     if ($(this).is('.asc')) {
-    //         sortdir = 1;
-    //         var rec = $('table').find('tbody>tr').get();
-    //         rec.sort(function (a, b) {
-    //             var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
-    //             var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
-    //             if (isNaN(val1) || isNaN(val2)){
-    //                 return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
-    //             }
-    //             else {
-    //                 return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
-    //             }
-    //         });
-    //         $.each(rec, function (index, row) {
-    //             $('tbody').append(row);
-    //         });
-    //     } else if (($(this).is('.desc'))) {
-    //         sortdir = -1;
+    // 김치 프리미엄 테이블 정렬 고정
+    $('#premium_tr').children().each(function (column){
+        // 정렬 부분 고정
+        if ($(this).is('.asc')) {
+            sortdir = 1;
+            var rec = $('#coin_premium_lists_table').find('tbody>tr').get();
+            rec.sort(function (a, b) {
+                var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
+                var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
+                if (isNaN(val1) || isNaN(val2)){
+                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+                }
+                else {
+                    return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
+                }
+            });
+            $.each(rec, function (index, row) {
+                $('#coin_lists_table_body').append(row);
+            });
+        } else if (($(this).is('.desc'))) {
+            sortdir = -1;
             
-    //         var rec = $('table').find('tbody>tr').get();
-    //         rec.sort(function (a, b) {
-    //             var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
-    //             var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
-    //             if (isNaN(val1) || isNaN(val2)){
-    //                 return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
-    //             }
-    //             else {
-    //                 return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
-    //             }
-    //         });
-    //         $.each(rec, function (index, row) {
-    //             $('tbody').append(row);
-    //         });
-    //     }
-    // });
-    
-    // 값이 0인 경우 숨김 처리
+            var rec = $('#coin_premium_lists_table').find('tbody>tr').get();
+            rec.sort(function (a, b) {
+                var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
+                var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
+                if (isNaN(val1) || isNaN(val2)){
+                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+                }
+                else {
+                    return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
+                }
+            });
+            $.each(rec, function (index, row) {
+                $('#coin_lists_table_body').append(row);
+            });
+        }
+    });
+    // 김치 프리미엄 테이블 값이 0인 경우 숨김 처리
     (function() {
         var table_set = $('#coin_premium_lists_table')[0]
         var rowList = table_set.rows;
