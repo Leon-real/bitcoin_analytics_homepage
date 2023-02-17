@@ -1,4 +1,6 @@
 
+
+
 window.addEventListener('DOMContentLoaded', event => {
     // Dashboard Summary Charts
     const dashbordObject1 = document.body.querySelector('#dashbordObject_1');
@@ -117,7 +119,7 @@ setTimeout((function () {
         upbit_tickers[i] = upbit_tickers[i].replace("KRW-","");
         listOfTickers.innerHTML += '<tr>'+
                                         '<td class = table_name_'+upbit_tickers[i]+' id='+upbit_tickers[i]+'>'+
-                                        '<img src="https://static.upbit.com/logos/'+upbit_tickers[i]+'.png" onerror="../img/no_img.png"  width="20" height="20">'+
+                                        '<img src="https://static.upbit.com/logos/'+upbit_tickers[i]+'.png" onerror="../img/no.png"  width="20" height="20"/>'+
                                         i+
                                         '</td>'+
                                         '<td class =table_current_price_'+upbit_tickers[i]+'>'+0+'</td>'+
@@ -127,7 +129,7 @@ setTimeout((function () {
 
         listOfTickers_spot_top_10.innerHTML += '<tr>'+
                                     '<td class = spot_top_table_name_'+upbit_tickers[i]+' id=spot_top_10_'+upbit_tickers[i]+'>'+
-                                    '<img src="https://static.upbit.com/logos/'+upbit_tickers[i]+'.png", onerror="../img/no_img.png", width="20",height="20">'+
+                                    '<img src="https://static.upbit.com/logos/'+upbit_tickers[i]+'.png", onerror="../img/no.png" width="20" height="20"/>'+
                                     i+
                                     '</td>'+
                                     '<td class = spot_top_table_current_price_'+upbit_tickers[i]+'>'+0+'</td>'+
@@ -139,7 +141,7 @@ setTimeout((function () {
         let temp_name = i.replace("USDT",'');
         listOfTickers_future_top_10.innerHTML += '<tr>'+
                                     '<td class = future_top_table_name_'+temp_name+' id=future_top_10_'+temp_name+'>'+
-                                    // '<img src="https://static.upbit.com/logos/'+temp_name+'.png" onerror="this.src=\'../img/no_img.png\';" width="20" height="20">'+
+                                    '<img src="../img/no.png" width="20" height="20"/>'+
                                     temp_name+
                                     '</td>'+
                                     '<td class = future_top_table_current_price_'+temp_name+'>'+0+'</td>'+

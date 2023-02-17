@@ -1,3 +1,4 @@
+console.log("img tesitng....")
 // 바이낸스 테이블 정렬하기
 $('th').each(function (column) {
     $(this).click(function () {
@@ -29,7 +30,7 @@ $('th').each(function (column) {
         });
     });
 });
-// 정렬 값 고정하여서 자동 갱신
+// 정렬 값 고정하여서 자동 갱신, 업비트에도 있는 코인을 경우 이미지 불러와주기
 setInterval(function () {
     // console.log("t")
     $('th').each(function (column){
@@ -83,6 +84,18 @@ setInterval(function () {
             var ticker_spot_price = row.cells[1].innerHTML; // 가격
             var ticker_future_price = row.cells[2].innerHTML; // 등락 퍼센트
             var ticker_premium = row.cells[3].innerHTML; // 등락 가격
+
+            // 업비트와 비교하여 업비트에도 있는 코인일 경우 이미지 업로드 해주기
+            // console.log(ticker_name.split(">")[0], ticker_name.split(">")[1])
+            for (temp_i in upbit_tickers) {
+                // 이름이 같을 같고 이미지가 없는 경우
+                if (upbit_tickers[temp_i].replace("KRW-","") == ticker_name.split(">")[1] && ticker_name.split(">")[0]=='<img src="../img/no.png" width="20" height="20"') { 
+                    let temp_coin_name = ticker_name.split(">")[1]
+                    row.cells[0].innerHTML = '<img src="https://static.upbit.com/logos/'+temp_coin_name+'.png" width="20" height="20"/>'+temp_coin_name
+                    break
+                };
+            };
+
             // 만약 등락 퍼센트가 0일 경우 안보이게 하기
             if (ticker_future_price==0) {
                 row.style.display='none';

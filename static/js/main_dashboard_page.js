@@ -217,6 +217,16 @@ setInterval(function () {
             var ticker_name = row.cells[0].innerHTML; // 코인
             var ticker_price = row.cells[1].innerHTML; // 가격
             var ticker_rate = row.cells[2].innerHTML; // 상승률
+            
+            // 업비트와 비교하여 업비트에도 있는 코인일 경우 이미지 업로드 해주기
+            for (temp_i in upbit_tickers) {
+                // 이름이 같을 같고 이미지가 없는 경우
+                if (upbit_tickers[temp_i] == ticker_name.split(">")[1] && ticker_name.split(">")[0]=='<img src="../img/no.png" width="20" height="20"') { 
+                    let temp_coin_name = ticker_name.split(">")[1]
+                    row.cells[0].innerHTML = '<img src="https://static.upbit.com/logos/'+temp_coin_name+'.png" width="20" height="20"/>'+temp_coin_name
+                    break
+                };
+            };
 
             if (i<11) { // 상위 10개만
                 // 만약 안보임 처리 되어 있다면, 보여주기
