@@ -1,4 +1,4 @@
-
+console.log("top 10 add testing")
 
 window.addEventListener('DOMContentLoaded', event => {
     // Dashboard Summary Charts
@@ -41,10 +41,15 @@ let upbit_spot_data; // 업비트 현물 데이터 현재 가격
 function binance_data(binance_data) {
     let temp_data_set = new Object(); //임시 데이터 저장소
     for (const [key, value] of Object.entries(binance_data)) {
+        // console.log(value)
         // 선물 데이터
         if (value['s'].includes('USDT')) {
             // console.log(value['s'], value['c'], value['P'], value['p'], value['Q']);
             temp_data_set[value['s'].replace('USDT','')] = parseFloat(value['c'])
+
+            // 선물 상승률 탑 10 테이블에 넣어주기
+            $('.future_top_table_current_price_'+value['s'].replace("USDT","")).text(value['c']) // 가격
+            $('.future_top_table_raise_percent'+value['s'].replace("USDT","")).text(value['P']) // 상승률
         };
     };
     return temp_data_set
