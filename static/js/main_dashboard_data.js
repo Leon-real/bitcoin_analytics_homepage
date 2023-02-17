@@ -1,4 +1,3 @@
-console.log("top 10 add testing")
 
 window.addEventListener('DOMContentLoaded', event => {
     // Dashboard Summary Charts
