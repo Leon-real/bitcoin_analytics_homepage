@@ -49,7 +49,7 @@ function binance_data(binance_data) {
 
             // 선물 상승률 탑 10 테이블에 넣어주기
             $('.future_top_table_current_price_'+value['s'].replace("USDT","")).text(value['c']) // 가격
-            $('.future_top_table_raise_percent'+value['s'].replace("USDT","")).text(value['P']) // 상승률
+            $('.future_top_table_raise_percent'+value['s'].replace("USDT","")).text(parseFloat(value['P']).toFixed(2)) // 상승률
         };
     };
     return temp_data_set
@@ -65,6 +65,11 @@ function upbit_data_processing(upbit_data) {
             temp_name = value.replace('USDT',"").replace("KRW-","");
             // console.log(value, upbit_data['trade_price'], upbit_data['change'])
             temp_single_data_set[temp_name] = upbit_data['trade_price']
+
+            // 현물 top 10 테이블에 넣어주기
+            $('.spot_top_table_current_price_'+temp_name).text(upbit_data['trade_price'])
+            $('.spot_top_table_raise_percent'+temp_name).text(upbit_data['signed_change_rate'].toFixed(2))
+            
         };
     };
     $('.table_current_price_'+temp_name).text(temp_single_data_set[temp_name])
