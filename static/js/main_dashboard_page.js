@@ -175,5 +175,70 @@ setInterval(function () {
             });
         }
     });
+    // spot top 10 display only 10 tickers
+    (function() {
+        var table_set = $('#spot_top_10_table')[0]
+        var rowList = table_set.rows;
+        // console.log(rowList)
+        for (i=1; i<rowList.length; i++) {
+            var row = rowList[i];     //thead 부분을 제외하기 위해 i가 1부터 시작됩니다.
+            // var tdsNum = row.childElementCount;     //아래 for문에서 사용하기 위해 row 하위에 존재하는 td의 갯수를 구합니다.
+            var ticker_name = row.cells[0].innerHTML; // 코인
+            var ticker_price = row.cells[1].innerHTML; // 가격
+            var ticker_rate = row.cells[2].innerHTML; // 상승률
+
+            if (i<11) { // 상위 10개만
+                // 만약 안보임 처리 되어 있다면, 보여주기
+                if (row.style.display=='none') {
+                    row.style.display='';
+                } else {
+                    row.style.display='';
+                };
+            } else { // 상위 11개 이후의 값들
+                // 만약 보임되어 있다면, 안보여주기
+                if (row.style.display=='') {
+                    row.style.display='none';
+                } else {
+                    row.style.display='none';
+                };
+            };
+            
+
+            // console.log(ticker_name, ticker_spot_price, ticker_future_price, ticker_premium)
+        };
+    }) ();
+    // future top 10 display only 10 tickers
+    (function() {
+        var table_set = $('#future_top_10_table')[0]
+        var rowList = table_set.rows;
+        // console.log(rowList)
+        for (i=1; i<rowList.length; i++) {
+            var row = rowList[i];     //thead 부분을 제외하기 위해 i가 1부터 시작됩니다.
+            // var tdsNum = row.childElementCount;     //아래 for문에서 사용하기 위해 row 하위에 존재하는 td의 갯수를 구합니다.
+            var ticker_name = row.cells[0].innerHTML; // 코인
+            var ticker_price = row.cells[1].innerHTML; // 가격
+            var ticker_rate = row.cells[2].innerHTML; // 상승률
+
+            if (i<11) { // 상위 10개만
+                // 만약 안보임 처리 되어 있다면, 보여주기
+                if (row.style.display=='none') {
+                    row.style.display='';
+                } else {
+                    row.style.display='';
+                };
+            } else { // 상위 11개 이후의 값들
+                // 만약 보임되어 있다면, 안보여주기
+                if (row.style.display=='') {
+                    row.style.display='none';
+                } else {
+                    row.style.display='none';
+                };
+            };
+            
+
+            // console.log(ticker_name, ticker_spot_price, ticker_future_price, ticker_premium)
+        };
+    }) ();
+    
 }, 100);
 
