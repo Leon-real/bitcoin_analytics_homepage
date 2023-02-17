@@ -1,4 +1,3 @@
-console.log("정렬 테스트중")
 
 // 김치 프리미엄 테이블 정렬하기
 // console.log($('#premium_tr').children())

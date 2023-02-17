@@ -106,23 +106,30 @@ setTimeout(function() {
 },3000);
 
 // 김치 프리미엄 테이블 만들기
-const listOfTickers = document.getElementById('coin_lists_table_body');// 바이낸스 티커 정보 보여줄 부분 만들기
-const listOfTickers_future_top_10 = document.getElementById('future_top_10_table_body');// 바이낸스 티커 정보 보여줄 부분 만들기
-const listOfTickers_spot_top_10 = document.getElementById('spot_top_10_table_body');// 바이낸스 티커 정보 보여줄 부분 만들기
+const listOfTickers = document.getElementById('coin_lists_table_body');// 김치프리미엄 테이블
+const listOfTickers_future_top_10 = document.getElementById('future_top_10_table_body');// 선물 탑10 테이블
+const listOfTickers_spot_top_10 = document.getElementById('spot_top_10_table_body');// 현물 탑10 테이블
+
 setTimeout((function () {
     // 김치프리미엄 테이블 만들기, 현물 상승률 탑10 테이블 만들기
     for (let i in upbit_tickers){
         let before_replace = upbit_tickers[i];
         upbit_tickers[i] = upbit_tickers[i].replace("KRW-","");
         listOfTickers.innerHTML += '<tr>'+
-                                        '<td class = table_name_'+upbit_tickers[i]+' id='+upbit_tickers[i]+'>'+i+'</td>'+
+                                        '<td class = table_name_'+upbit_tickers[i]+' id='+upbit_tickers[i]+'>'+
+                                        '<img src="https://static.upbit.com/logos/'+upbit_tickers[i]+'.png" onerror="../img/no_img.png"  width="20" height="20">'+
+                                        i+
+                                        '</td>'+
                                         '<td class =table_current_price_'+upbit_tickers[i]+'>'+0+'</td>'+
                                         '<td class =table_current_abroad_price_'+upbit_tickers[i]+'>'+0+'</td>'+
                                         '<td class =table_premium_price_'+upbit_tickers[i]+'>'+0+'</td>'+
                                     '</tr>';
 
         listOfTickers_spot_top_10.innerHTML += '<tr>'+
-                                    '<td class = spot_top_table_name_'+upbit_tickers[i]+' id=spot_top_10_'+upbit_tickers[i]+'>'+i+'</td>'+
+                                    '<td class = spot_top_table_name_'+upbit_tickers[i]+' id=spot_top_10_'+upbit_tickers[i]+'>'+
+                                    '<img src="https://static.upbit.com/logos/'+upbit_tickers[i]+'.png", onerror="../img/no_img.png", width="20",height="20">'+
+                                    i+
+                                    '</td>'+
                                     '<td class = spot_top_table_current_price_'+upbit_tickers[i]+'>'+0+'</td>'+
                                     '<td class = spot_top_table_raise_percent'+upbit_tickers[i]+'>'+0+'</td>'+
                                 '</tr>';
@@ -131,7 +138,10 @@ setTimeout((function () {
     for (let i in binance_tickers) {
         let temp_name = i.replace("USDT",'');
         listOfTickers_future_top_10.innerHTML += '<tr>'+
-                                    '<td class = future_top_table_name_'+temp_name+' id=future_top_10_'+temp_name+'>'+temp_name+'</td>'+
+                                    '<td class = future_top_table_name_'+temp_name+' id=future_top_10_'+temp_name+'>'+
+                                    // '<img src="https://static.upbit.com/logos/'+temp_name+'.png" onerror="this.src=\'../img/no_img.png\';" width="20" height="20">'+
+                                    temp_name+
+                                    '</td>'+
                                     '<td class = future_top_table_current_price_'+temp_name+'>'+0+'</td>'+
                                     '<td class = future_top_table_raise_percent'+temp_name+'>'+0+'</td>'+
                                 '</tr>';

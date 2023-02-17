@@ -72,7 +72,10 @@ setTimeout((function () {
         let before_replace = i;
         i = i.replace("USDT","");
         listOfTickers.innerHTML += '<tr>'+
-                                        '<td class =table_name_'+i+'>'+i+'</td>'+
+                                        '<td class =table_name_'+i+'>'+
+                                        // '<img src="https://static.upbit.com/logos/'+i+'.png" onerror="../img/no_img.png" width="20" height="20">'+
+                                        i+
+                                        '</td>'+
                                         '<td class =table_price_'+i+'>'+binance_tickers[before_replace]+'</td>'+
                                         '<td class =table_change_rate_'+i+'>'+'0'+'</td>'+
                                         '<td class =table_change_price_'+i+'>'+'0'+'</td>'+

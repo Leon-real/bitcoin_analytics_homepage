@@ -1,4 +1,4 @@
-
+console.log("img testing")
 
 window.addEventListener('DOMContentLoaded', event => {
     // 현재 시간 및 비트코인 현재 가격
@@ -112,7 +112,10 @@ const listOfTickers = document.getElementById('coin_lists_table_body');// 업비
 setTimeout((function () {
     for (let i in upbit_tickers){
         listOfTickers.innerHTML += '<tr>'+
-                                        '<td class =table_name_'+upbit_tickers[i]+'>'+i+'</td>'+
+                                        '<td class =table_name_'+upbit_tickers[i]+'>'+
+                                        '<img src="https://static.upbit.com/logos/'+upbit_tickers[i].replace("KRW-",'')+'.png" onerror="../img/no_img.png" width="20" height="20">'+
+                                        i+
+                                        '</td>'+
                                         '<td class =table_price_'+upbit_tickers[i]+'>'+0+'</td>'+
                                         '<td class =table_change_rate_'+upbit_tickers[i]+'>'+'0'+'</td>'+
                                         '<td class =table_change_price_'+upbit_tickers[i]+'>'+'0'+'</td>'+
