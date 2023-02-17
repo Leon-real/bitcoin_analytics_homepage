@@ -99,7 +99,7 @@ setInterval(function () {
         };
     }) ();
 
-    // spot top 10
+    // spot top 10 고정 정렬
     $('#spot_top_10_tr').children().each(function (column){
         // 정렬 부분 고정
         if ($(this).is('.asc')) {
@@ -137,7 +137,7 @@ setInterval(function () {
             });
         }
     });
-    // future top 10
+    // future top 10 고정 정렬
     $('#future_top_10_tr').children().each(function (column){
         // 정렬 부분 고정
         if ($(this).is('.asc')) {
