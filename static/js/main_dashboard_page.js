@@ -98,5 +98,82 @@ setInterval(function () {
             // console.log(ticker_name, ticker_spot_price, ticker_future_price, ticker_premium)
         };
     }) ();
+
+    // spot top 10
+    $('#spot_top_10_tr').children().each(function (column){
+        // 정렬 부분 고정
+        if ($(this).is('.asc')) {
+            sortdir = 1;
+            var rec = $('#spot_top_10_table').find('tbody>tr').get();
+            rec.sort(function (a, b) {
+                var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
+                var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
+                if (isNaN(val1) || isNaN(val2)){
+                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+                }
+                else {
+                    return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
+                }
+            });
+            $.each(rec, function (index, row) {
+                $('#spot_top_10_table_body').append(row);
+            });
+        } else if (($(this).is('.desc'))) {
+            sortdir = -1;
+            
+            var rec = $('#spot_top_10_table').find('tbody>tr').get();
+            rec.sort(function (a, b) {
+                var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
+                var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
+                if (isNaN(val1) || isNaN(val2)){
+                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+                }
+                else {
+                    return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
+                }
+            });
+            $.each(rec, function (index, row) {
+                $('#spot_top_10_table_body').append(row);
+            });
+        }
+    });
+    // future top 10
+    $('#future_top_10_tr').children().each(function (column){
+        // 정렬 부분 고정
+        if ($(this).is('.asc')) {
+            sortdir = 1;
+            var rec = $('#future_top_10_table').find('tbody>tr').get();
+            rec.sort(function (a, b) {
+                var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
+                var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
+                if (isNaN(val1) || isNaN(val2)){
+                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+                }
+                else {
+                    return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
+                }
+            });
+            $.each(rec, function (index, row) {
+                $('#future_top_10_table_body').append(row);
+            });
+        } else if (($(this).is('.desc'))) {
+            sortdir = -1;
+            
+            var rec = $('#future_top_10_table').find('tbody>tr').get();
+            rec.sort(function (a, b) {
+                var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
+                var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
+                if (isNaN(val1) || isNaN(val2)){
+                    return (val1 < val2) ? -sortdir : (val1 > val2) ? sortdir : 0;
+                }
+                else {
+                    return (parseFloat(val1) < parseFloat(val2)) ? -sortdir : (parseFloat(val1) > parseFloat(val2)) ? sortdir : 0;
+                }
+            });
+            $.each(rec, function (index, row) {
+                $('#future_top_10_table_body').append(row);
+            });
+        }
+    });
 }, 100);
 

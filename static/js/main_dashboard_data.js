@@ -45,10 +45,16 @@ function binance_data(binance_data) {
         if (value['s'].includes('USDT')) {
             // console.log(value['s'], value['c'], value['P'], value['p'], value['Q']);
             temp_data_set[value['s'].replace('USDT','')] = parseFloat(value['c'])
-
+            let temp_per;
             // 선물 상승률 탑 10 테이블에 넣어주기
+            if (typeof value['P'] == "undefined" || value['P'] == null || value['P'] == "") {
+                temp_per = 0
+            } else {
+                temp_per = parseFloat(value['P']).toFixed(2)
+            }
+            // console.log(value['s'], value['P'], temp_per)
             $('.future_top_table_current_price_'+value['s'].replace("USDT","")).text(value['c']) // 가격
-            $('.future_top_table_raise_percent'+value['s'].replace("USDT","")).text(parseFloat(value['P']).toFixed(2)) // 상승률
+            $('.future_top_table_raise_percent'+value['s'].replace("USDT","")).text(temp_per) // 상승률
         };
     };
     return temp_data_set
