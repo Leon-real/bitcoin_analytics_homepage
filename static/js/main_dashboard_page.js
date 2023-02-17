@@ -1,6 +1,6 @@
 
 
-// 테이블 정렬하기
+// 프리미엄 테이블 정렬하기
 $('th').each(function (column) {
     $(this).click(function () {
         if ($(this).is('.asc')) {
