@@ -30,7 +30,6 @@ window.addEventListener('DOMContentLoaded', event => {
             document.getElementById('index_dashboradchart1').innerHTML = '비트코인 도미넌스 차트'
         });
     } // 비트코인 도미넌스 부분
-
 });
 
 
