@@ -1,4 +1,4 @@
-console.log("img tesitng....")
+
 // 바이낸스 테이블 정렬하기
 $('th').each(function (column) {
     $(this).click(function () {
@@ -71,7 +71,7 @@ setInterval(function () {
             });
         }
     });
-    // 테이블에서 특정 조건의 행 숨겨주기
+    // 테이블에서 특정 조건의 행 숨겨주기 및 이미지넣어주기
     (function() {
         var table_set = $('#coin_lists_table')[0]
         var rowList = table_set.rows;
@@ -87,9 +87,11 @@ setInterval(function () {
 
             // 업비트와 비교하여 업비트에도 있는 코인일 경우 이미지 업로드 해주기
             // console.log(ticker_name.split(">")[0], ticker_name.split(">")[1])
+            let no_img_path;
             for (temp_i in upbit_tickers) {
+                no_img_path = '../../../static/imgFolder/no.png' // 에러이미지 path
                 // 이름이 같을 같고 이미지가 없는 경우
-                if (upbit_tickers[temp_i].replace("KRW-","") == ticker_name.split(">")[1] && ticker_name.split(">")[0]=='<img src="../img/no.png" width="20" height="20"') { 
+                if (upbit_tickers[temp_i].replace("KRW-","") == ticker_name.split(">")[1] && ticker_name.split(">")[0]=='<img src="'+no_img_path+'" width="20" height="20"') { 
                     let temp_coin_name = ticker_name.split(">")[1]
                     row.cells[0].innerHTML = '<img src="https://static.upbit.com/logos/'+temp_coin_name+'.png" width="20" height="20"/>'+temp_coin_name
                     break

@@ -206,7 +206,7 @@ setInterval(function () {
             // console.log(ticker_name, ticker_spot_price, ticker_future_price, ticker_premium)
         };
     }) ();
-    // future top 10 display only 10 tickers
+    // future top 10 display only 10 tickers and upload img
     (function() {
         var table_set = $('#future_top_10_table')[0]
         var rowList = table_set.rows;
@@ -218,10 +218,12 @@ setInterval(function () {
             var ticker_price = row.cells[1].innerHTML; // 가격
             var ticker_rate = row.cells[2].innerHTML; // 상승률
             
-            // 업비트와 비교하여 업비트에도 있는 코인일 경우 이미지 업로드 해주기
+            // 이미지가 없을경우 업비트와 비교하여 업비트에도 있는 코인일 경우 이미지 업로드 해주기
+            let no_img_path;
             for (temp_i in upbit_tickers) {
+                no_img_path = '../../../static/imgFolder/no.png' // 에러이미지 path
                 // 이름이 같을 같고 이미지가 없는 경우
-                if (upbit_tickers[temp_i] == ticker_name.split(">")[1] && ticker_name.split(">")[0]=='<img src="../img/no.png" width="20" height="20"') { 
+                if (upbit_tickers[temp_i].replace("KRW-","") == ticker_name.split(">")[1] && ticker_name.split(">")[0]=='<img src="'+no_img_path+'" width="20" height="20"') { 
                     let temp_coin_name = ticker_name.split(">")[1]
                     row.cells[0].innerHTML = '<img src="https://static.upbit.com/logos/'+temp_coin_name+'.png" width="20" height="20"/>'+temp_coin_name
                     break

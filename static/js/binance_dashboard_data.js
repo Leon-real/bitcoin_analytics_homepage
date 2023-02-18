@@ -67,13 +67,14 @@ setTimeout(function() {
 // binance_tickers 변수를 활용하여, 바이낸스 티커 정보 테이블 만들기
 const listOfTickers = document.getElementById('coin_lists_table_body');// 바이낸스 티커 정보 보여줄 부분 만들기
 setTimeout((function () {
+    let no_img_path = '../../../static/imgFolder/no.png'
     for (let i in binance_tickers){
         // console.log(i, binance_tickers[i])
         let before_replace = i;
         i = i.replace("USDT","");
         listOfTickers.innerHTML += '<tr>'+
                                         '<td class =table_name_'+i+'>'+
-                                        '<img src="../img/no.png" width="20" height="20"/>'+
+                                        '<img src="'+no_img_path+'" width="20" height="20"/>'+
                                         i+
                                         '</td>'+
                                         '<td class =table_price_'+i+'>'+binance_tickers[before_replace]+'</td>'+
