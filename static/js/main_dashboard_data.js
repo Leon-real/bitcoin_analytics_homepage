@@ -60,7 +60,7 @@ function binance_get_data(binance_data) {
     };
     return temp_data_set
 };
-// 업비트 데이터 {티커:현재가격} 가지고 오기 및 테이블에 적어주기
+// 업비트 데이터 {티커:현재가격} 가지고 오기 및 테이블에 적어주기, 시장 트랜드 적용해주기
 function upbit_data_processing(upbit_data) {
     let temp_single_data_set = new Object(); //임시 데이터 저장소
     let temp_name;
@@ -71,11 +71,19 @@ function upbit_data_processing(upbit_data) {
             temp_name = value.replace('USDT',"").replace("KRW-","");
             // console.log(value, upbit_data['trade_price'], upbit_data['change'])
             temp_single_data_set[temp_name] = upbit_data['trade_price']
-
             // 현물 top 10 테이블에 넣어주기
             $('.spot_top_table_current_price_'+temp_name).text(upbit_data['trade_price'])
             $('.spot_top_table_raise_percent'+temp_name).text(upbit_data['signed_change_rate'].toFixed(2))
-            
+
+            // 시장 트랜드 적용하기 (비트코인 전날대비 어떠한지)
+            if (value=='BTC' && upbit_data['change']=='RISE') { //상승
+                console.log("")
+                $('#TrendIndexOfMarket').text('상승장 RISE').css('color','#00DD00');
+            } else if (value=='BTC' && upbit_data['change']=='FALL') { // 하락
+                $('#TrendIndexOfMarket').text('하락장 FALL').css('color','red');
+            } else { // 보합
+                $('#TrendIndexOfMarket').text('횡보장 EVEN').css('color','black');
+            };
         };
     };
     // 김치 프리미엄 테이블 현물 가격에 넣어주기
@@ -112,7 +120,6 @@ function binance_spot_data_processing(binance_data) {
             // $('.table_current_abroad_price_'+key).css('color','red');
         };
         
-
     };
 };
 // 데이터 처리해주기 {티커명:현재가}
