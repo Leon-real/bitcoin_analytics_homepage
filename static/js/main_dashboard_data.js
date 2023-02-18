@@ -32,7 +32,6 @@ window.addEventListener('DOMContentLoaded', event => {
     } // 비트코인 도미넌스 부분
 });
 
-
 let binance_future_data; // 바이낸스 선물 데이터 현재 가격
 let binance_spot_data; // 바이낸스 현물 데이터 현재 가격
 let upbit_spot_data; // 업비트 현물 데이터 현재 가격
