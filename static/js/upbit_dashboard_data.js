@@ -1,4 +1,4 @@
-console.log("img testing")
+
 
 window.addEventListener('DOMContentLoaded', event => {
     // 현재 시간 및 비트코인 현재 가격

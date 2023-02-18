@@ -11,25 +11,25 @@ window.addEventListener('DOMContentLoaded', event => {
             console.log('공포 / 탐욕 지수 차트 표시');
             document.getElementById('index_dashboradchart1').innerHTML = '공포 / 탐욕 지수 차트'
         });
-    }
+    } // 공포 탑욕 지수 부분
     if (dashbordObject2) {
         dashbordObject2.addEventListener('click', event => {
             console.log('강도 지수 차트 표시');
             document.getElementById('index_dashboradchart1').innerHTML = '상대 강도 지수 차트'
         });
-    }
+    } // 상대 강도 지수 부분
     if (dashbordObject3) {
         dashbordObject3.addEventListener('click', event => {
             console.log('시장 트렌드 차트 표시');
             document.getElementById('index_dashboradchart1').innerHTML = '시장 트렌드 차트'
         });
-    }
+    } // 시장 트렌드 부분
     if (dashbordObject4) {
         dashbordObject4.addEventListener('click', event => {
             console.log('비트코인 도미넌스 차트 표시');
             document.getElementById('index_dashboradchart1').innerHTML = '비트코인 도미넌스 차트'
         });
-    }
+    } // 비트코인 도미넌스 부분
 
 });
 
@@ -38,7 +38,7 @@ let binance_future_data; // 바이낸스 선물 데이터 현재 가격
 let binance_spot_data; // 바이낸스 현물 데이터 현재 가격
 let upbit_spot_data; // 업비트 현물 데이터 현재 가격
 // 바이낸스 선물 데이터 {티커:현재가격} 가지고 오기
-function binance_data(binance_data) {
+function binance_get_data(binance_data) {
     let temp_data_set = new Object(); //임시 데이터 저장소
     for (const [key, value] of Object.entries(binance_data)) {
         // console.log(value)
@@ -78,6 +78,7 @@ function upbit_data_processing(upbit_data) {
             
         };
     };
+    // 김치 프리미엄 테이블 현물 가격에 넣어주기
     $('.table_current_price_'+temp_name).text(temp_single_data_set[temp_name])
     return temp_single_data_set
 };
@@ -89,17 +90,36 @@ function binance_spot_data_processing(binance_data) {
         $('.table_current_abroad_price_'+key).text(price)
         // 김치 프리미엄 적어주기
         const foregine_price = price * exchange_rate_price
-        const premiun_price =  ((($('.table_current_price_'+key).text() / foregine_price) * 100) - 100).toFixed(2);
+        let premiun_price =  ((($('.table_current_price_'+key).text() / foregine_price) * 100) - 100).toFixed(2);
         // console.log(exchange_rate_price, foregine_price, premiun_price)
+        // -100% 인 경우 데이터 값 수정해주기
+        if (premiun_price == -100.00){
+            // console.log("value error", ((($('.table_current_price_'+key).text() / foregine_price) * 100) - 100).toFixed(2))
+            // console.log(premiun_price, typeof(premiun_price))
+            premiun_price = ((($('.table_current_price_'+key).text() / foregine_price) * 100).toFixed(2))
+        }
+        // 김치프리미엄 테이블에 데이터 넣어주기
         $('.table_premium_price_'+key).text(premiun_price)
+
+        // 김치프리미엄의 양수 음수 여부에 따라 색상 변경해주기
+        if (premiun_price > 0){// 양수일 경우
+            $('.table_premium_price_'+key).text(premiun_price).css('color','#00DD00');
+            // $('.table_current_price_'+key).css('color','#00DD00');
+            // $('.table_current_abroad_price_'+key).css('color','#00DD00');
+        } else if (premiun_price < 0) { // 음수일 경우
+            $('.table_premium_price_'+key).text(premiun_price).css('color','red');
+            // $('.table_current_price_'+key).css('color','red');
+            // $('.table_current_abroad_price_'+key).css('color','red');
+        };
+        
 
     };
 };
 // 데이터 처리해주기 {티커명:현재가}
 setTimeout(function() {
     setInterval(function() {
-        binance_spot_data = binance_data(binance_socket_spot_datas);
-        binance_future_data = binance_data(binance_socket_future_datas);
+        binance_spot_data = binance_get_data(binance_socket_spot_datas);
+        binance_future_data = binance_get_data(binance_socket_future_datas);
         upbit_spot_data = upbit_data_processing(upbit_socket_datas);
 
         binance_spot_data_processing(binance_spot_data);
@@ -120,7 +140,7 @@ setTimeout((function () {
         listOfTickers.innerHTML += '<tr>'+
                                         '<td class = table_name_'+upbit_tickers[i]+' id='+upbit_tickers[i]+'>'+
                                         '<img src="https://static.upbit.com/logos/'+upbit_tickers[i]+'.png" onerror="this.src=\''+no_img_path+'\'"  width="20" height="20"/>'+
-                                        i+
+                                        i+' ('+upbit_tickers[i]+')'+
                                         '</td>'+
                                         '<td class =table_current_price_'+upbit_tickers[i]+'>'+0+'</td>'+
                                         '<td class =table_current_abroad_price_'+upbit_tickers[i]+'>'+0+'</td>'+
@@ -130,7 +150,7 @@ setTimeout((function () {
         listOfTickers_spot_top_10.innerHTML += '<tr>'+
                                     '<td class = spot_top_table_name_'+upbit_tickers[i]+' id=spot_top_10_'+upbit_tickers[i]+'>'+
                                     '<img src="https://static.upbit.com/logos/'+upbit_tickers[i]+'.png" onerror="this.src=\''+no_img_path+'\'" width="20" height="20"/>'+
-                                    i+
+                                    i+' ('+upbit_tickers[i]+')'+
                                     '</td>'+
                                     '<td class = spot_top_table_current_price_'+upbit_tickers[i]+'>'+0+'</td>'+
                                     '<td class = spot_top_table_raise_percent'+upbit_tickers[i]+'>'+0+'</td>'+

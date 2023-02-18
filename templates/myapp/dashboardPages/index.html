@@ -55,6 +55,7 @@
                 </div>
             </div>
         </div>
+        <!-- 테스트 그래프 -->
         <div class="row">
             <div class="col-xl-6">
                 <div class="card mb-4">
@@ -67,8 +68,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Top 10 상승률 테이블  -->
+        <div class="row">
             <!-- 현물 Top 10 table -->
-            <div class="col-xl-6">
+            <div class="col-xl-5">
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-bar me-1"></i>
@@ -78,9 +82,9 @@
                         <table class='dataTable-table' id="spot_top_10_table">
                             <thead>
                                 <tr id='spot_top_10_tr'>
-                                    <th>코인</th>
-                                    <th>가격</th>
-                                    <th class="desc">상승률</th>
+                                    <th>암호화폐 (약어)</th>
+                                    <th>가격 (₩ KRW)</th>
+                                    <th class="desc">상승률 (%)</th>
                                 </tr>
                             </thead>
                             <tbody id="spot_top_10_table_body">
@@ -90,7 +94,7 @@
                 </div>
             </div>
             <!-- 선물 Top 10 table -->
-            <div class="col-xl-6">
+            <div class="col-xl-5">
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-bar me-1"></i>
@@ -100,9 +104,9 @@
                         <table class='dataTable-table' id="future_top_10_table">
                             <thead>
                                 <tr id="future_top_10_tr">
-                                    <th>코인</th>
-                                    <th>가격</th>
-                                    <th class="desc">상승률</th>
+                                    <th>암호화폐 약어</th>
+                                    <th>가격 ($ USDT)</th>
+                                    <th class="desc">상승률 (%)</th>
                                 </tr>
                             </thead>
                             <tbody id="future_top_10_table_body">
@@ -116,16 +120,16 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                김치 프리미엄 확인하기 (현물 기준)
+                김치 프리미엄 확인하기 (현물 기준) : 초록이면 한국이 비쌈, 빨강색이면 해외가 비쌈
             </div>
             <div class="card-body">
                 <table class='dataTable-table' id="coin_premium_lists_table">
                     <thead>
                         <tr id="premium_tr">
-                            <th>코인</th>
-                            <th>현물 가격</th>
-                            <th>해외 가격</th>
-                            <th>김치 프리미엄</th>
+                            <th>암호화폐 (약어)</th>
+                            <th>현물 가격 (₩ KRW)</th>
+                            <th>해외 가격 ($ USDT)</th>
+                            <th>김치 프리미엄 (%)</th>
                         </tr>
                     </thead>
                     <tbody id="coin_lists_table_body">
