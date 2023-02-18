@@ -76,7 +76,6 @@ function upbit_data_processing(upbit_data) {
 
             // 시장 트랜드 적용하기 (비트코인 전날대비 어떠한지)
             if (value=='BTC' && upbit_data['change']=='RISE') { //상승
-                console.log("")
                 $('#TrendIndexOfMarket').text('상승장 RISE').css('color','#00DD00');
             } else if (value=='BTC' && upbit_data['change']=='FALL') { // 하락
                 $('#TrendIndexOfMarket').text('하락장 FALL').css('color','red');
