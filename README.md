@@ -1,7 +1,9 @@
 # Bitcoin Analytics Homepage
-- [History of this project](#time-line-of-this-project)
-- [See Image of Homepage](#homepage-image)   
-- If you have any questions or something, just ask [Contact](#contact-with)   
+- If you want to see more about this project.  
+    [History of this project](#time-line-of-this-project)  
+    [See the Image of Homepage](#homepage-image)   
+- If you have any questions or something, just ask and send e-mail.  
+    [Contact](#contact-with)   
 - [API Refference Site](#api-받아오는-참고-사이트)
 - [Notices](#notices)
 
