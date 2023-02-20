@@ -1,4 +1,29 @@
 # Bitcoin Analytics Homepage
+- [History of this project](#time-line-of-this-project)
+- [See Image of Homepage](#homepage-image)   
+
+
+- [Contact](#contact-with)   
+
+
+- [API Refference Site](#api-받아오는-참고-사이트)
+- [Notices](#notices)
+
+# Time Line of This Project
+- [Public Notion Link](https://realleonsnotebook.notion.site/Crypto-Currency-Analystics-Homepage-e40f502468fa47cc9cd5fa54107560e2)  
+    You can see the history of this project imags and code progress.
+
+  
+### api 받아오는 참고 사이트
+- [Fear and Greedy index (공포 탐욕 지표)](https://alternative.me/crypto/api/)
+- [Upbit official API documents (업비트 공식 API 문서)](https://docs.upbit.com/docs)
+- [Binance official API documents (바이낸스 공식 API 문서)](https://binance-docs.github.io/apidocs/futures/en/#general-info)
+
+### Contact with
+- E-mail  
+    tutmr999@naver.com   
+
+### Homepage Image
 1. Current Main Dashboard page   
     <details>
     <summary>Image</summary>
@@ -17,19 +42,6 @@
     <img src="./site_image/Future_page.png" width="600px" height="300px" title="Summary" alt="Summary"></img><br/>
     </details>
 
-# Time Line of This Project
-- [Public Notion Link](https://realleonsnotebook.notion.site/Crypto-Currency-Analystics-Homepage-e40f502468fa47cc9cd5fa54107560e2)  
-    You can see the history of this project imags and code progress.
-
-  
-### api 받아오는 참고 사이트
-- [Fear and Greedy index (공포 탐욕 지표)](https://alternative.me/crypto/api/)
-- [Upbit official API documents (업비트 공식 API 문서)](https://docs.upbit.com/docs)
-- [Binance official API documents (바이낸스 공식 API 문서)](https://binance-docs.github.io/apidocs/futures/en/#general-info)
-
-### Contact with
-- E-mail  
-    tutmr999@naver.com
 
 ### Notices
 - Secrete Key  
