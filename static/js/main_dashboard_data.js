@@ -78,7 +78,7 @@ function upbit_data_processing(upbit_data) {
                 $('#TrendIndexOfMarket').text('상승장 RISE').css('color','#00DD00');
             } else if (value=='BTC' && upbit_data['change']=='FALL') { // 하락
                 $('#TrendIndexOfMarket').text('하락장 FALL').css('color','red');
-            } else { // 보합
+            } else if (value=='BTC' && upbit_data['change']=='EVEN') { // 보합
                 $('#TrendIndexOfMarket').text('횡보장 EVEN').css('color','black');
             };
         };

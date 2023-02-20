@@ -79,3 +79,13 @@ window.addEventListener('DOMContentLoaded', event => {
             })
         .catch((err) => console.error(err));
 })();
+
+// 색상 바꿔주기 (255,255,0) => rgbToHex(255,255,0); // ffff0
+function valueToHex(c) {
+    var hex = c.toString(16);
+    return hex
+}
+// rgb를 Hex로 변환하기
+function rgbToHex(r, g, b) {
+    return (valueToHex(r) + valueToHex(g) + valueToHex(b));
+}

@@ -15,9 +15,19 @@ window.addEventListener('DOMContentLoaded', event => {
             .then(response => response.json())
             .then(data => {
                 // console.log(data)
-                const value = data.data[0]['value'] // api value 값 가져오기
-                console.log(value)
-                document.getElementById('FearAndGreedData').innerHTML = value
+                const value = data.data[0]['value']; // api value 값 가져오기
+                // console.log(value)
+
+
+                // 색상 설정
+                let green_rate = parseInt(255 * (value /100));
+                let red_rate = parseInt(255*(1 - (value / 100)));
+                let hex_color_rate = '#'+rgbToHex(red_rate, green_rate, 255);
+                
+                // 데이터 입력
+                $('#FearAndGreedData').text(value).css('color', hex_color_rate);
+                $('#FearAndGreedData_End').css('color', hex_color_rate);
+                // document.getElementById('FearAndGreedData').innerHTML = value
             })
             .catch(error => console.log(error));
     }, 1000*60*60*12); 
@@ -51,7 +61,7 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     }, 1000*60*60); // 12시간에 한번씩 업데이트
     
-    //RSI => 30분마다 갱신(30분봉으로 갱신한다)
+    //RSI, 생명선 => 30분마다 갱신(30분봉으로 갱신한다)
     startInterval(function () {
         const rsi_index_of_30_days = {
             method: "get"
@@ -65,14 +75,73 @@ window.addEventListener('DOMContentLoaded', event => {
                 
                 // rsi 계산해주기
                 const rsi = calculateRSI(close_prices).toFixed(2);
+                // ema 계산해주기 => 생명선
+                const ema = EMACalc(close_prices,20);
+                let life_line; // 생명선
+                let life_line_color; //생명선 색상
+                let cal_percentOfLifeLine = parseFloat(close_prices[close_prices.length-1]).toFixed(2) / parseFloat(ema[ema.length-1]).toFixed(2);
+                if (cal_percentOfLifeLine*100 <= 90) { //현재 가격이 EMA보다 10% 아래에 있는 경우
+                    life_line = 'Under Life Line';
+                    life_line_color = 'red';
+                } else if (cal_percentOfLifeLine*100 >= 110 ) { // 현재 가격이 EMA보다 10% 위에 있는 경우
+                    life_line = 'Above Life Line';
+                    life_line_color = 'greed';
+                } else {
+                    life_line = 'Around Life Line';
+                    life_line_color = 'black';
+                }
                 
+
                 // 데이터 넣기
-                document.getElementById('RsiIndexOf30Days').innerHTML = rsi
+                document.getElementById('RsiIndexOf30Minutes').innerHTML = rsi;
+                document.getElementById('LifeIndexOfMarket').innerHTML = life_line;
+                
+                // 색상 옵션
+                $('#LifeIndexOfMarket').css('color', life_line_color);
+                
+                
+                // rsi 부분
+                let green_rate = parseInt(255 * (rsi /100));
+                let red_rate = parseInt(255*(1 - (rsi / 100)));
+                let hex_color_rate = '#'+rgbToHex(red_rate, green_rate, 255);
+                
+                $('#RsiIndexOf30Minutes').css('color', hex_color_rate);
+                $('#RsiIndexOf30Minutes_End').css('color', hex_color_rate);
             })
             .catch(error => console.log(error));
         }, 1000*60*30); // 30분에 한번씩 업데이트
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 퀀트 계산 부분
+// EMA구하기
+function EMACalc(mArray, mRange) {
+    var k = 2 / (mRange + 1);
+    // first item is just the same as the first item in the input
+    let emaArray = [mArray[0]];
+    // for the rest of the items, they are computed with the previous one
+    for (var i = 1; i < mArray.length; i++) {
+        emaArray.push(mArray[i] * k + emaArray[i - 1] * (1 - k));
+    }
+    return emaArray;
+}
 
 // rsi 계산해주기 인자값으로 종가 배열을 받는다.
 function calculateRSI(closingPrices) {
