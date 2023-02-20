@@ -13,17 +13,14 @@ const typing_text = ' Bitcoin ! ! !]          ';
 const main_text = $('.main_text');
 const full_text = sub_main_text+typing_text;
 let index = 0;
-function typing_bitcoin() {
+startInterval(function typing_bitcoin() {// 시작
     main_text.text(main_text.text()+ full_text[index++]);
     if (index > full_text.length){
         console.log()
         main_text.text("ㅤ");
         index = 0;
     }
-};
-
-setInterval(typing_bitcoin, 100);
-// 타이핑 효과 
+}, 100);
 
 // 환율 업데이트
 window.addEventListener('DOMContentLoaded', event => {
@@ -80,12 +77,6 @@ window.addEventListener('DOMContentLoaded', event => {
         .catch((err) => console.error(err));
 })();
 
-// 색상 바꿔주기 (255,255,0) => rgbToHex(255,255,0); // ffff0
-function valueToHex(c) {
-    var hex = c.toString(16);
-    return hex
-}
-// rgb를 Hex로 변환하기
-function rgbToHex(r, g, b) {
-    return (valueToHex(r) + valueToHex(g) + valueToHex(b));
-}
+
+
+
