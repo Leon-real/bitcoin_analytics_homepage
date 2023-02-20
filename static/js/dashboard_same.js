@@ -28,16 +28,7 @@ setInterval(typing_bitcoin, 100);
 // 환율 업데이트
 window.addEventListener('DOMContentLoaded', event => {
     // 환율 부분
-    //환율 정보 초기에 한번 업데이트 해주기
-    // console.log("[Update Exchange Rate]")
-    fetch('https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD')
-        .then((response) => response.json())
-        .then((response) => {
-            console.log('[Update : Exchange Rate]'+response[0]['basePrice'])
-            $('.exchange-rate').text(response[0]['basePrice'])
-        })
-        .catch((err) => console.error(err));
-    setInterval(function () {
+    startInterval(function () {
         // console.log("[Update Exchange Rate]")
         fetch('https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD')
             .then((response) => response.json())

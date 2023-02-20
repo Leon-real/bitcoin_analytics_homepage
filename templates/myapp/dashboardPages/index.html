@@ -12,20 +12,17 @@
         </p>
         <!-- 공포탐욕, 강도 지수, 시장 트랜드, 비트코인 도미넌스 -->
         <div class="row">
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-2 col-md-3">
                 <div class="card bg-secondary text-white mb-4">
-                    <div class="card-body">공포 / 탐욕 지수
-                        <span style="color:white; font-weight:bold" id="FearAndGreedData">-</span>
-                    </div>                                    
+                    <div class="card-body">공포 / 탐욕 지수</div>                                    
                     <div class="card-footer d-flex align-items-center justify-content-between">
+                        <span style="color:white; font-weight:bold" id="FearAndGreedData">-</span>
                         <buttom class="small btn btn-link text-white stretched-link" id="dashbordObject_1">
-                            <!-- 좀 더 보완 필요 프로그래스 바 -->
-                            <progress value="0" max="100" id="FearAndGreedDataProgressbar"></progress>
                         </buttom>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-2 col-md-2">
                 <div class="card bg-secondary text-white mb-4">
                     <div class="card-body">상대 강도 지수</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -35,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-2 col-md-2">
                 <div class="card bg-secondary text-white mb-4">
                     <div class="card-body">시장 트랜드</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -46,10 +43,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-5 col-md-7">
                 <div class="card bg-secondary text-white mb-4">
-                    <div class="card-body">비트코인 도미넌스</div>
+                    <div class="card-body">[비트코인 | 이더리움 | 바이낸스코인 | USDT | USDC] 도미넌스 (%)</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
+                        <span style="color:white; font-weight:bold" id="DominaceIndecOfBtc">-</span>
+                        <span style="color:white; font-weight:bold" >|</span>
+                        <span style="color:white; font-weight:bold" id="DominaceIndecOfEth">-</span>
+                        <span style="color:white; font-weight:bold" >|</span>
+                        <span style="color:white; font-weight:bold" id="DominaceIndecOfBnb">-</span>
+                        <span style="color:white; font-weight:bold" >|</span>
+                        <span style="color:white; font-weight:bold" id="DominaceIndecOfUSDT">-</span>
+                        <span style="color:white; font-weight:bold" >|</span>
+                        <span style="color:white; font-weight:bold" id="DominaceIndecOfUSDC">-</span>
                         <buttom class="small btn btn-link text-white stretched-link" id="dashbordObject_4">
                             <!-- 프로그래스 이미지 넣기 -->
                         </buttom>                                        
