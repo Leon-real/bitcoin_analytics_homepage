@@ -2,34 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', event => {
     // Dashboard Summary Charts
-    const dashbordObject1 = document.body.querySelector('#dashbordObject_1');
-    const dashbordObject2 = document.body.querySelector('#dashbordObject_2');
-    const dashbordObject3 = document.body.querySelector('#dashbordObject_3');
-    const dashbordObject4 = document.body.querySelector('#dashbordObject_4');
-    if (dashbordObject1) {
-        dashbordObject1.addEventListener('click', event => {
-            console.log('공포 / 탐욕 지수 차트 표시');
-            document.getElementById('index_dashboradchart1').innerHTML = '공포 / 탐욕 지수 차트'
-        });
-    } // 공포 탑욕 지수 부분
-    if (dashbordObject2) {
-        dashbordObject2.addEventListener('click', event => {
-            console.log('강도 지수 차트 표시');
-            document.getElementById('index_dashboradchart1').innerHTML = '상대 강도 지수 차트'
-        });
-    } // 상대 강도 지수 부분
-    if (dashbordObject3) {
-        dashbordObject3.addEventListener('click', event => {
-            console.log('시장 트렌드 차트 표시');
-            document.getElementById('index_dashboradchart1').innerHTML = '시장 트렌드 차트'
-        });
-    } // 시장 트렌드 부분
-    if (dashbordObject4) {
-        dashbordObject4.addEventListener('click', event => {
-            console.log('비트코인 도미넌스 차트 표시');
-            document.getElementById('index_dashboradchart1').innerHTML = '비트코인 도미넌스 차트'
-        });
-    } // 비트코인 도미넌스 부분
+    
 });
 
 let binance_future_data; // 바이낸스 선물 데이터 현재 가격
