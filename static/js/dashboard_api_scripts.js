@@ -47,11 +47,11 @@ window.addEventListener('DOMContentLoaded', event => {
                 // console.log(btc_dominance_index, eth_dominance_index, bnb_dominance_index, usdt_dominance_index, usdc_dominance_index)
                 
                 // 데이터 넣기
-                document.getElementById('DominaceIndecOfBtc').innerHTML = btc_dominance_index
-                document.getElementById('DominaceIndecOfEth').innerHTML = eth_dominance_index
-                document.getElementById('DominaceIndecOfBnb').innerHTML = bnb_dominance_index
-                document.getElementById('DominaceIndecOfUSDT').innerHTML = usdt_dominance_index
-                document.getElementById('DominaceIndecOfUSDC').innerHTML = usdc_dominance_index
+                $('#DominaceIndecOfBtc').text(btc_dominance_index).css('color','#FF8200');
+                $('#DominaceIndecOfEth').text(eth_dominance_index).css('color','#000000');
+                $('#DominaceIndecOfBnb').text(bnb_dominance_index).css('color','#FAEB78');
+                $('#DominaceIndecOfUSDT').text(usdt_dominance_index).css('color','#3CA03C');
+                $('#DominaceIndecOfUSDC').text(usdc_dominance_index).css('color','#64A0FF');
                 
             })
             .catch(error => console.log(error));
