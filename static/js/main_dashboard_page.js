@@ -253,7 +253,8 @@ setInterval(function () {
     
 }, 100);
 
-// 차트 그려주기
+
+// Summary 부분 차트 그려주기
 // 처음 갱신 부분
 setTimeout(
     function () {
@@ -293,7 +294,7 @@ setTimeout(
                     display: false
                 },
                 maintainAspectRatio: false,
-                cutoutPercentage: 70,
+                cutoutPercentage: 50,
                 // animation: false,
                 rotation: 1 * Math.PI,
                 circumference: 1 * Math.PI
@@ -303,7 +304,7 @@ setTimeout(
         let dominant_chart = new Chart(dominantValue_chart, {
             type: 'doughnut',
             data: {
-                labels: ["Btc",'Eth','Bnb','USDT','USDC','Rest Coin'],
+                labels: ["Btc",'Eth','Bnb','USDT','USDC','Rest All Coin'],
                 datasets: [{
                     data: dominantValue,      // [데이터 배열]
                     backgroundColor: [
@@ -324,75 +325,88 @@ setTimeout(
                 legend: {
                     display: false
                 },
+                maintainAspectRatio: false,
+                cutoutPercentage: 0,
+                // animation: false,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI
             }
         });
 }, 5000);
-setInterval(function () {
-    // 값 가지고 오기
-    let fearandgreedValue = [100-parseFloat($('#FearAndGreedData').text()),parseFloat($('#FearAndGreedData').text())];
-    let btc_dom_val = parseFloat($('#DominaceIndecOfBtc').text());
-    let eth_dom_val = parseFloat($('#DominaceIndecOfEth').text());
-    let bnb_dom_val = parseFloat($('#DominaceIndecOfBnb').text());
-    let ustc_dom_val = parseFloat($('#DominaceIndecOfUSDT').text());
-    let usdc_dom_val = parseFloat($('#DominaceIndecOfUSDC').text());
-    let rest_dom_val = (100 - (btc_dom_val+eth_dom_val+bnb_dom_val+ustc_dom_val+usdc_dom_val)).toFixed(2);
-    let dominantValue = [btc_dom_val, eth_dom_val, bnb_dom_val, ustc_dom_val, usdc_dom_val, rest_dom_val];
-    
-    // 넣어줄 차트 부분
-    let fearandgreedValue_chart = $('#FearAndGreedChart');
-    let dominantValue_chart = $('#DominantChart');
-    // 공포 지수 차트 그리기
-    let fear_and_greed_chart = new Chart(fearandgreedValue_chart, {
-        type: 'doughnut',
-        data: {
-            labels: ["Fear", "Greed"],
-            datasets: [{
-                data: fearandgreedValue,      // [데이터 배열]
-                backgroundColor: [
-                    '#CD1039', // 공포
-                    '#52E252' // 탐욕
-                ],
-                borderWidth: 0,
-                scaleBeginAtZero: true,
-            }
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                display: false
+setInterval(
+    function () {
+        // console.log("start")
+        // 값 가지고 오기
+        let fearandgreedValue = [100 - parseFloat($('#FearAndGreedData').text()), parseFloat($('#FearAndGreedData').text())];
+        let btc_dom_val = parseFloat($('#DominaceIndecOfBtc').text());
+        let eth_dom_val = parseFloat($('#DominaceIndecOfEth').text());
+        let bnb_dom_val = parseFloat($('#DominaceIndecOfBnb').text());
+        let ustc_dom_val = parseFloat($('#DominaceIndecOfUSDT').text());
+        let usdc_dom_val = parseFloat($('#DominaceIndecOfUSDC').text());
+        let rest_dom_val = (100 - (btc_dom_val + eth_dom_val + bnb_dom_val + ustc_dom_val + usdc_dom_val)).toFixed(2);
+        let dominantValue = [btc_dom_val, eth_dom_val, bnb_dom_val, ustc_dom_val, usdc_dom_val, rest_dom_val];
+
+        // 넣어줄 차트 부분
+        let fearandgreedValue_chart = $('#FearAndGreedChart');
+        let dominantValue_chart = $('#DominantChart');
+        // 공포 지수 차트 그리기
+        let fear_and_greed_chart = new Chart(fearandgreedValue_chart, {
+            type: 'doughnut',
+            data: {
+                labels: ["Fear", "Greed"],
+                datasets: [{
+                    data: fearandgreedValue,      // [데이터 배열]
+                    backgroundColor: [
+                        '#CD1039', // 공포
+                        '#52E252' // 탐욕
+                    ],
+                    borderWidth: 0,
+                    scaleBeginAtZero: true,
+                }
+                ]
             },
-            maintainAspectRatio: false,
-            cutoutPercentage: 70,
-            rotation: 1 * Math.PI,
-            circumference: 1 * Math.PI
-        }
-    }); 
-    // 도미넌스 차트 그리기
-    let dominant_chart = new Chart(dominantValue_chart, {
-        type: 'doughnut',
-        data: {
-            labels: ["Btc",'Eth','Bnb','USDT','USDC','Rest Coin'],
-            datasets: [{
-                data: dominantValue,      // [데이터 배열]
-                backgroundColor: [
-                    '#FF8200', // 비트코인
-                    '#000000', // 이더리움
-                    '#FAEB78', // 비앤비
-                    '#3CA03C', //USDT
-                    '#64A0FF', // USTC
-                    '#FFFFFF'// 나머지
-                ],
-                borderWidth: 0,
-                scaleBeginAtZero: true,
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                maintainAspectRatio: false,
+                cutoutPercentage: 50,
+                // animation: false,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI
             }
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                display: false
+        });
+        // 도미넌스 차트 그리기
+        let dominant_chart = new Chart(dominantValue_chart, {
+            type: 'doughnut',
+            data: {
+                labels: ["Btc", 'Eth', 'Bnb', 'USDT', 'USDC', 'Rest All Coin'],
+                datasets: [{
+                    data: dominantValue,      // [데이터 배열]
+                    backgroundColor: [
+                        '#FF8200', // 비트코인
+                        '#000000', // 이더리움
+                        '#FAEB78', // 비앤비
+                        '#3CA03C', //USDT
+                        '#64A0FF', // USTC
+                        '#FFFFFF'// 나머지
+                    ],
+                    borderWidth: 0,
+                    scaleBeginAtZero: true,
+                }
+                ]
             },
-        }
-    });
-}, 1000*60*5); //분마다 차트 갱신
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                maintainAspectRatio: false,
+                cutoutPercentage: 0,
+                // animation: false,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI
+            }
+        });
+}, 1000*60*5); // 5분 마다 차트 갱신
