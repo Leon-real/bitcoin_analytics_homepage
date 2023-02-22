@@ -12,14 +12,20 @@ window.addEventListener('DOMContentLoaded', event => {
             .then(data => {
                 // console.log(data)
                 const value = data.data[0]['value']; // api value 값 가져오기
-                // console.log(value)
+                console.log(value)
 
+                if (value >= 50) {
+                    $('#FearAndGreedData').css('-webkit-text-stroke-width', '3px green')
+                } else {
+                    $('#FearAndGreedData').css('-webkit-text-stroke-width', '3px red')
+                };
 
                 // 색상 설정
                 let green_rate = parseInt(255 * (value /100));
                 let red_rate = parseInt(255*(1 - (value / 100)));
-                let hex_color_rate = '#'+rgbToHex(red_rate, green_rate, 255);
-                
+                let hex_color_rate = '#'+rgbToHex(red_rate, green_rate, 100);
+                console.log(hex_color_rate)
+
                 // 데이터 입력
                 $('#FearAndGreedData').text(value).css('color', hex_color_rate);
                 $('#FearAndGreedData_End').css('color', hex_color_rate);
