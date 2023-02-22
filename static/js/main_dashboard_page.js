@@ -260,7 +260,7 @@ setTimeout(
     function () {
         // console.log("start")
         // 값 가지고 오기
-        let fearandgreedValue = [100-parseFloat($('#FearAndGreedData').text()),parseFloat($('#FearAndGreedData').text())];
+        let fearandgreedValue = [100-parseFloat($('#FearAndGreedData').text()).toFixed(2), parseFloat($('#FearAndGreedData').text())];
         let btc_dom_val = parseFloat($('#DominaceIndecOfBtc').text());
         let eth_dom_val = parseFloat($('#DominaceIndecOfEth').text());
         let bnb_dom_val = parseFloat($('#DominaceIndecOfBnb').text());
@@ -367,7 +367,7 @@ setInterval(
     function () {
         // console.log("start")
         // 값 가지고 오기
-        let fearandgreedValue = [100 - parseFloat($('#FearAndGreedData').text()), parseFloat($('#FearAndGreedData').text())];
+        let fearandgreedValue = [100 - parseFloat($('#FearAndGreedData').text()).toFixed(2), parseFloat($('#FearAndGreedData').text())];
         let btc_dom_val = parseFloat($('#DominaceIndecOfBtc').text());
         let eth_dom_val = parseFloat($('#DominaceIndecOfEth').text());
         let bnb_dom_val = parseFloat($('#DominaceIndecOfBnb').text());
