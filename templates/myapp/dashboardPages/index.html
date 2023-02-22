@@ -12,6 +12,7 @@
         </p>
         <!-- 공포탐욕, 강도 지수, 시장 트랜드, 비트코인 도미넌스 -->
         <div class="row">
+            <!-- 공포탐욕 -->
             <div class="col-xl-2 col-md-3">
                 <div class="card bg-secondary text-white mb-4">
                     <div class="card-body">공포 / 탐욕 지수<br>
@@ -23,6 +24,7 @@
                     </div>
                 </div>
             </div>
+            <!-- 상대강도 -->
             <div class="col-xl-2 col-md-3">
                 <div class="card bg-secondary text-white mb-4">
                     <div class="card-body">상대 강도 지수<br>
@@ -34,18 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-3">
-                <div class="card bg-secondary text-white mb-4">
-                    <div class="card-body">시장 트랜드 | 생명선<br>
-                        <span style="color:white; font-weight:bold" id="TrendIndexOfMarket">-</span>
-                        <span style="color:white; font-weight:bold" >|</span>
-                        <span style="color:white; font-weight:bold" id="LifeIndexOfMarket">-</span>
-                    </div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <canvas id="TrendAndLifeChar" height="70"></canvas>
-                    </div>
-                </div>
-            </div>
+            <!-- 도미넌스 -->
             <div class="col-xl-5 col-md-9">
                 <div class="card bg-secondary text-white mb-4">
                     <div class="card-body">[
@@ -74,7 +65,23 @@
                     </div>
                 </div>
             </div>
+            <!-- 광고 -->
+            <div class="col-xl-3 col-md-3">
+                <div class="card bg-secondary text-white mb-4">
+                    <div class="card-body">
+                        광고 영역
+                </div>
+            </div>
             <!-- 하나 더 추가해도 될 듯?! 항목 -->
+        </div>
+        <div class="col-xl-2 col-md-3">
+            <div class="card bg-secondary text-white mb-4">
+                <div class="card-body">시장 트랜드 | 생명선<br>
+                    <span style="color:white; font-weight:bold" id="TrendIndexOfMarket">-</span>
+                    <span style="color:white; font-weight:bold" >|</span>
+                    <span style="color:white; font-weight:bold" id="LifeIndexOfMarket">-</span>
+                </div>
+            </div>
         </div>
         <!-- Top 10 상승률 테이블  -->
         <div class="row">

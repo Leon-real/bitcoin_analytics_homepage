@@ -268,10 +268,12 @@ setTimeout(
         let usdc_dom_val = parseFloat($('#DominaceIndecOfUSDC').text());
         let rest_dom_val = (100 - (btc_dom_val+eth_dom_val+bnb_dom_val+ustc_dom_val+usdc_dom_val)).toFixed(2);
         let dominantValue = [btc_dom_val, eth_dom_val, bnb_dom_val, ustc_dom_val, usdc_dom_val, rest_dom_val];
-        
+        let rsiVal = [100 - parseFloat($('#RsiIndexOf30Minutes').text()), parseFloat($('#RsiIndexOf30Minutes').text())];
+
         // 넣어줄 차트 부분
         let fearandgreedValue_chart = $('#FearAndGreedChart');
         let dominantValue_chart = $('#DominantChart');
+        let rsiValue_chart = $('#RsiIndexChart');
         // 공포 지수 차트 그리기
         let fear_and_greed_chart = new Chart(fearandgreedValue_chart, {
             type: 'doughnut',
@@ -327,6 +329,34 @@ setTimeout(
                 },
                 maintainAspectRatio: false,
                 cutoutPercentage: 0,
+                // animation: false,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI
+            }
+        });
+        // rsi 차트 그리기
+        let rsi_chart = new Chart(rsiValue_chart, {
+            type: 'doughnut',
+            data: {
+                labels: ["Ask","Bid"],
+                datasets: [{
+                    data: rsiVal,      // [데이터 배열]
+                    backgroundColor: [
+                        '#CD1039', // 매도
+                        '#52E252' // 매수
+                    ],
+                    borderWidth: 0,
+                    scaleBeginAtZero: true,
+                }
+                ]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                maintainAspectRatio: false,
+                cutoutPercentage: 50,
                 // animation: false,
                 rotation: 1 * Math.PI,
                 circumference: 1 * Math.PI
@@ -409,4 +439,33 @@ setInterval(
                 circumference: 1 * Math.PI
             }
         });
+        // rsi 차트 그리기
+        let rsi_chart = new Chart(rsiValue_chart, {
+            type: 'doughnut',
+            data: {
+                labels: ["Ask","Bid"],
+                datasets: [{
+                    data: rsiVal,      // [데이터 배열]
+                    backgroundColor: [
+                        '#CD1039', // 매도
+                        '#52E252' // 매수
+                    ],
+                    borderWidth: 0,
+                    scaleBeginAtZero: true,
+                }
+                ]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                maintainAspectRatio: false,
+                cutoutPercentage: 50,
+                // animation: false,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI
+            }
+        });
+        
 }, 1000*60*5); // 5분 마다 차트 갱신

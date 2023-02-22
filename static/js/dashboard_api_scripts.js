@@ -14,11 +14,14 @@ window.addEventListener('DOMContentLoaded', event => {
                 const value = data.data[0]['value']; // api value 값 가져오기
                 // console.log(value)
 
-                if (value >= 50) {
-                    $('#FearAndGreedData').css('-webkit-text-stroke-width', '3px green')
-                } else {
-                    $('#FearAndGreedData').css('-webkit-text-stroke-width', '3px red')
-                };
+                // //테두리 설정
+                // if (value >= 50) {
+                //     $('#FearAndGreedData').css('-webkit-text-stroke', '0.3px #52E252')
+                //     $('#FearAndGreedData_End').css('-webkit-text-stroke', '0.3px #52E252')
+                // } else {
+                //     $('#FearAndGreedData').css('-webkit-text-stroke', '0.3px #FF0000')
+                //     $('#FearAndGreedData_End').css('-webkit-text-stroke', '0.3px #FF0000')
+                // };
 
                 // 색상 설정
                 let green_rate = parseInt(255 * (value /100));
@@ -93,6 +96,14 @@ window.addEventListener('DOMContentLoaded', event => {
                     life_line_color = 'black';
                 }
                 
+                //테두리 설정
+                // if (rsi >= 50) {
+                //     $('#RsiIndexOf30Minutes').css('-webkit-text-stroke', '1px #52E252');
+                //     $('#RsiIndexOf30Minutes_End').css('-webkit-text-stroke', '1px #52E252');
+                // } else {
+                //     $('#RsiIndexOf30Minutes').css('-webkit-text-stroke', '1px #FF0000');
+                //     $('#RsiIndexOf30Minutes_End').css('-webkit-text-stroke', '1px #FF0000');
+                // };
 
                 // 데이터 넣기
                 document.getElementById('RsiIndexOf30Minutes').innerHTML = rsi;
@@ -105,7 +116,7 @@ window.addEventListener('DOMContentLoaded', event => {
                 // rsi 부분
                 let green_rate = parseInt(255 * (rsi /100));
                 let red_rate = parseInt(255*(1 - (rsi / 100)));
-                let hex_color_rate = '#'+rgbToHex(red_rate, green_rate, 255);
+                let hex_color_rate = '#'+rgbToHex(red_rate, green_rate, 0)+'0';
                 
                 $('#RsiIndexOf30Minutes').css('color', hex_color_rate);
                 $('#RsiIndexOf30Minutes_End').css('color', hex_color_rate);

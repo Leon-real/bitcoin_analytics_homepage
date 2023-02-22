@@ -1,7 +1,6 @@
 
 
 window.addEventListener('DOMContentLoaded', event => {
-    // Dashboard Summary Charts
     
 });
 
