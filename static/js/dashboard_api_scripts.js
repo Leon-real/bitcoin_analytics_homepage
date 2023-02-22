@@ -82,10 +82,10 @@ window.addEventListener('DOMContentLoaded', event => {
                 let life_line; // 생명선
                 let life_line_color; //생명선 색상
                 let cal_percentOfLifeLine = parseFloat(close_prices[close_prices.length-1]).toFixed(2) / parseFloat(ema[ema.length-1]).toFixed(2);
-                if (cal_percentOfLifeLine*100 <= 90) { //현재 가격이 EMA보다 10% 아래에 있는 경우
+                if (cal_percentOfLifeLine*100 <= 95) { //현재 가격이 EMA보다 5% 아래에 있는 경우
                     life_line = 'Under Life Line';
                     life_line_color = 'red';
-                } else if (cal_percentOfLifeLine*100 >= 110 ) { // 현재 가격이 EMA보다 10% 위에 있는 경우
+                } else if (cal_percentOfLifeLine*100 >= 105 ) { // 현재 가격이 EMA보다 5% 위에 있는 경우
                     life_line = 'Above Life Line';
                     life_line_color = 'greed';
                 } else {
