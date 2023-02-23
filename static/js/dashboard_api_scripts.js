@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', event => {
                 let life_line; // 생명선
                 let life_line_color; //생명선 색상
                 let cal_percentOfLifeLine = parseFloat(close_prices[close_prices.length-1]).toFixed(2) / parseFloat(ema[ema.length-1]).toFixed(2);
-                console.log(cal_percentOfLifeLine)
+                // console.log(cal_percentOfLifeLine)
                 if (cal_percentOfLifeLine*100 <= 97) { //현재 가격이 EMA보다 3% 아래에 있는 경우
                     life_line = 'Under Life Line';
                     life_line_color = 'red';
