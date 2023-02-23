@@ -17,7 +17,7 @@
 1. Current Main Dashboard page   
     <details>
     <summary>Image</summary>
-    <img src="./site_image/MainDashboardpage_Summary.png" width="600px" height="300px" title="Summary" alt="Summary"></img><br/>
+    <img src="./site_image/MainDashboardpage_Summary_Ver_1.1.png" width="600px" height="300px" title="Summary" alt="Summary"></img><br/>
     <img src="./site_image/MaindashboardPage_top10_table.png" width="600px" height="300px" title="Top 10 table" alt="Top10Table"></img><br/>
     <img src="./site_image/MainDashboardPage_Gimchi_Premium.png" width="600px" height="300px" title="Gimchi Premium" alt="GimchiPremium"></img><br/>
     </details>
