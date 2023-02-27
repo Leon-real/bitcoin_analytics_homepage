@@ -1,5 +1,6 @@
 # Bitcoin Analytics Homepage
-- [Deploy Site Link](https://enchanting-valkyrie-42fb0e.netlify.app/index.html)  
+- **Deploy Site**
+    **[Site]**(https://enchanting-valkyrie-42fb0e.netlify.app/index.html)  
 
 - If you want to see more about this project.  
     [History of this project](#time-line-of-this-project)  
