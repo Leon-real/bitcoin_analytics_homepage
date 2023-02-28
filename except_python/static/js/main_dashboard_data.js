@@ -39,6 +39,9 @@ function upbit_data_processing(upbit_data) {
         // console.log(`${key}: ${value}`);
         if (upbit_data.code.replace("KRW-",'') == value && upbit_data.type == 'ticker'){ // 키값이 같을 경우
             temp_name = value.replace('USDT',"").replace("KRW-","");
+            if (temp_name == 'BTC') {
+                $('.current_bitcoin_price').text(upbit_data['trade_price'])
+            };
             // console.log(value, upbit_data['trade_price'], upbit_data['change'])
             temp_single_data_set[temp_name] = upbit_data['trade_price']
             // 현물 top 10 테이블에 넣어주기
