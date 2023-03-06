@@ -51,4 +51,4 @@
 - Secrete Key  
     현재 gitignore로 업로드 안해놓은 상태,  
     따로 managy.py 파이썬 파일 위치에 secretes.json 파일이 있어야 서버가 돌아간다.
-- 
+- Python 없이 실행하기 [Click](#Bitcoin Analytics Homepage Without Python)
