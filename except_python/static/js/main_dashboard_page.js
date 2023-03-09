@@ -484,7 +484,3 @@ $("#premium_search").keyup(function () {
 	//입력한 데이터가 있는 Elemnet의 부모 Elemnet(td)만 표시.
 	$(temp).parent().show();
 })
-
-
-
-console.log("테이블 검색기능 테스트중")
