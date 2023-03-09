@@ -474,7 +474,7 @@ setInterval(
 // 김치 프리미엄의 search 부분
 //input에 keyup 이벤트 등록
 $("#premium_search").keyup(function () {
-    console.log('키보드 이벤트 발생')
+    // console.log('키보드 이벤트 발생')
     //keyup 이벤트 발생 시 해당 input의 value 가져오기.
     var searchText = $(this).val();
     //실시간 검색이 필요한 table의 모든 행(tr) 숨김 처리
