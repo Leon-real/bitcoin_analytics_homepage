@@ -471,8 +471,7 @@ setInterval(
         
 }, 1000*60*5); // 5분 마다 차트 갱신
 
-// 김치 프리미엄의 search 부분
-//input에 keyup 이벤트 등록
+// 김치 프리미엄의 search 부분 //input에 keyup 이벤트 등록
 $("#premium_search").keyup(function () {
     // console.log('키보드 이벤트 발생')
     //keyup 이벤트 발생 시 해당 input의 value 가져오기.
@@ -484,3 +483,9 @@ $("#premium_search").keyup(function () {
 	//입력한 데이터가 있는 Elemnet의 부모 Elemnet(td)만 표시.
 	$(temp).parent().show();
 })
+
+// 클릭시 [차트] 영역 글자 바꿔주기
+
+
+// #premium_table_div
+console.log("클릭 테스트 진행중")
