@@ -49,8 +49,8 @@
 - [CoinGecko API documents (코인게코 공식 API 문서)](https://www.coingecko.com/ko/api/documentation)
 
 # Notices
+- 현재 python(Django)의 경우 업데이트를 안하고, [except python 폴더](/except_python) 안에 내용면 업데이트중 (2023년 03월 08일 이후)  
 - Secrete Key  
     현재 gitignore로 업로드 안해놓은 상태,  
     따로 managy.py 파이썬 파일 위치에 secretes.json 파일이 있어야 서버가 돌아간다.  
-- 현재 python(Django)의 경우 업데이트를 안하고, except python 폴더 안에 내용면 업데이트중 (3월 8일 이후)  
 - Python 없이 실행하기 [Click](/except_python)
