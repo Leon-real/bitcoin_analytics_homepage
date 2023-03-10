@@ -175,7 +175,7 @@ setInterval(function () {
             });
         }
     });
-    // spot top 10 display only 10 tickers
+    // spot top 10 display only 6 tickers
     (function() {
         var table_set = $('#spot_top_10_table')[0]
         var rowList = table_set.rows;
@@ -187,7 +187,7 @@ setInterval(function () {
             var ticker_price = row.cells[1].innerHTML; // 가격
             var ticker_rate = row.cells[2].innerHTML; // 상승률
 
-            if (i<11) { // 상위 10개만
+            if (i<6) { // 상위 6개만
                 // 만약 안보임 처리 되어 있다면, 보여주기
                 if (row.style.display=='none') {
                     row.style.display='';
@@ -207,7 +207,7 @@ setInterval(function () {
             // console.log(ticker_name, ticker_spot_price, ticker_future_price, ticker_premium)
         };
     }) ();
-    // future top 10 display only 10 tickers and upload img
+    // future top 10 display only 6 tickers and upload img
     (function() {
         var table_set = $('#future_top_10_table')[0]
         var rowList = table_set.rows;
@@ -231,7 +231,7 @@ setInterval(function () {
                 };
             };
 
-            if (i<11) { // 상위 10개만
+            if (i<6) { // 상위 6개만
                 // 만약 안보임 처리 되어 있다면, 보여주기
                 if (row.style.display=='none') {
                     row.style.display='';
