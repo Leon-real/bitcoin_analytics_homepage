@@ -486,3 +486,4 @@ $("#premium_search").keyup(function () {
 
 // 클릭시 [차트] 영역 글자 바꿔주기
 console.log("클릭 테스트 진행중")
+console.log("테스트 진행중 . . .")
