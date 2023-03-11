@@ -100,11 +100,11 @@ setInterval(function () {
     }) ();
 
     // spot top 10 고정 정렬
-    $('#spot_top_10_tr').children().each(function (column){
+    $('#spot_top_tr').children().each(function (column){
         // 정렬 부분 고정
         if ($(this).is('.asc')) {
             sortdir = 1;
-            var rec = $('#spot_top_10_table').find('tbody>tr').get();
+            var rec = $('#spot_top_table').find('tbody>tr').get();
             rec.sort(function (a, b) {
                 var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
                 var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
@@ -116,12 +116,12 @@ setInterval(function () {
                 }
             });
             $.each(rec, function (index, row) {
-                $('#spot_top_10_table_body').append(row);
+                $('#spot_top_table_body').append(row);
             });
         } else if (($(this).is('.desc'))) {
             sortdir = -1;
             
-            var rec = $('#spot_top_10_table').find('tbody>tr').get();
+            var rec = $('#spot_top_table').find('tbody>tr').get();
             rec.sort(function (a, b) {
                 var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
                 var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
@@ -133,16 +133,16 @@ setInterval(function () {
                 }
             });
             $.each(rec, function (index, row) {
-                $('#spot_top_10_table_body').append(row);
+                $('#spot_top_table_body').append(row);
             });
         }
     });
     // future top 10 고정 정렬
-    $('#future_top_10_tr').children().each(function (column){
+    $('#future_top_tr').children().each(function (column){
         // 정렬 부분 고정
         if ($(this).is('.asc')) {
             sortdir = 1;
-            var rec = $('#future_top_10_table').find('tbody>tr').get();
+            var rec = $('#future_top_table').find('tbody>tr').get();
             rec.sort(function (a, b) {
                 var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
                 var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
@@ -154,12 +154,12 @@ setInterval(function () {
                 }
             });
             $.each(rec, function (index, row) {
-                $('#future_top_10_table_body').append(row);
+                $('#future_top_table_body').append(row);
             });
         } else if (($(this).is('.desc'))) {
             sortdir = -1;
             
-            var rec = $('#future_top_10_table').find('tbody>tr').get();
+            var rec = $('#future_top_table').find('tbody>tr').get();
             rec.sort(function (a, b) {
                 var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
                 var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
@@ -171,13 +171,13 @@ setInterval(function () {
                 }
             });
             $.each(rec, function (index, row) {
-                $('#future_top_10_table_body').append(row);
+                $('#future_top_table_body').append(row);
             });
         }
     });
-    // spot top 10 display only 10 tickers
+    // spot top 10 display only 10 tickers // spot top 갯수 설정 부분
     (function() {
-        var table_set = $('#spot_top_10_table')[0]
+        var table_set = $('#spot_top_table')[0]
         var rowList = table_set.rows;
         // console.log(rowList)
         for (i=1; i<rowList.length; i++) {
@@ -187,14 +187,14 @@ setInterval(function () {
             var ticker_price = row.cells[1].innerHTML; // 가격
             var ticker_rate = row.cells[2].innerHTML; // 상승률
 
-            if (i<11) { // 상위 10개만
+            if (i<6) { // 상위 5개만
                 // 만약 안보임 처리 되어 있다면, 보여주기
                 if (row.style.display=='none') {
                     row.style.display='';
                 } else {
                     row.style.display='';
                 };
-            } else { // 상위 11개 이후의 값들
+            } else { // 상위 5개 이후의 값들
                 // 만약 보임되어 있다면, 안보여주기
                 if (row.style.display=='') {
                     row.style.display='none';
@@ -207,9 +207,9 @@ setInterval(function () {
             // console.log(ticker_name, ticker_spot_price, ticker_future_price, ticker_premium)
         };
     }) ();
-    // future top 10 display only 10 tickers and upload img
+    // future top 10 display only 10 tickers and upload img // future top 갯수 설정 부분
     (function() {
-        var table_set = $('#future_top_10_table')[0]
+        var table_set = $('#future_top_table')[0]
         var rowList = table_set.rows;
         // console.log(rowList)
         for (i=1; i<rowList.length; i++) {
@@ -231,14 +231,14 @@ setInterval(function () {
                 };
             };
 
-            if (i<11) { // 상위 10개만
+            if (i<6) { // 상위 5개만
                 // 만약 안보임 처리 되어 있다면, 보여주기
                 if (row.style.display=='none') {
                     row.style.display='';
                 } else {
                     row.style.display='';
                 };
-            } else { // 상위 11개 이후의 값들
+            } else { // 상위 6개 이후의 값들
                 // 만약 보임되어 있다면, 안보여주기
                 if (row.style.display=='') {
                     row.style.display='none';

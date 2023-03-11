@@ -107,8 +107,8 @@ setTimeout(function() {
 
 // 김치 프리미엄 테이블 만들기
 const listOfTickers = document.getElementById('coin_lists_table_body');// 김치프리미엄 테이블
-const listOfTickers_future_top_10 = document.getElementById('future_top_10_table_body');// 선물 탑10 테이블
-const listOfTickers_spot_top_10 = document.getElementById('spot_top_10_table_body');// 현물 탑10 테이블
+const listOfTickers_future_top_10 = document.getElementById('future_top_table_body');// 선물 탑10 테이블
+const listOfTickers_spot_top_10 = document.getElementById('spot_top_table_body');// 현물 탑10 테이블
 
 setTimeout((function () {
     // 김치프리미엄 테이블 만들기, 현물 상승률 탑10 테이블 만들기
