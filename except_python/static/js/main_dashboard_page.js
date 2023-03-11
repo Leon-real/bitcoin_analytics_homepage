@@ -238,7 +238,7 @@ setInterval(function () {
                 } else {
                     row.style.display='';
                 };
-            } else { // 상위 6개 이후의 값들
+            } else { // 상위 5개 이후의 값들
                 // 만약 보임되어 있다면, 안보여주기
                 if (row.style.display=='') {
                     row.style.display='none';
