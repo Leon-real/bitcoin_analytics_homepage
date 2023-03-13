@@ -1,4 +1,9 @@
 window.addEventListener('DOMContentLoaded', event => {
+    // 비트코인 현재 가격 summary에 표시해주기
+    setInterval(function () {
+        let current_price = $('.table_price_BTC').text()
+        $(".current-price").text(current_price)
+    }, 1000); // 1초마다 갱신
     // 고래 체결량 가격 차이 발생시 삭제해주기 4% 이하로 체결된 가격 있으면 초기화 시키기
     setInterval(function () {
         for (let i in binance_tickers){
@@ -72,6 +77,7 @@ setTimeout((function () {
         // console.log(i, binance_tickers[i])
         let before_replace = i;
         i = i.replace("USDT","");
+        // console.log(i, binance_tickers[before_replace]);
         listOfTickers.innerHTML += '<tr>'+
                                         '<td class =table_name_'+i+'>'+
                                         '<img src="'+no_img_path+'" width="20" height="20"/>'+

@@ -102,6 +102,7 @@
                     </div>
                 </nav>
             </div>
+            <!-- 매인 내용 부분 -->
             <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
@@ -109,9 +110,55 @@
                     <ol class="breadcrumb mb-4">
                         <li class="sub_main_text" style="display:none;">ㅤ[Future </li>
                     </ol>
-                    <p>환율<br>
-                        <span class="exchange-rate"></span> 원달러
-                    </p>
+
+                    <!-- 첫번째 행 : 비트코인 가격, 환율, 김치 프리미엄 광고-->
+                    <div class="row">
+                        <div class="col-xl-2 col-md-2">
+                            <div class="card bg-secondary text-white mb-4">
+                                <div class="card-body">
+                                    비트코인 현재 가격
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <span class="current-price"></span> USDT
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-2">
+                            <div class="card bg-secondary text-white mb-4">
+                                <div class="card-body">
+                                    환욜 (USD/KRW)
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <span class="exchange-rate"></span> 원
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 광고 1 -->
+                        <div class="col-xl-3 col-md-9">
+                            <div class="card bg-secondary text-white mb-4">
+                                <div class="card-body">
+                                    광고 제목 영역
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        광고 내용
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 하나 더 추가해도 될 듯?! 항목 -->
+                        </div>
+                        <!-- 광고 2 -->
+                        <div class="col-xl-3 col-md-9">
+                            <div class="card bg-secondary text-white mb-4">
+                                <div class="card-body">
+                                    광고 제목 영역
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        광고 내용
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 하나 더 추가해도 될 듯?! 항목 -->
+                        </div>
+                    </div>
+
                     <!-- 바이낸스 티커 정보 업데이트 하기 -->
                     <div class="row">
                         <div class="col-xl-5">

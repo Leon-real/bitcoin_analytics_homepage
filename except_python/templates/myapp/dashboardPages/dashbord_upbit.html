@@ -32,15 +32,13 @@
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <!-- 고정 사이드바 메뉴 -->
-                    <div class="sb-sidenav-menu">
-                        
+                    <div class="sb-sidenav-menu">                    
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Main Part</div>
                             <a class="nav-link" href="../../../index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 대시보드
                             </a>
-
                             <a class="nav-link" href="./dashbord_upbit.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 업비트
@@ -49,8 +47,6 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 바이낸스
                             </a>
-
-
                             <div class="sb-sidenav-menu-heading">임시 저장용</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -102,6 +98,7 @@
                     </div>
                 </nav>
             </div>
+            <!-- 메인 내용 부분 -->
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -109,18 +106,56 @@
                         <ol class="breadcrumb mb-4">
                             <li class="sub_main_text" style="display:none;">ㅤ[Spot </li>
                         </ol>
-                        <p>데이터 업데이트 시간<br>
+                        <p style="display:none;">데이터 업데이트 시간<br>
                             <span class="last-time"></span>
                         </p>
-                        <p>비트코인 현재 가격 : 
-                            <span class="current-price"></span>
-                        </p>
-                        <p>환율<br>
-                            <span class="exchange-rate"></span> 원달러
-                        </p>
-                        <p>김프 퍼센트<br>
-                            <span class="premium_bitcoin"></span>
-                        </p>
+                        <!-- 첫번째 행 : 비트코인 가격, 환율, 김치 프리미엄 광고-->
+                        <div class="row">
+                            <div class="col-xl-2 col-md-2">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">
+                                        비트코인 현재 가격
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <span class="current-price"></span> 원
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-2">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">
+                                        환욜 (USD/KRW)
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <span class="exchange-rate"></span> 원
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-2">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">
+                                        김치 프리미엄
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <span class="premium_bitcoin"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 광고 2 -->
+                            <div class="col-xl-3 col-md-9">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">
+                                        광고 제목 영역
+                                        <div class="card-footer d-flex align-items-center justify-content-between">
+                                            광고 내용
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 하나 더 추가해도 될 듯?! 항목 -->
+                            </div>
+                        </div>
+
                         <!-- 업비트 티커 정보 업데이트 하기 -->
                         <div class="row">
                             <div class="col-xl-5">
