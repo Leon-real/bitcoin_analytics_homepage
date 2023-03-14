@@ -106,5 +106,6 @@ $("#search_coin_input").keyup(function () {
 	//입력한 데이터가 있는 Elemnet의 부모 Elemnet(td)만 표시.
     
 	console.log(temp)
-    
+    console.log(temp[0])
+    // console.log(temp[0].val())
 })
