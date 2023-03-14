@@ -162,23 +162,56 @@
                     <!-- 바이낸스 티커 정보 업데이트 하기 -->
                     <div class="row">
                         <div class="col-xl-7">
-                            <div id="coin_lists_div">
-                                <i class="fas fa-table me-1"></i>
-                                바이낸스 티커 정보들 (USDT 기준)
-                                <table class='dataTable-table' id="coin_lists_table">
-                                    <thead>
-                                        <tr>
-                                            <th>코인</th>
-                                            <th id="th_price">가격</th>
-                                            <th>등락 퍼센트</th>
-                                            <th>등락 가격</th>
-                                            <th>체결 수량</th>
-                                            <th>고래 체결 가격 (갯수)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="coin_lists_table_body">
-                                    </tbody>
-                                </table>
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-table me-1"></i>
+                                    바이낸스 티커 정보들 (USDT 기준)
+                                </div>
+                                <div class="card-body">
+                                    <div id="coin_lists_div">
+                                        <table class='dataTable-table' id="coin_lists_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>코인</th>
+                                                    <th id="th_price">가격</th>
+                                                    <th>등락 퍼센트</th>
+                                                    <th>등락 가격</th>
+                                                    <th>체결 수량</th>
+                                                    <th>고래 체결 가격 (갯수)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="coin_lists_table_body">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-table me-1"></i>
+                                    바이낸스 티커 검색하기 (USDT 기준)
+                                    <input id='search_coin_input' type="text" placeholder="Search for..." aria-label="Search for..." style="float: right;" />
+                                </div>
+                                <div class="card-body">
+                                    <div id="search_coin_lists_div">
+                                        <table class='dataTable-table' id="search_coin_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>코인</th>
+                                                    <th>가격</th>
+                                                    <th>등락 퍼센트</th>
+                                                    <th>등락 가격</th>
+                                                    <th>체결 수량</th>
+                                                    <th>고래 체결 가격 (갯수)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="search_coin_table_body">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

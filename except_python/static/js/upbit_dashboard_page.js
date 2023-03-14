@@ -93,3 +93,18 @@ setInterval(function () {
         };
     }) ();
 }, 100);
+
+// 검색 부분
+//input에 keyup 이벤트 등록
+$("#search_coin_input").keyup(function () {
+    console.log('키보드 이벤트 발생')
+    //keyup 이벤트 발생 시 해당 input의 value 가져오기.
+    var searchText = $(this).val();
+	//해당 table에서 input에 입력한 데이터가 있는 td Element 찾기.
+	var temp = $("#coin_lists_table > tbody > tr > td:contains('" + searchText + "')");
+    var show_temp = $('search_coin_table > tbody > tr > td');
+	//입력한 데이터가 있는 Elemnet의 부모 Elemnet(td)만 표시.
+    
+	console.log(temp)
+    
+})
