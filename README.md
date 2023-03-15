@@ -1,5 +1,5 @@
 # Bitcoin Analytics Homepage
-### Update Date : 2023. 03. 09
+### Update Date : 2023. 03. 14
 - **Deploy Site**  
     [Site](https://enchanting-valkyrie-42fb0e.netlify.app/index.html)  
         ㄴ This site is working without python(Django) file.  
