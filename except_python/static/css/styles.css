@@ -84,7 +84,10 @@
 /* .main_text {
   color: white;
 } */
-
+#main-bottom-footer {
+  position: fixed;
+  transform: translatY(-100%);
+};
 
 
 /* self write */
