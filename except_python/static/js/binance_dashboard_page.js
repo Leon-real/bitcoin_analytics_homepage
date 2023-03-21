@@ -1,6 +1,6 @@
 
 // 바이낸스 테이블 정렬하기
-$('th').each(function (column) {
+$('#main-tr').children().each(function (column) {
     $(this).click(function () {
         if ($(this).is('.asc')) {
             $(this).removeClass('asc');
@@ -14,7 +14,7 @@ $('th').each(function (column) {
         $(this).siblings().removeClass('asc');
         $(this).siblings().removeClass('desc');
 
-        var rec = $('table').find('tbody>tr').get();
+        var rec = $('#coin_lists_table').find('tbody>tr').get();
         rec.sort(function (a, b) {
             var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
             var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
@@ -26,19 +26,19 @@ $('th').each(function (column) {
             }
         });
         $.each(rec, function (index, row) {
-            $('tbody').append(row);
+            $('coin_lists_table_body').append(row);
         });
     });
 });
 // 정렬 값 고정하여서 자동 갱신, 업비트에도 있는 코인을 경우 이미지 불러와주기
 setInterval(function () {
     // console.log("t")
-    $('th').each(function (column){
+    $('#main-tr').children().each(function (column){
         // console.log("자동 정렬 실행", $(this).is('.asc'), ($(this).is('.desc')))
         
         if ($(this).is('.asc')) {
             sortdir = 1;
-            var rec = $('table').find('tbody>tr').get();
+            var rec = $('#coin_lists_table').find('tbody>tr').get();
             rec.sort(function (a, b) {
                 var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
                 var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
@@ -50,12 +50,12 @@ setInterval(function () {
                 }
             });
             $.each(rec, function (index, row) {
-                $('tbody').append(row);
+                $('#coin_lists_table_body').append(row);
             });
         } else if (($(this).is('.desc'))) {
             sortdir = -1;
             
-            var rec = $('table').find('tbody>tr').get();
+            var rec = $('#coin_lists_table').find('tbody>tr').get();
             rec.sort(function (a, b) {
                 var val1 = $(a).children('td').eq(column).text().toUpperCase().replace(" %","");
                 var val2 = $(b).children('td').eq(column).text().toUpperCase().replace(" %","");
@@ -67,7 +67,7 @@ setInterval(function () {
                 }
             });
             $.each(rec, function (index, row) {
-                $('tbody').append(row);
+                $('#coin_lists_table_body').append(row);
             });
         }
     });
